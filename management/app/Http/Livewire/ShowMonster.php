@@ -5,9 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\Map;
 use Livewire\Component;
 
-class ShowWsnlp extends DataTable
+class ShowMonster extends DataTable
 {
-    public $objectClass = "App\Models\Wsnlp";
+    public $objectClass = "App\Models\Monster";
 
     // Any filters we will use to search
     public $filters = [

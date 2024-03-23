@@ -59,6 +59,21 @@
                 </div>
             </dl>
         </div>
+        <div class="px-4 py-2">
+            <h2 class="text-xl font-bold text-center">Player vs. Environment</h2>
+            <!-- List of routes with a short description of what they do. Show any relevant data here if necessary -->
+            <dl class="bg-white dark:bg-gray-800 shadow p-2 sm:mx-auto text-sm rounded-lg flex flex-wrap flex-auto">
+                <x-definition objectClass="ManagementUser">Add/edit administrative users for management.</x-definition>
+                <x-definition objectClass="Language">Add or enable support for languages.</x-definition>
+                <div class="py-2 px-4 w-full sm:w-1/2">
+                    <dt class="text-lg">
+                        {{--Note the crappy hack below to capitalize NPC. This won't scale if we have many words that need custom replacements.--}}
+                        <a href="{{route('monster')}}" class="link pr-1">Help Guide & Video</a>
+                    </dt>
+                    <dd>Video tutorial and documentation.</dd>
+                </div>
+            </dl>
+        </div>
     </div>
 
 </x-app-layout>
