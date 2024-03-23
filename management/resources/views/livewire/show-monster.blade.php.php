@@ -59,5 +59,5 @@
         </tr>
     @endforeach
     {{-- End main slot --}}
-    <x-slot name="editModal"><livewire:edit-wsnlp /></x-slot>
+    <x-slot name="editModal"><livewire:edit-monster /></x-slot>
 </x-data-table>

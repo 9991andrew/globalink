@@ -142,7 +142,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/maps/ask4/{map}',
         \App\Http\Livewire\ShowMapAsk4::class
     )->name('mapask4');
-    Route::get('/monster',
+    
+    Route::get('/Monster',
     \App\Http\Livewire\ShowMonster::class
     )->name('monster');
 
