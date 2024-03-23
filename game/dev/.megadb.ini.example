@@ -1,0 +1,15 @@
+## .env - Server-specific configuration settings for MEGA World.
+## Create a .env file from this .env.example file with your database settings.
+
+[DATABASE]
+# Host may work better as IP address than 'localhost'
+# Default: 127.0.0.1
+DB_HOST=127.0.0.1
+# Default: 3306
+DB_PORT=3306
+# Default: mega
+DB_NAME=mega
+# Default: mega
+DB_USER=mega
+# Password for the MEGA World database. Quoting allows for more characters.
+DB_PASSWORD="change_me!!"

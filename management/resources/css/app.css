@@ -1,0 +1,502 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    /* Custom form styles */
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select,
+    .itemPicker
+    {
+        @apply rounded-md shadow-sm px-2 py-1
+        border border-black dark:border-gray-300 text-black dark:text-white bg-gray-100 dark:bg-gray-850
+        hover:bg-white dark:hover:bg-black
+        focus:bg-white focus:outline-none focus:border-gray-900 focus:ring dark:focus:bg-black focus:ring-opacity-50 focus:ring-cyan-200
+        placeholder-gray-500 placeholder-opacity-60;
+    }
+
+    [type='checkbox'], [type='radio'] {
+        @apply dark:text-cyan-700 shadow-sm text-cyan-500
+        border border border-black dark:border-gray-300 text-black
+        checked:border checked:border-black dark:checked:border-gray-300 dark:checked:text-cyan-600
+        focus:outline-none focus:border-gray-900 focus:ring focus:ring-opacity-50 focus:ring-cyan-200
+        focus:ring-offset-0 focus:ring-offset-transparent;
+    }
+
+    [type='checkbox'] {
+        @apply rounded;
+    }
+
+    [type='radio'] {
+        @apply rounded-full;
+    }
+
+    select {
+        background-position: right 0.25rem center;
+    }
+} /* end @layer base */
+
+.itemPickerSelected {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23737373' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+}
+
+@layer components {
+
+    /* APPLY: This section is used for custom classes I use all the time so I don't have to repeat large groups of tailwind class names */
+    /* Typical blue link to another page or external URL */
+    .link {
+        @apply text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300;
+    }
+
+    .btn {
+        @apply px-2 py-1
+        border rounded-md text-sm font-semibold
+        border-black dark:border-gray-300 text-black dark:text-white dark:bg-gray-850 bg-gray-200
+        focus:outline-none focus:border-gray-900 focus:ring ring-cyan-300 dark:focus:bg-black focus:ring-opacity-50
+        hover:bg-white dark:hover:bg-black
+        active:bg-gray-100 dark:active:bg-gray-900
+        disabled:opacity-25 transition ease-in-out duration-100;
+
+        box-shadow: 2px -2px 0px 0px #42bee0AA;
+    }
+
+    .btn:active, .btn.highlight:active {
+        box-shadow: none;
+        transform: scale(0.98);
+    }
+
+    .btn.highlight {
+        box-shadow: 2px -2px 0px 0px #ffe505;
+    }
+
+
+    .panelButton {
+        @apply relative block text-xs text-white text-center flex-1 p-1 pb-0 bg-gray-500/20 transition-all duration-300 ease-out;
+        --bevel:3px;
+        background-image: linear-gradient(rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) var(--bevel), rgba(0,0,0,0.3) calc(100% - var(--bevel)), rgba(0,0,0,0.5) 100%),
+        linear-gradient(90deg, rgba(255,255,255,0.2) 0%, transparent var(--bevel), transparent calc(100% - var(--bevel)), rgba(0,0,0,0.2) 100%);
+        text-shadow:0 0 3px rgba(0,0,0,0.6);
+    }
+
+    .panelButton:hover {
+        background-image: linear-gradient(rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.0) var(--bevel), rgba(0,0,0,0.15) calc(100% - var(--bevel)), rgba(0,0,0,0.3) 100%);
+    }
+
+    .panelButton.active, .panelButton:active {
+        background-color: rgba(255,255,255,1);
+        color: black;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 1);
+        background-image: linear-gradient(rgba(128,128,128,0.1) 0%, rgba(0,0,0,0.15) var(--bevel), rgba(0,0,0,0.25) calc(100% - var(--bevel)), rgba(0,0,0,0.3) 100%);
+    }
+
+    .panelButton i {
+        display: block;
+        margin-bottom: 2px;
+    }
+
+
+
+    /* Style for data tables. This is a custom style primarily to reduce the weight of data loaded (no extra tailwind classes needed on each row) */
+    .dataTable {
+        @apply divide-y divide-gray-500 divide-opacity-80;
+    }
+
+    .dataTable tbody tr {
+        @apply even:bg-gray-200 dark:even:bg-gray-850 odd:bg-gray-50 dark:odd:bg-gray-950;
+    }
+
+    .dataTable tbody tr:not(.noRecords) td {
+        @apply p-2;
+    }
+
+    /* neutral (gray) link to a page or within a page. Used in pagination */
+    .pageBtn {
+        @apply relative inline-flex items-center justify-center py-2 text-sm leading-5
+        text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800
+        border border-gray-300 dark:border-gray-600;
+        min-width: 2.8rem;
+    }
+
+    /* add this style with page when it is a clickable link */
+    .pageBtnLink {
+        @apply hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-gray-700
+        focus:z-10 focus:outline-none focus:border-gray-900 dark:focus:bg-gray-600 focus:ring ring-cyan-300 focus:ring-opacity-50
+        active:bg-gray-100 active:text-gray-700 dark:active:text-white
+        transition ease-in-out duration-150;
+    }
+
+    /* Used for zoom buttons in map tile editor */
+    #zoomButtons button {
+        @apply flex justify-center items-center w-8 h-8 m-3 text-lg rounded-full
+        text-black border border-black border-opacity-20 bg-white bg-opacity-20
+        hover:text-yellow
+        focus:outline-none focus:ring focus:ring-cyan-200 focus:ring-opacity-50;
+        text-shadow: 0 0 3px rgba(255,255,255,0.3);
+    }
+
+    #zoomButtons button:hover {
+        text-shadow: 0 0 5px rgba(0,0,0,1);
+    }
+
+    #zoomButtons button:active {
+        transform: scale(0.97);
+        text-shadow: 0 0 2px rgba(0,0,0,0.7);
+    }
+
+
+    /* Normalize content edited in the management interface which may have serious issues.
+    All content that is editable by management users should be in a div with this class. */
+
+    /*  Typically users expect p tags to put space above and below an element. */
+    .managementContent p {
+        margin-bottom: 0.5em;
+    }
+
+    /* Images should max out at 100% so they always fit responsively */
+    .managementContent img {
+        max-width:100%;
+    }
+
+    /* Use our link styling on all a tags */
+    .managementContent a {
+        @apply link;
+    }
+
+    /* Make typical looking bullet lists for ULs */
+    .managementContent ul {
+        @apply list-disc pl-8
+    }
+
+    /* OLs are numbered */
+    .managementContent ol {
+        @apply list-decimal pl-8
+    }
+
+    .managementContent pre, .managementContent code {
+        @apply text-sm;
+    }
+
+}/* end @layer components */
+
+/* Custom loading spinner */
+.loader {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    animation: load5 1.1s infinite ease;
+}
+@-webkit-keyframes load5 {
+    0%,
+    100% {
+        box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+    }
+    12.5% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+    }
+    25% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    37.5% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    62.5% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    75% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    87.5% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+    }
+}
+@keyframes load5 {
+    0%,
+    100% {
+        box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+    }
+    12.5% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+    }
+    25% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    37.5% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    62.5% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    75% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    87.5% {
+        box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+    }
+}
+
+/* Styles for maps */
+:root {
+    --tileW: 200px;
+    --tileH: 100px;
+    --arrowW: 35px;
+}
+
+.tile, .axisLabel {
+    width: var(--tileW, 200px);
+    /* In practice, tile bases are half the height of their width. Some elements can extend "above" the tile,
+    and will be layered on the tile above it, visually. Like shadows or tall towers */
+    height: calc(var(--tileW)*.75);
+    position:absolute;
+    background-repeat:no-repeat;
+    background-size:100% auto;
+    background-position:center bottom;
+    /* For centering text in map tiles */
+    color:white;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.axisLabel {
+    text-shadow: none;
+    color: black;
+}
+
+.dark .axisLabel {
+    color:white;
+}
+
+.axisLabel {
+    padding-left:calc(var(--tileW)/2);
+}
+
+.cursor {
+    background-position: top center;
+    background-repeat: no-repeat;
+    position:absolute;
+    color:yellow;
+    width:var(--tileW);
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    font-size:125%;
+    /*text-shadow: 0 1px 1px rgba(0,0,0,0.8);*/
+    /*filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));*/
+    overflow:visible;
+    /* This hack helps visually center the avatar on the tile */
+    margin-top:calc(var(--tileH)/3.5 * -1);
+    transition:all .4s ease-in-out 0s;
+}
+
+
+@keyframes flash{
+    0%{opacity:1}
+    50%{opacity:0.4}
+}
+
+/* Considering using this as a loading animation for a clicked button */
+@keyframes pulsate {
+    from {
+        transform: scale(0.97);
+        transform-origin: center center;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        transform: scale(1);
+        animation-timing-function: ease-in-out;
+    }
+    100% {
+        transform: scale(0.97);
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.pulsate {
+    animation: pulsate 1.5s ease-in-out infinite both;
+}
+
+/* this is ALWAYS collapsed */
+#panelParent .panel.collapsed {
+    display:none;
+}
+
+/* Collapsed on medium screens */
+@media (max-width:1250px) {
+    #panelParent .panel.collapsedM {
+        display:none;
+    }
+}
+
+/* Collapsed only on small screens */
+@media (max-width:800px) {
+    #panelParent .panel.collapsedS {
+        display:none;
+    }
+}
+
+
+/* The control arrows have a ton of style to get them to be positioned correctly and look appropriate.*/
+#controls.seeThrough {
+    background-color:rgba(255,255,255,0.04);
+    border-color: transparent;
+}
+
+#controls.seeThrough svg {
+    opacity:0.2;
+}
+
+#controls.seeThrough .upleft,
+#controls.seeThrough .upright,
+#controls.seeThrough .downleft,
+#controls.seeThrough .downright {
+    opacity:0.1;
+}
+
+#controls.seeThrough .center {
+    opacity:0.6;
+}
+
+#controls.seeThrough .center circle {
+    stroke-width:5;
+    stroke:white;
+}
+
+#controls img, #controls svg {
+    width:var(--arrowW);
+    height:var(--arrowW);
+    display:block;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
+    padding:2px;
+    opacity:0.8;
+    font-family: Helvetica, sans-serif;
+}
+
+#controls svg text{
+    text-anchor: middle;
+    font-size: 28px;
+    fill: #DDD;
+}
+
+/* Diagonals are a bit more translucent */
+#controls .upleft,#controls .upright,#controls .downleft,#controls .downright {
+    opacity:0.6;
+}
+
+#controls svg:hover {
+    fill:#ffe507;
+}
+
+#zoomButtons div:active, #zoomButtons div.active,
+#controls svg:active, #controls svg.active {
+    filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0.9));
+    fill:#f3da05;
+    color:#f3da05;
+}
+
+#controls .arrow.upleft {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(-45deg) scale(0.6) translateY(10px);
+}
+
+#controls .arrow.up {
+    top:2px;
+    left:calc(50% - var(--arrowW)/2);
+}
+
+#controls .arrow.upright {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(45deg) scale(0.6) translateY(10px);
+}
+
+#controls .arrow.right {
+    top:calc(50% - var(--arrowW)/2);
+    right:2px;
+    transform: rotate(90deg);
+}
+
+#controls .arrow.left {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(-90deg);
+}
+
+#controls .arrow.downleft {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(-135deg) scale(0.6) translateY(10px);
+}
+
+#controls .arrow.down {
+    bottom:2px;
+    left:calc(50% - var(--arrowW)/2);
+    transform: rotate(180deg) translateY(-4px);
+}
+
+#controls .arrow.downright {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(135deg) scale(0.6) translateY(10px);
+}
+
+#controls .upleft, #controls .up, #controls .upright {
+    padding-top:0;
+}
+
+#controls .downleft, #controls .down, #controls .downright {
+    padding-bottom:0;
+}
+
+#controls * {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*Reposition controls on larger heights*/
+@media (min-height: 600px) {
+    #controls {
+        bottom:270px;
+    }
+}
+
+/* Add text-shadows to titleInfoSummary for improved legibility */
+.dark #tileInfoSummary {
+    text-shadow: 0 0 4px rgba(0,0,0,1);
+}
+.light #tileInfoSummary {
+    text-shadow: 0 0 4px rgba(255,255,255,1);
+}
+
+
+
+
+/* FontAwesome */
+@import "~@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "~@fortawesome/fontawesome-free/css/regular.css";
+@import "~@fortawesome/fontawesome-free/css/solid.css";

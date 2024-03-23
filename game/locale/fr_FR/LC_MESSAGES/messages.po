@@ -1,0 +1,1507 @@
+
+# MEGA World Text - English (Canadian).
+# Copyright (C) 2021, Joseph D. Lien jd@jdlien.com
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-21 03:14-0600\n"
+"PO-Revision-Date: 2021-06-24 09:11-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /login.php:2
+msgid "Login"
+msgstr "Connexion"
+
+#: /login.php:14 /index.php:29 /guide.php:92 /register.php:15
+msgid "Multiplayer Educational Game for Everyone"
+msgstr "Jeu éducatif multijoueur pour tous"
+
+#: /login.php:18
+msgid "Enter"
+msgstr "Entrer"
+
+#: /login.php:22 /login.php:25 /password_change.php:10 /register.php:22
+#: /register.php:28
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: /login.php:25 /login.php:33 /password_change.php:24 /password_change.php:35
+#: /register.php:28 /register.php:40
+msgid "is required"
+msgstr "est nécessaire"
+
+#: /login.php:30 /login.php:33 /password_change.php:24 /password_change.php:35
+#: /register.php:34 /register.php:40
+msgid "Password"
+msgstr "Mot de passe"
+
+#: /login.php:40
+msgid "Log In"
+msgstr "Connexion"
+
+#: /login.php:52 /register.php:2 /register.php:19
+msgid "Register New Account"
+msgstr "Créer un nouveau compte"
+
+#: /login.php:53
+msgid "About"
+msgstr "À propos"
+
+#: /password_change_success.php:2 /password_change.php:2 /password_change.php:7
+#: /password_change.php:51 /map.php:261 /password_change_action.php:7
+msgid "Change Password"
+msgstr "Changer le mot de passe"
+
+#: /password_change_success.php:7
+msgid "Password Change Successful"
+msgstr "Changement de mot de passe réussi"
+
+#: /password_change_success.php:9
+msgid "Your password has been changed."
+msgstr "Votre mot de passe a été changé."
+
+#: /password_change_success.php:12 /password_change.php:57
+msgid "Return to Game"
+msgstr "Retour au jeu"
+
+#: /password_change.php:18
+msgid "Current Password"
+msgstr "Mot de passe actuel"
+
+#: /password_change.php:29
+msgid "New Password"
+msgstr "Nouveau mot de passe"
+
+#: /password_change.php:31 /register.php:36
+msgid "At least 6 characters"
+msgstr "Au moins 6 caractères"
+
+#: /password_change.php:41 /register.php:46
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+#: /password_change.php:44 /register.php:49
+msgid "Re-enter your password"
+msgstr "Saisissez à nouveau votre mot de passe"
+
+#: /password_change.php:45 /register.php:50
+msgid "Your passwords do not match"
+msgstr "Vos mots de passe ne correspondent pas"
+
+#: /password_change.php:57 /avatar_edit.php:165 /player_create.php:323
+msgid "Cancel"
+msgstr "Annuler"
+
+#: /password_change.php:71 /register.php:175
+msgid "Must be at least 6 characters."
+msgstr "Doit comporter au moins 6 caractères."
+
+#: /index.php:9
+msgid "Welcome to MEGA World"
+msgstr "Bienvenue dans MEGA World"
+
+#: /index.php:34
+msgid "About MEGA World"
+msgstr "À propos de MEGA World"
+
+#: /index.php:35
+msgid "MEGA World is a web-based role-playing game that allows players to navigate environments where they can interact with characters and other players to support educational goals. Quests are offered that can test proficiency in school subject matter, allowing students to learn while they play."
+msgstr "MEGA World est un jeu de rôle en ligne qui permet aux joueurs de naviguer dans des environnements où ils peuvent interagir avec des personnages et d'autres joueurs pour les aider dans leurs objectifs éducatifs. Des quêtes sont proposées pour tester les compétences dans des matières scolaires, ce qui permet aux élèves d'apprendre tout en jouant."
+
+#: /index.php:37
+msgid "Play Now"
+msgstr "Jouer maintenant"
+
+#: /index.php:41
+msgid "User Guide"
+msgstr "Guide de l'utilisateur"
+
+#: /index.php:44
+msgid "Introduction Video"
+msgstr "Vidéo d'introduction"
+
+#: /index.php:50
+msgid "Team Members"
+msgstr "Membres de l'équipe"
+
+#: /index.php:54
+msgid "Project Lead & Principal Investigator"
+msgstr "Chef de projet et chercheur principal"
+
+#: /index.php:55
+msgid "Full Professor"
+msgstr "Professeur titulaire"
+
+#: /index.php:61
+msgid "Lead Developer v3.0 & Graphic Designer (v3.0 Map Tiles)"
+msgstr "Développeur principal v3.0 et concepteur graphique (Tuiles de la carte v3.0)"
+
+#: /index.php:62
+msgid "Undergraduate Project Student"
+msgstr "Étudiant de projet de premier cycle"
+
+#: /index.php:66
+msgid "Past Team Members"
+msgstr "Anciens membres de l'équipe"
+
+#: /index.php:70
+msgid "Project co-lead (v1.0)"
+msgstr "Co-chef de projet (v1.0)"
+
+#: /index.php:71
+msgid "Dean of the College of Information"
+msgstr "Doyen du Collège d'information"
+
+#: /index.php:78
+msgid "Project co-lead (v2.0)"
+msgstr "Co-chef de projet (v2.0)"
+
+#: /index.php:79
+msgid "Instructor"
+msgstr "Instructeur"
+
+#: /index.php:80
+msgid "Computer Science & Engineering"
+msgstr "Sciences et ingénierie informatiques"
+
+#: /index.php:85 /index.php:97
+msgid "Lead Developer"
+msgstr "Développeur principal"
+
+#: /index.php:91
+msgid "Lead Programmer (Virtual Player)"
+msgstr "Programmeur principal (Virtual Player)"
+
+#: /index.php:101
+msgid "Programmer (Virtual Player)"
+msgstr "Programmeur (Virtual Player)"
+
+#: /index.php:102
+msgid "Research Intern"
+msgstr "Stagiaire en recherche"
+
+#: /index.php:107
+msgid "Programmer (PvE module management)"
+msgstr "Programmeur (gestion des modules PvE)"
+
+#: /index.php:112
+msgid "Lead Developer, Analyst, and Designer (PvE module)"
+msgstr "Développeur, analyste et concepteur principal (module PvE)"
+
+#: /index.php:117
+msgid "Quests and World Creation for Java Programming (v2.1)"
+msgstr "Quêtes et création de monde pour la programmation Java (v2.1)"
+
+#: /index.php:124
+msgid "Game Artist (NPCs, Items, Avatars, and Map Tiles in v2.0)"
+msgstr "Designer du jeu (PNJ, objets, avatars et tuiles de la carte dans la v2.0)"
+
+#: /index.php:125
+msgid "supervised by"
+msgstr "supervisé par"
+
+#: /index.php:125
+msgid "in 2014-2015"
+msgstr "en 2014-2015"
+
+#: /index.php:130
+msgid "Lead Programmer (Speaking-based Conversation Quest)"
+msgstr "Programmeur principal (Quêtes de conversation basées sur le chat)"
+
+#: /index.php:136
+msgid "Quests and World Creation for Math"
+msgstr "Quêtes et création de monde pour les mathématiques"
+
+#: /index.php:142
+msgid "Game Artist (NPCs, Items, and Map Tiles in v2.1)"
+msgstr "Designer du jeu (PNJ, objets et tuiles de la carte dans la v2.1)"
+
+#: /index.php:148
+msgid "Game Artist and Graphics Designer (NPCs, Avatars and Landing and Registration in v2.1)"
+msgstr "Designer du jeu et designer graphique (PNJ, avatars, landing et enregistrement dans la v2.1)"
+
+#: /index.php:154
+msgid "Programmer (Speaking-based Conversation Quest)"
+msgstr "Programmeur (Quêtes de conversation basées sur le chat)"
+
+#: /index.php:160 /index.php:166
+msgid "Game Artist and Graphics Designer (Items, Monsters, and Animations for PvE in v2.1)"
+msgstr "Designer du jeu et designer graphique (objets, monstres et animations pour le PvE dans la v2.1)"
+
+#: /index.php:172
+msgid "Relevant Publications"
+msgstr "Publications pertinentes"
+
+#: /tile_details.php:79 /tile_details.php:93 /npc_object.php:92
+#: /quest_details.php:81 /quest_check_answers.php:120
+#: /playeritem_details.php:87 /playeritem_details.php:95
+msgid "Level"
+msgstr "Niveau"
+
+#: /tile_details.php:86
+msgid "Destination"
+msgid_plural "Destinations"
+msgstr[0] "Destination"
+msgstr[1] "Destinations"
+
+#: /tile_details.php:104
+msgid "Item"
+msgid_plural "Items"
+msgstr[0] "Objet"
+msgstr[1] "Objets"
+
+#: /tile_details.php:104 /tile_details.php:136
+msgid "for You"
+msgstr "pour Vous"
+
+#: /tile_details.php:120 /tile_details.php:136
+msgid "Quest"
+msgid_plural "Quests"
+msgstr[0] "Quête"
+msgstr[1] "Quêtes"
+
+#: /tile_details.php:120
+msgid "in Progress"
+msgstr "en cours"
+
+#: /tile_details.php:152
+msgid "Join"
+msgstr "Rejoindre"
+
+#: /tile_details.php:152
+msgid "Profession"
+msgid_plural "Professions"
+msgstr[0] "Profession"
+msgstr[1] "Professions"
+
+#: /tile_details.php:174
+msgid "Building"
+msgstr "Bâtiment"
+
+#: /tile_details.php:184
+msgid "To"
+msgstr "Vers"
+
+#: /tile_details.php:187 /map.php:266
+msgid "Travel"
+msgstr "Voyager"
+
+#: /tile_details.php:192 /map.php:269
+msgid "Allowed Professions"
+msgstr "Professions autorisées"
+
+#: /tile_details.php:217
+msgid "This seems to be the correct location."
+msgstr "On dirait que c’est le bon emplacement."
+
+#: /guide.php:6 /map.php:259
+msgid "How to Play"
+msgstr "Comment jouer"
+
+#: /player_select_action.php:24 /username_check.php:23 /avatar_edit.php:52
+#: /avatar_edit.php:74 /playername_check.php:28 /avatar_edit_action.php:25
+#: /password_change_action.php:30 /password_change_action.php:51
+#: /password_change_action.php:53 /login_check.php:27 /login_check.php:34
+#: /register_action.php:61
+msgid "Error"
+msgstr "Erreur"
+
+#: /player_select_action.php:24 /avatar_edit.php:74 /avatar_edit_action.php:25
+msgid "The specified player does not belong to the logged in user."
+msgstr "Le joueur spécifié n'appartient pas à l'utilisateur connecté."
+
+#: /map.php:42
+msgid "Something went wrong"
+msgstr "Quelque chose a mal tourné"
+
+#: /map.php:43
+msgid "Try logging in again"
+msgstr "Essayez de vous reconnecter"
+
+#: /map.php:86
+msgid "Menu"
+msgstr "Menu"
+
+#: /map.php:92
+msgid "Health"
+msgstr "Points de vie"
+
+#: /map.php:93
+msgid "Damage that can be taken."
+msgstr "Les dommages qui peuvent être reçus."
+
+#: /map.php:93
+msgid "Your Max Health"
+msgstr "Vos points de vie max"
+
+#: /map.php:99
+msgid "Mana"
+msgstr "Mana"
+
+#: /map.php:100
+msgid "Needed for casting spells."
+msgstr "Nécessaire pour lancer des sorts."
+
+#: /map.php:106
+msgid "Energy"
+msgstr "Énergie"
+
+#: /map.php:107
+msgid "Tiles take different amounts of energy to walk to."
+msgstr "Les tuiles consomment différentes quantités d'énergie à parcourir."
+
+#: /map.php:107
+msgid "Energy comes from food."
+msgstr "L'énergie provient de la nourriture."
+
+#: /map.php:113 classes/playerquest.class.php:426
+msgid "Money"
+msgstr "Argent"
+
+#: /map.php:114
+msgid "Used to buy items and food."
+msgstr "Utilisé pour acheter des objets et de la nourriture."
+
+#: /map.php:140
+msgid "Details"
+msgstr "Détails"
+
+#: /map.php:194 /avatar_edit.php:5 /player_select.php:73
+msgid "Edit Avatar"
+msgstr "Modifier l'avatar"
+
+#: /map.php:220
+msgid "Send"
+msgstr "Envoyer"
+
+#: /map.php:226
+msgid "Bag"
+msgstr "Sac"
+
+#: /map.php:227
+msgid "Player"
+msgstr "Joueur"
+
+#: /map.php:228
+msgid "Quests"
+msgstr "Quêtes"
+
+#: /map.php:229
+msgid "Chat"
+msgstr "Chat"
+
+#: /map.php:256
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: /map.php:256 /register.php:68
+msgid "Language"
+msgstr "Langue"
+
+#: /map.php:257
+msgid "Toggle Dark Theme"
+msgstr "Activer le monde sombre"
+
+#: /map.php:258
+msgid "Toggle Touch Controls"
+msgstr "Basculer les commandes tactiles"
+
+#: /map.php:260
+msgid "Change or Create Player"
+msgstr "Changer ou créer un joueur"
+
+#: /map.php:262
+msgid "Rankings"
+msgstr "Classements"
+
+#: /map.php:263 /player_select.php:85
+msgid "Log Out"
+msgstr "Déconnexion"
+
+#: /map.php:264
+msgid "Zoom"
+msgstr "Zoom"
+
+#: /map.php:265
+msgid "You do not have enough energy to move there."
+msgstr "Vous n'avez pas assez d'énergie pour vous déplacer là."
+
+#: /map.php:267
+msgid "Space"
+msgstr "Espace"
+
+#: /map.php:268
+msgid "Open Link"
+msgstr "Ouvrir le lien"
+
+#: /map.php:270
+msgid "Location"
+msgstr "Localisation"
+
+#: /map.php:271
+msgid "At this location"
+msgstr "À cet endroit"
+
+#: /map.php:271
+msgid "There is nothing here."
+msgstr "Il n'y a rien ici."
+
+#: /map.php:272
+msgid "Back"
+msgstr "Retour"
+
+#: /map.php:273 /playeritem_details.php:110
+msgid "Split Off"
+msgstr "Diviser"
+
+#: /map.php:274
+msgid "Scroll down for more info"
+msgstr "Faites défiler pour en savoir plus"
+
+#: /map.php:275
+msgid "You have no active quests."
+msgstr "Vous n'avez pas de quêtes actives."
+
+#: /map.php:276
+msgid "Are you sure you want to drop this quest?"
+msgstr "Vous êtes sûr de vouloir abandonner cette quête ?"
+
+#: /map.php:277
+msgid "There was a problem interacting with the item."
+msgstr "Il y a eu un problème d'interaction avec l'objet."
+
+#: /map.php:278
+msgid "Are you sure you want to drop this item? It will be gone permanently."
+msgstr "Vous êtes sûr de vouloir dropper cet objet ? Il sera définitivement perdu."
+
+#: /map.php:279
+msgid "click name to chat"
+msgstr "cliquez sur le nom pour chatter"
+
+#: /map.php:280
+msgid "No speech was detected."
+msgstr "Aucune parole n'a été détectée."
+
+#: /map.php:281
+msgid "No microphone was found."
+msgstr "Aucun microphone n'a été trouvé."
+
+#: /map.php:282
+msgid "Permission to use microphone was denied."
+msgstr "L'autorisation d'utiliser le microphone a été refusée."
+
+#: /map.php:283
+msgid "Permission to use microphone is blocked."
+msgstr "L'autorisation d'utiliser le microphone est bloquée."
+
+#: /map.php:284
+msgid "Your browser does not support speech recognition. For best results use Chrome or Safari."
+msgstr "Votre navigateur ne prend pas en charge la reconnaissance vocale. Pour de meilleurs résultats, utilisez Chrome ou Safari."
+
+#: /map.php:285 /npc_object.php:228
+msgid "Buy"
+msgstr "Acheter"
+
+#: /register.php:55
+msgid "Email"
+msgstr "E-mail"
+
+#: /register.php:55
+msgid "Optional"
+msgstr "Facultatif"
+
+#: /register.php:60
+msgid "This email address may be used for password resets."
+msgstr "Cette adresse de e-mail peut être utilisée pour la réinitialisation des mots de passe."
+
+#: /register.php:62
+msgid "A valid email address is required"
+msgstr "Une adresse de e-mail valide est requise"
+
+#: /register.php:83
+msgid "Register"
+msgstr "S’enregistrer"
+
+#: /register.php:93
+msgid "Return to Home Page"
+msgstr "Retour à la page d'accueil"
+
+#: /username_check.php:23 /register_action.php:24
+msgid "No username was specified."
+msgstr "Aucun nom d'utilisateur n'a été spécifié."
+
+#: /username_check.php:40
+msgid "Username is available!"
+msgstr "Le nom d'utilisateur est disponible !"
+
+#: /username_check.php:45
+#, php-format
+msgid "Sorry, username \"%s\" is taken."
+msgstr "Désolé, le nom d'utilisateur \"%s\" est pris."
+
+#: /username_check.php:55
+msgid "Something went wrong checking the username."
+msgstr "Quelque chose a mal tourné en vérifiant le nom d'utilisateur."
+
+#: /logout.php:6
+msgid "Log Out of"
+msgstr "Déconnexion de"
+
+#: /logout.php:29
+msgid "You are now logged out. Thanks for playing"
+msgstr "Vous êtes maintenant déconnecté. Merci d'avoir joué"
+
+#: /logout.php:31
+msgid "Log In to"
+msgstr "Connexion sur"
+
+#: /logout.php:33
+msgid "Home"
+msgstr "Accueil"
+
+#: /logout.php:35
+msgid "Redirecting to the home page in a few seconds..."
+msgstr "Redirection vers la page d'accueil dans quelques secondes..."
+
+#: /avatar_edit.php:52
+msgid "No player has been specified."
+msgstr "Aucun joueur n'a été spécifié."
+
+#: /avatar_edit.php:83
+msgid "Welcome back to"
+msgstr "Bon retour sur"
+
+#: /avatar_edit.php:84
+msgid "Since you are new to V3, your avatar has been randomly regenerated. You can update features and colours to your liking."
+msgstr "Comme vous débutez sur la V3, votre avatar a été régénéré de manière aléatoire. Vous pouvez modifier les caractéristiques et les couleurs à votre guise."
+
+#: /avatar_edit.php:85
+msgid "Come back and change your avatar any time from the"
+msgstr "Revenez pour changer votre avatar à tout moment à partir de la page d'accueil"
+
+#: /avatar_edit.php:85
+msgid "Player Selection Screen"
+msgstr "Écran de sélection du joueur"
+
+#: /avatar_edit.php:164
+msgid "Save Avatar"
+msgstr "Sauvegarder l'avatar"
+
+#: /avatar_edit.php:167
+msgid "Use"
+msgstr "Utilisez"
+
+#: /avatar_edit.php:167 /player_create.php:323
+msgid "and"
+msgstr "et"
+
+#: /avatar_edit.php:167
+msgid "keys to browse options."
+msgstr "pour parcourir les options."
+
+#: /npc_object.php:89
+msgid "Icon"
+msgstr "Icône"
+
+#: /npc_object.php:118
+#, php-format
+msgid "It's going to cost $%d for me to get you there."
+msgstr "Ça vous coûtera %d $ pour que je vous y emmène."
+
+#: /npc_object.php:118
+msgid "You don't have enough money right now."
+msgstr "Vous n'avez pas assez d'argent actuellement."
+
+#: /npc_object.php:121
+#, php-format
+msgid "You must at least be level %d for me to get you there."
+msgstr "Vous devez être au moins au niveau %d pour que je puisse vous y emmener."
+
+#: /npc_object.php:121
+msgid "Come back when you've levelled up."
+msgstr "Revenez quand vous avez atteint ce niveau."
+
+#: /npc_object.php:127
+msgid "Thanks! Let's get on our way!"
+msgstr "Merci ! C’est parti !"
+
+#: /npc_object.php:162
+msgid "You are ready. Excellent!"
+msgstr "Vous êtes prêt. Excellent !"
+
+#: /npc_object.php:163
+msgid "Would you like to join?"
+msgstr "Vous voulez rejoindre ?"
+
+#: /npc_object.php:166
+msgid "Become"
+msgstr "Devenir"
+
+#: /npc_object.php:169
+msgid "I'm afraid you don't meet the requirements yet."
+msgstr "J'ai peur que vous ne répondiez pas encore aux conditions."
+
+#: /npc_object.php:169
+msgid "Come back when you're ready."
+msgstr "Revenez quand vous serez prêt."
+
+#: /npc_object.php:184
+msgid "Congratulations on your new profession!"
+msgstr "Bienvenue dans votre nouvelle profession !"
+
+#: /npc_object.php:209
+msgid "Would you like this?"
+msgstr "Vous voulez ça ?"
+
+#: /npc_object.php:211
+msgid "Would you like to buy this?"
+msgstr "Vous voulez acheter ça ?"
+
+#: /npc_object.php:216
+msgid "Price"
+msgstr "Prix"
+
+#: /npc_object.php:217 /playeritem_details.php:93
+msgid "Weight"
+msgstr "Poids"
+
+#: /npc_object.php:219
+#, php-format
+msgid "You must be <strong>Level %d</strong> to use this item."
+msgstr "Vous devez avoir le <strong>Niveau %d</strong> pour utiliser cet objet."
+
+#: /npc_object.php:227
+msgid "Get"
+msgstr "Obtenir"
+
+#: /npc_object.php:239
+msgid "Here you go."
+msgstr "Voilà."
+
+#: /npc_object.php:240
+msgid "Thanks for your purchase!"
+msgstr "Merci pour votre achat !"
+
+#: /npc_object.php:265 classes/item.class.php:184
+msgid "Accept Quest"
+msgstr "Accepter la quête"
+
+#: /npc_object.php:318
+msgid "Quest complete."
+msgstr "Quête terminée."
+
+#: /npc_object.php:329
+msgid "Complete Quest"
+msgstr "Effectuer la quête"
+
+#: /player_select.php:5
+msgid "Select A Player"
+msgstr "Choisir un joueur"
+
+#: /player_select.php:81
+msgid "New Player"
+msgstr "Nouveau joueur"
+
+#: /playername_check.php:40
+msgid "Name is available!"
+msgstr "Le nom est disponible !"
+
+#: /playername_check.php:44
+#, php-format
+msgid "Sorry, the name \"%s\" is taken."
+msgstr "Désolé, le nom \"%s\" est pris."
+
+#: /password_change_action.php:19
+msgid "No user is logged in."
+msgstr "Aucun utilisateur n'est connecté."
+
+#: /password_change_action.php:23 /register_action.php:54
+msgid "No password was specified."
+msgstr "Aucun mot de passe n'a été spécifié."
+
+#: /password_change_action.php:32 /register_action.php:63
+msgid "Please go back and try your submission again."
+msgstr "Veuillez revenir en arrière et réessayer votre soumission."
+
+#: /password_change_action.php:55
+msgid "Try Again"
+msgstr "Essayer à nouveau"
+
+#: /quest_details.php:37
+msgid "You do not currently have this quest."
+msgstr "Vous n'avez pas actuellement cette quête."
+
+#: /quest_details.php:53
+msgid "Dropped Quest"
+msgstr "Quête abandonnée"
+
+#: /quest_details.php:89
+msgid "You need the following to complete this quest"
+msgstr "Vous avez besoin des éléments suivants pour accomplir cette quête"
+
+#: /quest_details.php:110
+msgid "Drop Quest"
+msgstr "Abandonner la quête"
+
+#: /player_create.php:5
+msgid "Create New Player"
+msgstr "Créer un nouveau joueur"
+
+#: /player_create.php:173
+msgid "Character Name"
+msgstr "Nom du personnage"
+
+#: /player_create.php:180
+msgid "Enter a name"
+msgstr "Entrez un nom"
+
+#: /player_create.php:186
+msgid "Gender"
+msgstr "Sexe"
+
+#: /player_create.php:192
+msgid "Male"
+msgstr "Homme"
+
+#: /player_create.php:193
+msgid "Female"
+msgstr "Femme"
+
+#: /player_create.php:198
+msgid "Select a gender"
+msgstr "Choisir un sexe"
+
+#: /player_create.php:204
+msgid "Race"
+msgstr "Race"
+
+#: /player_create.php:212
+msgid "Select a race"
+msgstr "Choisir une race"
+
+#: /player_create.php:218
+msgid "Birthplace"
+msgstr "Lieu de naissance"
+
+#: /player_create.php:240
+msgid "Select a birthplace"
+msgstr "Choisir un lieu de naissance"
+
+#: /player_create.php:246
+msgid "Player Attributes"
+msgstr "Attributs du joueur"
+
+#: /player_create.php:267
+msgid "Reroll"
+msgstr "Relancer"
+
+#: /player_create.php:267
+msgid "Attributes"
+msgstr "Attributs"
+
+#: /player_create.php:319
+msgid "Next"
+msgstr "Suivant"
+
+#: /player_create.php:323
+msgid "Return to Player Selection"
+msgstr "Retour à la sélection du joueur"
+
+#: /player_create.php:394
+msgid "You must choose a different player name."
+msgstr "Vous devez choisir un autre nom de joueur."
+
+#: /player_create.php:401
+msgid "You must select all required fields above."
+msgstr "Vous devez sélectionner tous les champs obligatoires ci-dessus."
+
+#: /register_action.php:8
+msgid "User Registration"
+msgstr "Enregistrement de l’utilisateur"
+
+#: /register_action.php:30
+msgid "Invalid email format"
+msgstr "Format de e-mail non valide"
+
+#: /register_action.php:45
+#, php-format
+msgid "The specified username, \"%s\", is not available."
+msgstr "Le nom d'utilisateur spécifié, \"%s\", n'est pas disponible."
+
+#: /game_update.php:21
+msgid "Your session has expired and you have been logged out."
+msgstr "Votre session a expiré et vous avez été déconnecté."
+
+#: /game_update.php:21
+msgid "Log in to"
+msgstr "Connexion sur"
+
+#: /game_update.php:55
+msgid "You aren't allowed to use this portal."
+msgstr "Vous n'êtes pas autorisé à utiliser ce portail."
+
+#: /quest_check_answers.php:69
+msgid "You are not at the right location to complete this quest."
+msgstr "Vous n'êtes pas au bon endroit pour accomplir cette quête."
+
+#: /playeritem_details.php:45
+msgid "You aren't the owner of this item."
+msgstr "Vous n'êtes pas le propriétaire de cet objet."
+
+#: /playeritem_details.php:54
+msgid "has been dropped."
+msgstr "a été droppé."
+
+#: /playeritem_details.php:64
+msgid "has been"
+msgid_plural "have been"
+msgstr[0] "a été"
+msgstr[1] "ont été"
+
+#: /playeritem_details.php:64
+msgid "split to an empty slot."
+msgstr "divisé vers un emplacement vide."
+
+#: /playeritem_details.php:90 classes/playerquest.class.php:453
+msgid "Quantity"
+msgstr "Quantité"
+
+#: /playeritem_details.php:93
+msgid "gram each"
+msgid_plural "grams each"
+msgstr[0] "gramme chacun"
+msgstr[1] "grammes chacun"
+
+#: /playeritem_details.php:95
+msgid "You must be"
+msgstr "Vous devez être"
+
+#: /playeritem_details.php:95
+msgid "to use this item."
+msgstr "pour utiliser cet objet."
+
+#: /playeritem_details.php:120
+msgid "Stack Items"
+msgstr "Empiler les objets"
+
+#: /playeritem_details.php:125
+msgid "Drop Item"
+msgstr "Dropper l'objet"
+
+#: /playeritem_details.php:127
+msgid "Bag Item"
+msgstr "Objet du sac"
+
+#: includes/mw_header.php:77
+msgid "Sorry, Internet Explorer does not work with MEGA World"
+msgstr "Désolé, Internet Explorer ne fonctionne pas avec MEGA World"
+
+#: includes/mw_header.php:78
+msgid "You must use an up-to-date browser such as"
+msgstr "Vous devez utiliser un navigateur à jour tel que"
+
+#: includes/mw_header.php:103
+msgid "Invalid email address."
+msgstr "Adresse de e-mail non valide."
+
+#: includes/xgettext_strings.php:9
+msgid "Human"
+msgstr "Humain"
+
+#: includes/xgettext_strings.php:10
+msgid "Dwarf"
+msgstr "Nain"
+
+#: includes/xgettext_strings.php:11
+msgid "Elf"
+msgstr "Elfe"
+
+#: includes/xgettext_strings.php:12
+msgid "Orc"
+msgstr "Orc"
+
+#: includes/xgettext_strings.php:16
+msgid "Strength"
+msgstr "Force"
+
+#: includes/xgettext_strings.php:17
+msgid "Constitution"
+msgstr "Constitution"
+
+#: includes/xgettext_strings.php:18
+msgid "Dexterity"
+msgstr "Dextérité"
+
+#: includes/xgettext_strings.php:19
+msgid "Intelligence"
+msgstr "Intelligence"
+
+#: includes/xgettext_strings.php:20
+msgid "Wisdom"
+msgstr "Sagesse"
+
+#: includes/xgettext_strings.php:21
+msgid "Charisma"
+msgstr "Charisme"
+
+#: includes/xgettext_strings.php:22
+msgid "Determines physical attack power and carrying ability."
+msgstr "Détermine la puissance d'attaque physique et la facilité à porter des charges."
+
+#: includes/xgettext_strings.php:23
+msgid "Increases health points, damage received when attacked, and reduces damage over time attacks (eg poisoning)."
+msgstr "Augmente les points de vie, les dégâts reçus lors d'une attaque, et réduit les dégâts au fil du temps (par exemple par empoisonnement)."
+
+#: includes/xgettext_strings.php:24
+msgid "Improves movement, attack speed (including casting), and chance of dodging attacks. Some spells and skills may have dexterity requirements for learning and casting."
+msgstr "Améliore les mouvements, la vitesse d'attaque (y compris d'incantation) et les chances d'esquiver les attaques. Certains sorts et compétences peuvent nécessiter une certaine dextérité pour être appris et lancés."
+
+#: includes/xgettext_strings.php:25
+msgid "Affects mana points for casting spells. Some spells and skills have intelligence requirements for learning and casting."
+msgstr "Affecte les points de mana pour lancer des sorts. Certains sorts et compétences ont des conditions d'intelligence pour l'apprentissage et l'incantation."
+
+#: includes/xgettext_strings.php:26
+msgid "Allows more efficient attacking, blocking, casting, attack reaction, and dodging of attacks."
+msgstr "Permet d'attaquer, de bloquer, de lancer des sorts, de réagir aux attaques et d'esquiver les attaques de manière plus efficace."
+
+#: includes/xgettext_strings.php:27
+msgid "Determines opportunity to get help and hints from NPCs, including trading with them and getting additional quests."
+msgstr "Détermine la possibilité d'obtenir de l'aide et des conseils de la part des PNJ, y compris le commerce avec eux et l'obtention de quêtes supplémentaires."
+
+#: includes/xgettext_strings.php:30
+msgid "Skin"
+msgstr "Skin"
+
+#: includes/xgettext_strings.php:31
+msgid "Shoes"
+msgstr "Chaussures"
+
+#: includes/xgettext_strings.php:32
+msgid "Bottom"
+msgstr "Bas"
+
+#: includes/xgettext_strings.php:33
+msgid "Top"
+msgstr "Haut"
+
+#: includes/xgettext_strings.php:34
+msgid "Mouth"
+msgstr "Bouche"
+
+#: includes/xgettext_strings.php:35
+msgid "Beard"
+msgstr "Barbe"
+
+#: includes/xgettext_strings.php:36
+msgid "Nose"
+msgstr "Nez"
+
+#: includes/xgettext_strings.php:37
+msgid "Eyes"
+msgstr "Yeux"
+
+#: includes/xgettext_strings.php:38
+msgid "Eyebrows"
+msgstr "Sourcils"
+
+#: includes/xgettext_strings.php:39
+msgid "Hair"
+msgstr "Cheveux"
+
+#: includes/xgettext_strings.php:43
+msgid "Armour Store"
+msgstr "Magasin d'armure"
+
+#: includes/xgettext_strings.php:44
+msgid "Bulletin Board"
+msgstr "Tableau d'affichage"
+
+#: includes/xgettext_strings.php:45
+msgid "Brick House"
+msgstr "Maison en briques"
+
+#: includes/xgettext_strings.php:46
+msgid "Brick Road"
+msgstr "Route en briques"
+
+#: includes/xgettext_strings.php:47
+msgid "Plaza"
+msgstr "Place"
+
+#: includes/xgettext_strings.php:48
+msgid "Camp"
+msgstr "Camp"
+
+#: includes/xgettext_strings.php:49
+msgid "Castle"
+msgstr "Château"
+
+#: includes/xgettext_strings.php:50
+msgid "Castle Gate"
+msgstr "Porte du château"
+
+#: includes/xgettext_strings.php:51
+msgid "Castle Tower"
+msgstr "Tour du château"
+
+#: includes/xgettext_strings.php:52
+msgid "Castle Wall"
+msgstr "Mur du château"
+
+#: includes/xgettext_strings.php:53
+msgid "Town Centre"
+msgstr "Centre-ville"
+
+#: includes/xgettext_strings.php:54
+msgid "City Street"
+msgstr "Rue de la ville"
+
+#: includes/xgettext_strings.php:55
+msgid "Construction Site"
+msgstr "Chantier de construction"
+
+#: includes/xgettext_strings.php:56
+msgid "Dungeon"
+msgstr "Donjon"
+
+#: includes/xgettext_strings.php:57
+msgid "Garden"
+msgstr "Jardin"
+
+#: includes/xgettext_strings.php:58
+msgid "Rural Houses"
+msgstr "Maisons rurales"
+
+#: includes/xgettext_strings.php:59
+msgid "Fountain"
+msgstr "Fontaine"
+
+#: includes/xgettext_strings.php:60
+msgid "Grocery"
+msgstr "Épicerie"
+
+#: includes/xgettext_strings.php:61
+msgid "Harbor"
+msgstr "Port"
+
+#: includes/xgettext_strings.php:62
+msgid "House"
+msgstr "Maison"
+
+#: includes/xgettext_strings.php:63
+msgid "Lake"
+msgstr "Lac"
+
+#: includes/xgettext_strings.php:64
+msgid "Library"
+msgstr "Bibliothèque"
+
+#: includes/xgettext_strings.php:65
+msgid "Meeting"
+msgstr "Réunion"
+
+#: includes/xgettext_strings.php:66
+msgid "Mountains"
+msgstr "Montagnes"
+
+#: includes/xgettext_strings.php:67
+msgid "Ocean"
+msgstr "Océan"
+
+#: includes/xgettext_strings.php:68
+msgid "Path"
+msgstr "Chemin"
+
+#: includes/xgettext_strings.php:69
+msgid "Path Corner"
+msgstr "Coin du chemin"
+
+#: includes/xgettext_strings.php:70
+msgid "Crossroads"
+msgstr "Carrefour"
+
+#: includes/xgettext_strings.php:71
+msgid "Plains"
+msgstr "Plaines"
+
+#: includes/xgettext_strings.php:72
+msgid "Doorway"
+msgstr "Porte d'entrée"
+
+#: includes/xgettext_strings.php:73
+msgid "Restaurant"
+msgstr "Restaurant"
+
+#: includes/xgettext_strings.php:74
+msgid "River"
+msgstr "Rivière"
+
+#: includes/xgettext_strings.php:75
+msgid "Riverbend"
+msgstr "Coude de la rivière"
+
+#: includes/xgettext_strings.php:76
+msgid "River End"
+msgstr "Fin de la rivière"
+
+#: includes/xgettext_strings.php:77
+msgid "Ruins"
+msgstr "Ruines"
+
+#: includes/xgettext_strings.php:78
+msgid "School"
+msgstr "École"
+
+#: includes/xgettext_strings.php:79
+msgid "Stable"
+msgstr "Écurie"
+
+#: includes/xgettext_strings.php:80
+msgid "Stone Pillar"
+msgstr "Pilier de pierre"
+
+#: includes/xgettext_strings.php:81
+msgid "Stone Wall"
+msgstr "Mur de pierre"
+
+#: includes/xgettext_strings.php:82
+msgid "Cottage"
+msgstr "Chalet"
+
+#: includes/xgettext_strings.php:83
+msgid "Village Houses"
+msgstr "Maisons de village"
+
+#: includes/xgettext_strings.php:84
+msgid "Weapon Store"
+msgstr "Magasin d'armes"
+
+#: includes/xgettext_strings.php:85
+msgid "Workshop"
+msgstr "Atelier"
+
+#: classes/invaliduserexception.class.php:14
+#, php-format
+msgid "User \"%s\" does not exist."
+msgstr "L'utilisateur \"%s\" n'existe pas."
+
+#: classes/profession.class.php:141
+msgid "There are no requirements to join this profession."
+msgstr "Il n'y a pas de conditions à remplir pour rejoindre cette profession."
+
+#: classes/profession.class.php:143
+msgid "To join this profession, you require"
+msgstr "Pour rejoindre cette profession, vous devez"
+
+#: classes/profession.class.php:144
+msgid "<em>all</em> of the following professions"
+msgstr "<em>toutes</em> les professions suivantes"
+
+#: classes/profession.class.php:145
+msgid "any of the following professions"
+msgstr "l'une des professions suivantes"
+
+#: classes/profession.class.php:146
+msgid "the following profession"
+msgstr "la profession suivante"
+
+#: classes/profession.class.php:148
+msgid "and experience:"
+msgstr "et l'expérience :"
+
+#: classes/item.class.php:182
+msgid "Eat This Item"
+msgstr "Manger cet objet"
+
+#: classes/item.class.php:186
+msgid "Dig at This Location"
+msgstr "Creuser à cet endroit"
+
+#: classes/item.class.php:188
+msgid "Use This Item"
+msgstr "Utiliser cet objet"
+
+#: classes/questtool.class.php:152
+msgid "You have found the following"
+msgstr "Vous avez trouvé les objets suivants"
+
+#: classes/questtool.class.php:180 classes/player.class.php:1194
+msgid "Your bag is full!"
+msgstr "Votre sac est plein !"
+
+#: classes/questtool.class.php:180
+msgid "Try again after freeing up space."
+msgstr "Réessayez après avoir libéré de l'espace."
+
+#: classes/playerquest.class.php:163
+msgid "This quest has already been completed and is not repeatable."
+msgstr "Cette quête a déjà été accomplie et n'est pas répétable."
+
+#: classes/playerquest.class.php:165
+#, php-format
+msgid "You must wait one minute before repeating this quest."
+msgid_plural "You must wait another %d minutes before repeating this quest."
+msgstr[0] "Vous devez attendre une minute avant de répéter cette quête."
+msgstr[1] "Vous devez attendre encore %d minutes avant de répéter cette quête."
+
+#: classes/playerquest.class.php:169
+#, php-format
+msgid "You must wait one minute before attempting to complete this quest again."
+msgid_plural "You must wait another %d minutes before attempting to complete this quest again."
+msgstr[0] "Vous devez attendre une minute avant de tenter à nouveau d'effectuer cette quête."
+msgstr[1] "Vous devez attendre encore %d minutes avant de tenter d'effectuer à nouveau cette quête."
+
+#: classes/playerquest.class.php:189
+msgid "It seems you don't have everything you need yet."
+msgstr "Il semble que vous n'ayez pas encore tout ce dont vous avez besoin."
+
+#: classes/playerquest.class.php:189
+#, php-format
+msgid "You are missing an item."
+msgid_plural "You are missing %d items."
+msgstr[0] "Il vous manque un objets."
+msgstr[1] "Il vous manque %d objets."
+
+#: classes/playerquest.class.php:206
+#, php-format
+msgid "You need to free up a slot"
+msgid_plural "You need to free up %d slots"
+msgstr[0] "Vous devez libérer un emplacement"
+msgstr[1] "Vous devez libérer sous %d emplacements"
+
+#: classes/playerquest.class.php:208
+msgid "in your bag before you can complete this quest."
+msgstr "dans votre sac avant de pouvoir effectuer cette quête."
+
+#: classes/playerquest.class.php:423
+msgid "Reward"
+msgstr "Récompense"
+
+#: classes/playerquest.class.php:428
+msgid "Experience"
+msgstr "Expérience"
+
+#: classes/playerquest.class.php:430
+msgid "Profession XP"
+msgstr "XP de profession"
+
+#: classes/playerquest.class.php:447
+msgid "Items Awarded"
+msgstr "Objets attribués"
+
+#: classes/playerquest.class.php:497
+msgid "Submit Answer"
+msgstr "Soumettre la réponse"
+
+#: classes/playerquest.class.php:518 classes/playerquest.class.php:538
+msgid "Specify true or false"
+msgstr "Spécifiez vrai ou faux"
+
+#: classes/playerquest.class.php:519
+msgid "Choose one"
+msgstr "Choisissez-en un"
+
+#: classes/playerquest.class.php:520
+msgid "Choose any correct items"
+msgstr "Choisissez les bons objets"
+
+#: classes/playerquest.class.php:521
+msgid "Drag items into the correct order"
+msgstr "Faites glisser les objets dans le bon ordre"
+
+#: classes/playerquest.class.php:522
+msgid "Type in the correct answer"
+msgid_plural "Type in the correct answers"
+msgstr[0] "Tapez la bonne réponse"
+msgstr[1] "Tapez les bonnes réponses"
+
+#: classes/playerquest.class.php:530
+msgid "Fill in the blanks"
+msgstr "Remplissez les espaces vides"
+
+#: classes/playerquest.class.php:548 classes/playerquest.class.php:708
+msgid "True"
+msgstr "Vrai"
+
+#: classes/playerquest.class.php:549 classes/playerquest.class.php:711
+msgid "False"
+msgstr "Faux"
+
+#: classes/playerquest.class.php:561
+msgid "Choose the correct option"
+msgstr "Choisissez l'option correcte"
+
+#: classes/playerquest.class.php:578
+msgid "Choose all correct options"
+msgstr "Choisissez toutes les options correctes"
+
+#: classes/playerquest.class.php:596
+msgid "Answer the question below."
+msgid_plural "Answer the questions below"
+msgstr[0] "Répondez à la question ci-dessous."
+msgstr[1] "Répondez aux questions ci-dessous"
+
+#: classes/playerquest.class.php:618
+msgid "Calculate the correct value below"
+msgid_plural "Calculate the correct values below"
+msgstr[0] "Calculez la valeur correcte ci-dessous"
+msgstr[1] "Calculez les valeurs correctes ci-dessous"
+
+#: classes/playerquest.class.php:646
+msgid "Can you find the location?"
+msgstr "Pouvez-vous trouver l'emplacement ?"
+
+#: classes/playerquest.class.php:646
+msgid "If it doesn't seem to be anywhere on the map, you can drop the quest and I may give you another place to look."
+msgstr "S'il ne semble pas y avoir d'endroit sur la carte, vous pouvez abandonner la quête et je vous donnerai peut-être un autre endroit où chercher."
+
+#: classes/playerquest.class.php:654
+msgid "Click the microphone button and"
+msgstr "Cliquez sur le bouton du microphone et"
+
+#: classes/playerquest.class.php:654
+msgid "speak the answer"
+msgid_plural "speak the answers"
+msgstr[0] "donnez la réponse"
+msgstr[1] "donnez les réponses"
+
+#: classes/playerquest.class.php:673
+msgid "This quest type"
+msgstr "Ce type de quête"
+
+#: classes/playerquest.class.php:673
+msgid "is not currently supported."
+msgstr "n'est pas pris en charge actuellement."
+
+#: classes/playerquest.class.php:732
+msgid "Your answer"
+msgstr "Votre réponse"
+
+#: classes/playerquest.class.php:999
+msgid "Checking answers is not supported for this quest type."
+msgstr "La vérification des réponses n'est pas prise en charge pour ce type de quête."
+
+#: classes/playeritem.class.php:199
+msgid "You can't remove more of an item than you have."
+msgstr "Vous ne pouvez pas retirer plus d'un objet que vous n'en avez."
+
+#: classes/playeritem.class.php:200
+#, php-format
+msgid "Can't fit this many items in a slot. Maximum of this item is %d."
+msgstr "Impossible de mettre autant d'objets dans un emplacement. Le maximum pour cet objet est %d."
+
+#: classes/nobagslotsavailableexception.class.php:13
+msgid "No bag slots are available to store this item."
+msgstr "Aucun emplacement de sac n'est disponible pour stocker cet objet."
+
+#: classes/player.class.php:706
+msgid "You don't have enough money."
+msgstr "Vous n'avez pas assez d'argent."
+
+#: classes/player.class.php:710
+msgid "You don't have enough room in your bag."
+msgstr "Vous n'avez pas assez de place dans votre sac."
+
+#: classes/player.class.php:710
+#, php-format
+msgid "You need one slot and have none."
+msgid_plural "You need %d slots and have %d."
+msgstr[0] "Vous avez besoin d'un emplacement et vous n'en avez pas."
+msgstr[1] "Vous avez besoin de %d emplacements et vous en avez %d."
+
+#: classes/player.class.php:728
+msgid "Player does not have this much money."
+msgstr "Le joueur n'a pas autant d'argent."
+
+#: classes/player.class.php:747
+msgid "Player does not have this many XP."
+msgstr "Le joueur n'a pas autant d'XP."
+
+#: classes/player.class.php:827
+#, php-format
+msgid "You must be level %d to use this item."
+msgstr "Vous devez être au niveau %d pour utiliser cet objet."
+
+#: classes/player.class.php:865
+msgid "You tried digging here but didn't find anything interesting."
+msgstr "Vous avez essayé de creuser ici mais vous n'avez rien trouvé d'intéressant."
+
+#: classes/player.class.php:887
+msgid "You can't split an item into fewer than one."
+msgstr "Vous ne pouvez pas diviser un élément en moins d'un entier."
+
+#: classes/player.class.php:888
+msgid "You can only split fewer of an item than there is of it."
+msgstr "Vous ne pouvez diviser un objet qu'en une quantité inférieure de cet objet."
+
+#: classes/player.class.php:913
+msgid "There is no room in this slot to stack more items."
+msgstr "Il n'y a pas de place à cet emplacement pour empiler d'autres objets."
+
+#: classes/player.class.php:917
+msgid "There are no other items of this kind to stack that aren't full."
+msgstr "Il n'y a pas d'autres objets de ce type à empiler qui ne soient pas pleins."
+
+#: classes/player.class.php:931
+#, php-format
+msgid "One more of the item has been stacked into the slot."
+msgid_plural "%d more of the item have been stacked into the slot."
+msgstr[0] "Un exemplaire supplémentaire de l'objet a été empilé à l’emplacement."
+msgstr[1] "%d exemplaires en plus de l'objet ont été empilés à l’emplacement."
+
+#: classes/player.class.php:948
+msgid "Player already has this profession."
+msgstr "Le joueur a déjà cette profession."
+
+#: classes/player.class.php:950
+msgid "Player does not meet prerequisites for this profession."
+msgstr "Le joueur ne remplit pas les conditions préalables pour cette profession."
+
+#: classes/player.class.php:1089
+msgid "You don't have enough money to use this portal."
+msgstr "Vous n'avez pas assez d'argent pour utiliser ce portail."
+
+#: classes/player.class.php:1093
+msgid "You aren't a high enough level to use this portal."
+msgstr "Vous n'êtes pas d'un niveau assez élevé pour utiliser ce portail."
+
+#: classes/player.class.php:1149
+msgid "It doesn't seem that the NPC is offering this quest to you at the moment."
+msgstr "Il ne semble pas que le PNJ vous propose cette quête pour le moment."
+
+#: classes/player.class.php:1174
+msgid "You have received the following"
+msgstr "Vous avez reçu les objets suivants"
+
+#: classes/player.class.php:1185
+msgid "No room for"
+msgstr "Pas de place pour"
+
+#: classes/player.class.php:1195
+#, php-format
+msgid "Get this item from %s"
+msgid_plural "Get these items from %s"
+msgstr[0] "Obtenez cet objet à partir de %s"
+msgstr[1] "Obtenez ces objets à partir de %s"
+
+#: classes/player.class.php:1195
+msgid "after freeing up space."
+msgstr "après avoir libéré de l'espace."
+
+#: classes/player.class.php:1264
+#, php-format
+msgid "level %d achieved."
+msgstr "niveau %d atteint."
+
+#: classes/invalidpasswordexception.class.php:13
+msgid "Invalid password."
+msgstr "Mot de passe invalide."

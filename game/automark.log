@@ -1,0 +1,11 @@
+Starting...
+WSNLP config: 790
+array (
+  'maxbpm' => 0,
+  'autobpm' => 0,
+  'ngrampos' => 0,
+  'canonical' => 0,
+  'timeout' => 600,
+  'lang' => 'en',
+)
+Question 268 got mark 

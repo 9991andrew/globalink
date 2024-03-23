@@ -1,0 +1,22 @@
+{
+  "name": "mega",
+  "version": "3.0.0",
+  "description": "MEGA World is a multiplayer educational game.",
+  "main": "index.html",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/tailwind-src.css -o ./css/tailwind.css -m",
+    "watch": "npx tailwindcss -i ./css/tailwind-src.css -o ./css/tailwind.css -m -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "tailwindcss": "^2.2.4"
+  }
+}

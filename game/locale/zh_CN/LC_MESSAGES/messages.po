@@ -1,0 +1,1546 @@
+# MEGA World Text - Chinese (Simplified).
+# Copyright (C) 2021, Joseph D. Lien jd@jdlien.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-21 03:14-0600\n"
+"PO-Revision-Date: 2021-06-28 04:25+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 3.0\n"
+"Language: zh\n"
+
+#: /login.php:2
+msgid "Login"
+msgstr "注册"
+
+#: /login.php:14 /index.php:29 /guide.php:92 /register.php:15
+msgid "Multiplayer Educational Game for Everyone"
+msgstr "多人益智游戏"
+
+#: /login.php:18
+msgid "Enter"
+msgstr "进入"
+
+#: /login.php:22 /login.php:25 /password_change.php:10 /register.php:22
+#: /register.php:28
+msgid "Username"
+msgstr "用户名"
+
+#: /login.php:25 /login.php:33 /password_change.php:24 /password_change.php:35
+#: /register.php:28 /register.php:40
+msgid "is required"
+msgstr "必填"
+
+#: /login.php:30 /login.php:33 /password_change.php:24 /password_change.php:35
+#: /register.php:34 /register.php:40
+msgid "Password"
+msgstr "密码"
+
+#: /login.php:40
+msgid "Log In"
+msgstr "登录"
+
+#: /login.php:52 /register.php:2 /register.php:19
+msgid "Register New Account"
+msgstr "注册新账户"
+
+#: /login.php:53
+msgid "About"
+msgstr "关于我们"
+
+#: /password_change_success.php:2 /password_change.php:2 /password_change.php:7
+#: /password_change.php:51 /map.php:261 /password_change_action.php:7
+msgid "Change Password"
+msgstr "修改密码"
+
+#: /password_change_success.php:7
+msgid "Password Change Successful"
+msgstr "密码修改成功"
+
+#: /password_change_success.php:9
+msgid "Your password has been changed."
+msgstr "您的密码已被更改。"
+
+#: /password_change_success.php:12 /password_change.php:57
+msgid "Return to Game"
+msgstr "返回游戏"
+
+#: /password_change.php:18
+msgid "Current Password"
+msgstr "当前密码"
+
+#: /password_change.php:29
+msgid "New Password"
+msgstr "新密码"
+
+#: /password_change.php:31 /register.php:36
+msgid "At least 6 characters"
+msgstr "至少 6 个字符"
+
+#: /password_change.php:41 /register.php:46
+msgid "Confirm Password"
+msgstr "确认密码"
+
+#: /password_change.php:44 /register.php:49
+msgid "Re-enter your password"
+msgstr "重新输入您的密码"
+
+#: /password_change.php:45 /register.php:50
+msgid "Your passwords do not match"
+msgstr "密码不符合要求"
+
+#: /password_change.php:57 /avatar_edit.php:165 /player_create.php:323
+msgid "Cancel"
+msgstr "取消"
+
+#: /password_change.php:71 /register.php:175
+msgid "Must be at least 6 characters."
+msgstr "必须至少为 6 个字符。"
+
+#: /index.php:9
+msgid "Welcome to MEGA World"
+msgstr "欢迎进入MEGA World"
+
+#: /index.php:34
+msgid "About MEGA World"
+msgstr "关于MEGA World"
+
+#: /index.php:35
+msgid ""
+"MEGA World is a web-based role-playing game that allows players to navigate "
+"environments where they can interact with characters and other players to "
+"support educational goals. Quests are offered that can test proficiency in "
+"school subject matter, allowing students to learn while they play."
+msgstr ""
+"MEGA World是一款基于网络的角色扮演游戏，玩家可以在游戏环境中与角色和其他玩家"
+"进行互动，以实现教育目标。游戏中提供的任务可以测试学校所学科目的熟练程度，让"
+"学生在游戏中学习。"
+
+#: /index.php:37
+msgid "Play Now"
+msgstr "进入游戏"
+
+#: /index.php:41
+msgid "User Guide"
+msgstr "用户指南"
+
+#: /index.php:44
+msgid "Introduction Video"
+msgstr "介绍视频"
+
+#: /index.php:50
+msgid "Team Members"
+msgstr "团队成员"
+
+#: /index.php:54
+msgid "Project Lead & Principal Investigator"
+msgstr "项目负责人和首席研究员"
+
+#: /index.php:55
+msgid "Full Professor"
+msgstr "正式研究员"
+
+#: /index.php:61
+msgid "Lead Developer v3.0 & Graphic Designer (v3.0 Map Tiles)"
+msgstr "首席开发人员v3.0和图形设计师（v 3.0地图砖）。"
+
+#: /index.php:62
+msgid "Undergraduate Project Student"
+msgstr "本科在校生项目"
+
+#: /index.php:66
+msgid "Past Team Members"
+msgstr "前团队成员"
+
+#: /index.php:70
+msgid "Project co-lead (v1.0)"
+msgstr "项目联合负责人（v1.0）"
+
+#: /index.php:71
+msgid "Dean of the College of Information"
+msgstr "信息学院院长"
+
+#: /index.php:78
+msgid "Project co-lead (v2.0)"
+msgstr "项目联合负责人（v 2.0）"
+
+#: /index.php:79
+msgid "Instructor"
+msgstr "导师"
+
+#: /index.php:80
+msgid "Computer Science & Engineering"
+msgstr "计算机科学与工程"
+
+#: /index.php:85 /index.php:97
+msgid "Lead Developer"
+msgstr "首席开发人员"
+
+#: /index.php:91
+msgid "Lead Programmer (Virtual Player)"
+msgstr "首席程序员（虚拟玩家）"
+
+#: /index.php:101
+msgid "Programmer (Virtual Player)"
+msgstr "程序员（虚拟玩家）"
+
+#: /index.php:102
+msgid "Research Intern"
+msgstr "研究实习生"
+
+#: /index.php:107
+msgid "Programmer (PvE module management)"
+msgstr "程序员（P v E模块管理）"
+
+#: /index.php:112
+msgid "Lead Developer, Analyst, and Designer (PvE module)"
+msgstr "首席开发人员、分析师和设计师（P v E 模块）"
+
+#: /index.php:117
+msgid "Quests and World Creation for Java Programming (v2.1)"
+msgstr "Java编程任务和世界创建（v2.1）"
+
+#: /index.php:124
+msgid "Game Artist (NPCs, Items, Avatars, and Map Tiles in v2.0)"
+msgstr "游戏美术师（v2.0 中的 NPC、物品、形像和地图）"
+
+#: /index.php:125
+msgid "supervised by"
+msgstr "监督人"
+
+#: /index.php:125
+msgid "in 2014-2015"
+msgstr "2014-2015年"
+
+#: /index.php:130
+msgid "Lead Programmer (Speaking-based Conversation Quest)"
+msgstr "首席程序员(语言类的对话任务)"
+
+#: /index.php:136
+msgid "Quests and World Creation for Math"
+msgstr "数学任务和世界创建"
+
+#: /index.php:142
+msgid "Game Artist (NPCs, Items, and Map Tiles in v2.1)"
+msgstr "游戏美术师（v2.1中的NPC、物品和地图）"
+
+#: /index.php:148
+msgid ""
+"Game Artist and Graphics Designer (NPCs, Avatars and Landing and "
+"Registration in v2.1)"
+msgstr "游戏美术师和图形设计师（v2.1 中的 NPC、形象、登陆和注册）"
+
+#: /index.php:154
+msgid "Programmer (Speaking-based Conversation Quest)"
+msgstr "程序员（语言类对话任务）"
+
+#: /index.php:160 /index.php:166
+msgid ""
+"Game Artist and Graphics Designer (Items, Monsters, and Animations for PvE "
+"in v2.1)"
+msgstr "游戏美术师和图像设计师(v2.1中用于PvE的道具、怪物和动画)"
+
+#: /index.php:172
+msgid "Relevant Publications"
+msgstr "相关作品"
+
+#: /tile_details.php:79 /tile_details.php:93 /npc_object.php:92
+#: /quest_details.php:81 /quest_check_answers.php:120
+#: /playeritem_details.php:87 /playeritem_details.php:95
+msgid "Level"
+msgstr "等级"
+
+#: /tile_details.php:86
+msgid "Destination"
+msgid_plural "Destinations"
+msgstr[0] "终点"
+
+#: /tile_details.php:104
+msgid "Item"
+msgid_plural "Items"
+msgstr[0] "道具"
+
+#: /tile_details.php:104 /tile_details.php:136
+msgid "for You"
+msgstr "为您提供"
+
+#: /tile_details.php:120 /tile_details.php:136
+msgid "Quest"
+msgid_plural "Quests"
+msgstr[0] "任务"
+
+#: /tile_details.php:120
+msgid "in Progress"
+msgstr "进行中"
+
+#: /tile_details.php:152
+msgid "Join"
+msgstr "加入"
+
+#: /tile_details.php:152
+msgid "Profession"
+msgid_plural "Professions"
+msgstr[0] "职业"
+
+#: /tile_details.php:174
+msgid "Building"
+msgstr "建筑物"
+
+#: /tile_details.php:184
+msgid "To"
+msgstr "前往"
+
+#: /tile_details.php:187 /map.php:266
+msgid "Travel"
+msgstr "旅行"
+
+#: /tile_details.php:192 /map.php:269
+msgid "Allowed Professions"
+msgstr "既定职业"
+
+#: /tile_details.php:217
+msgid "This seems to be the correct location."
+msgstr "这似乎是正确的定位。"
+
+#: /guide.php:6 /map.php:259
+msgid "How to Play"
+msgstr "如何玩"
+
+#: /player_select_action.php:24 /username_check.php:23 /avatar_edit.php:52
+#: /avatar_edit.php:74 /playername_check.php:28 /avatar_edit_action.php:25
+#: /password_change_action.php:30 /password_change_action.php:51
+#: /password_change_action.php:53 /login_check.php:27 /login_check.php:34
+#: /register_action.php:61
+msgid "Error"
+msgstr "错误"
+
+#: /player_select_action.php:24 /avatar_edit.php:74 /avatar_edit_action.php:25
+msgid "The specified player does not belong to the logged in user."
+msgstr "指定的玩家不属于登录用户。"
+
+#: /map.php:42
+msgid "Something went wrong"
+msgstr "出了点问题"
+
+#: /map.php:43
+msgid "Try logging in again"
+msgstr "尝试再次登录"
+
+#: /map.php:86
+msgid "Menu"
+msgstr "菜单列表"
+
+#: /map.php:92
+msgid "Health"
+msgstr "生命值"
+
+#: /map.php:93
+msgid "Damage that can be taken."
+msgstr "可以承受的伤害。"
+
+#: /map.php:93
+msgid "Your Max Health"
+msgstr "您的最大生命值"
+
+#: /map.php:99
+msgid "Mana"
+msgstr "法力值"
+
+#: /map.php:100
+msgid "Needed for casting spells."
+msgstr "施法所需。"
+
+#: /map.php:106
+msgid "Energy"
+msgstr "能量值"
+
+#: /map.php:107
+msgid "Tiles take different amounts of energy to walk to."
+msgstr "地砖移动需要不同的能量值的消耗。"
+
+#: /map.php:107
+msgid "Energy comes from food."
+msgstr "能量值来自于食物。"
+
+#: /map.php:113 classes/playerquest.class.php:426
+msgid "Money"
+msgstr "金币"
+
+#: /map.php:114
+msgid "Used to buy items and food."
+msgstr "用于购买道具和食物。"
+
+#: /map.php:140
+msgid "Details"
+msgstr "详情"
+
+#: /map.php:194 /avatar_edit.php:5 /player_select.php:73
+msgid "Edit Avatar"
+msgstr "编辑形象"
+
+#: /map.php:220
+msgid "Send"
+msgstr "发送"
+
+#: /map.php:226
+msgid "Bag"
+msgstr "背包"
+
+#: /map.php:227
+msgid "Player"
+msgstr "玩家"
+
+#: /map.php:228
+msgid "Quests"
+msgstr "任务"
+
+#: /map.php:229
+msgid "Chat"
+msgstr "聊天"
+
+#: /map.php:256 /register.php:68
+msgid "Language"
+msgstr "语言"
+
+#: /map.php:257
+msgid "Toggle Dark Theme"
+msgstr "切换暗色系主题"
+
+#: ..//map.php:256
+msgid "Main Menu"
+msgstr "主选单"
+
+#: ..//map.php:272
+msgid "At this location"
+msgstr "在这个位置"
+
+#: ../includes/xgettext_strings.php:22
+msgid "Carry Power"
+msgstr "输出力"
+
+#: ..//map.php:288
+msgid "Public"
+msgstr "公开"
+
+#: /map.php:258
+msgid "Toggle Touch Controls"
+msgstr "切换触控模式"
+
+#: /map.php:260
+msgid "Change or Create Player"
+msgstr "更改或创建玩家"
+
+#: /map.php:262
+msgid "Rankings"
+msgstr "排名"
+
+#: /map.php:263 /player_select.php:85
+msgid "Log Out"
+msgstr "注销"
+
+#: /map.php:264
+msgid "Zoom"
+msgstr "缩放"
+
+#: /map.php:265
+msgid "You do not have enough energy to move there."
+msgstr "您没有足够的精力值移动去那里。"
+
+#: /map.php:267
+msgid "Space"
+msgstr "空格"
+
+#: /map.php:268
+msgid "Open Link"
+msgstr "打开链接"
+
+#: /map.php:270
+msgid "Location"
+msgstr "定位"
+
+#: /map.php:271
+msgid "There is nothing here."
+msgstr "这里什么也没有。"
+
+#: /map.php:272
+msgid "Back"
+msgstr "返回"
+
+#: /map.php:273 /playeritem_details.php:110
+msgid "Split Off"
+msgstr "离开"
+
+#: /map.php:274
+msgid "Scroll down for more info"
+msgstr "向下滑动获取更多信息"
+
+#: /map.php:275
+msgid "You have no active quests."
+msgstr "您没有活动任务。"
+
+#: /map.php:276
+msgid "Are you sure you want to drop this quest?"
+msgstr "您确定要放弃这个任务吗？"
+
+#: /map.php:277
+msgid "There was a problem interacting with the item."
+msgstr "在与道具交互时出现了问题。"
+
+#: /map.php:278
+msgid "Are you sure you want to drop this item? It will be gone permanently."
+msgstr "您确定要放弃这一道具吗？它将永久消失。"
+
+#: /map.php:279
+msgid "click name to chat"
+msgstr "点击名称进行聊天"
+
+#: /map.php:280
+msgid "No speech was detected."
+msgstr "未检测到语音。"
+
+#: /map.php:281
+msgid "No microphone was found."
+msgstr "未找到麦克风。"
+
+#: /map.php:282
+msgid "Permission to use microphone was denied."
+msgstr "使用麦克风的权限被拒绝。"
+
+#: /map.php:283
+msgid "Permission to use microphone is blocked."
+msgstr "使用麦克风的权限被阻止。"
+
+#: /map.php:284
+msgid ""
+"Your browser does not support speech recognition. For best results use "
+"Chrome or Safari."
+msgstr "您的浏览器不支持语音识别。 为获得最佳效果，请使用 Chrome 或 Safari。"
+
+#: /map.php:285 /npc_object.php:228
+msgid "Buy"
+msgstr "购买"
+
+#: /register.php:55
+msgid "Email"
+msgstr "邮箱"
+
+#: /register.php:55
+msgid "Optional"
+msgstr "可选"
+
+#: /register.php:60
+msgid "This email address may be used for password resets."
+msgstr "此电子邮件地址可用于重置密码。"
+
+#: /register.php:62
+msgid "A valid email address is required"
+msgstr "需要有效的电子邮件地址"
+
+#: /register.php:83
+msgid "Register"
+msgstr "注册账户"
+
+#: /register.php:93
+msgid "Return to Home Page"
+msgstr "返回主页"
+
+#: /username_check.php:23 /register_action.php:24
+msgid "No username was specified."
+msgstr "未指定用户名。"
+
+#: /username_check.php:40
+msgid "Username is available!"
+msgstr "用户名可用！"
+
+#: /username_check.php:45
+#, php-format
+msgid "Sorry, username \"%s\" is taken."
+msgstr "抱歉，用户名“%s”已被占用。"
+
+#: /username_check.php:55
+msgid "Something went wrong checking the username."
+msgstr "出错了，请检查用户名。"
+
+#: /logout.php:6
+msgid "Log Out of"
+msgstr "注销"
+
+#: /logout.php:29
+msgid "You are now logged out. Thanks for playing"
+msgstr "您现在已注销。 感谢参与"
+
+#: /logout.php:31
+msgid "Log In to"
+msgstr "登录"
+
+#: /logout.php:33
+msgid "Home"
+msgstr "首页"
+
+#: /logout.php:35
+msgid "Redirecting to the home page in a few seconds..."
+msgstr "几秒钟后跳转至首页......"
+
+#: /avatar_edit.php:52
+msgid "No player has been specified."
+msgstr "没有指定玩家。"
+
+#: /avatar_edit.php:83
+msgid "Welcome back to"
+msgstr "欢迎回来"
+
+#: /avatar_edit.php:84
+msgid ""
+"Since you are new to V3, your avatar has been randomly regenerated. You can "
+"update features and colours to your liking."
+msgstr ""
+"由于你是V3新成员，你的形象已经随机再生了。你可以根据自己的喜好更新功能和颜"
+"色。"
+
+#: /avatar_edit.php:85
+msgid "Come back and change your avatar any time from the"
+msgstr "随时返回更改您的形象"
+
+#: /avatar_edit.php:85
+msgid "Player Selection Screen"
+msgstr "玩家选择界面"
+
+#: /avatar_edit.php:164
+msgid "Save Avatar"
+msgstr "保存形象"
+
+#: /avatar_edit.php:167
+msgid "Use"
+msgstr "使用"
+
+#: /avatar_edit.php:167 /player_create.php:323
+msgid "and"
+msgstr "并且"
+
+#: /avatar_edit.php:167
+msgid "keys to browse options."
+msgstr "浏览选项键。"
+
+#: /npc_object.php:89
+msgid "Icon"
+msgstr "图标"
+
+#: /npc_object.php:118
+#, php-format
+msgid "It's going to cost $%d for me to get you there."
+msgstr "我把你带到那里要花%d美元。"
+
+#: /npc_object.php:118
+msgid "You don't have enough money right now."
+msgstr "你现在没有足够的资金。"
+
+#: /npc_object.php:121
+#, php-format
+msgid "You must at least be level %d for me to get you there."
+msgstr "你必须至少达到%d等级，我才能把你带到那里。"
+
+#: /npc_object.php:121
+msgid "Come back when you've levelled up."
+msgstr "升级后再回来。"
+
+#: /npc_object.php:127
+msgid "Thanks! Let's get on our way!"
+msgstr "谢谢！让我们出发吧！"
+
+#: /npc_object.php:162
+msgid "You are ready. Excellent!"
+msgstr "你准备好了。太好了!"
+
+#: /npc_object.php:163
+msgid "Would you like to join?"
+msgstr "你想加入吗？"
+
+#: /npc_object.php:166
+msgid "Become"
+msgstr "成为"
+
+#: /npc_object.php:169
+msgid "I'm afraid you don't meet the requirements yet."
+msgstr "恐怕你还没有达到要求。"
+
+#: /npc_object.php:169
+msgid "Come back when you're ready."
+msgstr "准备好了再来。"
+
+#: /npc_object.php:184
+msgid "Congratulations on your new profession!"
+msgstr "恭喜您已获得新职业！"
+
+#: /npc_object.php:209
+msgid "Would you like this?"
+msgstr "你喜欢这个吗？"
+
+#: /npc_object.php:211
+msgid "Would you like to buy this?"
+msgstr "你想购买这个吗？"
+
+#: /npc_object.php:216
+msgid "Price"
+msgstr "价格"
+
+#: /npc_object.php:217 /playeritem_details.php:93
+msgid "Weight"
+msgstr "重量"
+
+#: /npc_object.php:219
+#, php-format
+msgid "You must be <strong>Level %d</strong> to use this item."
+msgstr "您必须达到<strong>%d等级</strong>才能使用该道具。"
+
+#: /npc_object.php:227
+msgid "Get"
+msgstr "达成"
+
+#: /npc_object.php:239
+msgid "Here you go."
+msgstr "就是这样。"
+
+#: /npc_object.php:240
+msgid "Thanks for your purchase!"
+msgstr "谢谢惠顾！"
+
+#: /npc_object.php:265 classes/item.class.php:184
+msgid "Accept Quest"
+msgstr "接受任务"
+
+#: /npc_object.php:318
+msgid "Quest complete."
+msgstr "任务完成。"
+
+#: /npc_object.php:329
+msgid "Complete Quest"
+msgstr "完成任务"
+
+#: /player_select.php:5
+msgid "Select A Player"
+msgstr "选择玩家"
+
+#: /player_select.php:81
+msgid "New Player"
+msgstr "新玩家"
+
+#: /playername_check.php:40
+msgid "Name is available!"
+msgstr "名称可用！"
+
+#: /playername_check.php:44
+#, php-format
+msgid "Sorry, the name \"%s\" is taken."
+msgstr "抱歉，名称“%s”已被占用。"
+
+#: /password_change_action.php:19
+msgid "No user is logged in."
+msgstr "没有用户登录。"
+
+#: /password_change_action.php:23 /register_action.php:54
+msgid "No password was specified."
+msgstr "未指定密码。"
+
+#: /password_change_action.php:32 /register_action.php:63
+msgid "Please go back and try your submission again."
+msgstr "请返回并再次尝试提交。"
+
+#: /password_change_action.php:55
+msgid "Try Again"
+msgstr "再试一次"
+
+#: /quest_details.php:37
+msgid "You do not currently have this quest."
+msgstr "您当前没有此项任务。"
+
+#: /quest_details.php:53
+msgid "Dropped Quest"
+msgstr "已放弃任务"
+
+#: /quest_details.php:89
+msgid "You need the following to complete this quest"
+msgstr "您需要以下东西才能完成此任务"
+
+#: /quest_details.php:110
+msgid "Drop Quest"
+msgstr "放弃任务"
+
+#: /player_create.php:5
+msgid "Create New Player"
+msgstr "创建新玩家"
+
+#: /player_create.php:173
+msgid "Character Name"
+msgstr "角色名称"
+
+#: /player_create.php:180
+msgid "Enter a name"
+msgstr "输入名称"
+
+#: /player_create.php:186
+msgid "Gender"
+msgstr "性别"
+
+#: /player_create.php:192
+msgid "Male"
+msgstr "男性"
+
+#: /player_create.php:193
+msgid "Female"
+msgstr "女性"
+
+#: /player_create.php:198
+msgid "Select a gender"
+msgstr "选择性别"
+
+#: /player_create.php:204
+msgid "Race"
+msgstr "种族"
+
+#: /player_create.php:212
+msgid "Select a race"
+msgstr "选择种族"
+
+#: /player_create.php:218
+msgid "Birthplace"
+msgstr "出生地"
+
+#: /player_create.php:240
+msgid "Select a birthplace"
+msgstr "选择出生地"
+
+#: /player_create.php:246
+msgid "Player Attributes"
+msgstr "玩家属性"
+
+#: /player_create.php:267
+msgid "Reroll"
+msgstr "重复"
+
+#: /player_create.php:267
+msgid "Attributes"
+msgstr "属性"
+
+#: /player_create.php:319
+msgid "Next"
+msgstr "下一步"
+
+#: /player_create.php:323
+msgid "Return to Player Selection"
+msgstr "返回玩家选择"
+
+#: /player_create.php:394
+msgid "You must choose a different player name."
+msgstr "你必须选择不同的玩家名称。"
+
+#: /player_create.php:401
+msgid "You must select all required fields above."
+msgstr "你必须选择以上所有的必填项。"
+
+#: /register_action.php:8
+msgid "User Registration"
+msgstr "用户注册"
+
+#: /register_action.php:30
+msgid "Invalid email format"
+msgstr "无效邮箱格式"
+
+#: /register_action.php:45
+#, php-format
+msgid "The specified username, \"%s\", is not available."
+msgstr "指定的用户名“%s”不可用。"
+
+#: /game_update.php:21
+msgid "Your session has expired and you have been logged out."
+msgstr "您的会话已过期，已注销。"
+
+#: /game_update.php:21
+msgid "Log in to"
+msgstr "登录"
+
+#: /game_update.php:55
+msgid "You aren't allowed to use this portal."
+msgstr "您无权使用此门户。"
+
+#: /quest_check_answers.php:69
+msgid "You are not at the right location to complete this quest."
+msgstr "您的位置不对，无法完成此项任务。"
+
+#: /playeritem_details.php:45
+msgid "You aren't the owner of this item."
+msgstr "您不是该道具的拥有者。"
+
+#: /playeritem_details.php:54
+msgid "has been dropped."
+msgstr "已放弃。"
+
+#: /playeritem_details.php:64
+msgid "has been"
+msgid_plural "have been"
+msgstr[0] "已获得"
+
+#: /playeritem_details.php:64
+msgid "split to an empty slot."
+msgstr "拆分至空插槽。"
+
+#: /playeritem_details.php:90 classes/playerquest.class.php:453
+msgid "Quantity"
+msgstr "数量"
+
+#: /playeritem_details.php:93
+msgid "gram each"
+msgid_plural "grams each"
+msgstr[0] "每克"
+
+#: /playeritem_details.php:95
+msgid "You must be"
+msgstr "你必须"
+
+#: /playeritem_details.php:95
+msgid "to use this item."
+msgstr "使用该道具。"
+
+#: /playeritem_details.php:120
+msgid "Stack Items"
+msgstr "叠放道具"
+
+#: /playeritem_details.php:125
+msgid "Drop Item"
+msgstr "扔掉物品"
+
+#: /playeritem_details.php:127
+msgid "Bag Item"
+msgstr "背包物品"
+
+#: includes/mw_header.php:77
+msgid "Sorry, Internet Explorer does not work with MEGA World"
+msgstr "抱歉，Internet Explorer 不适用于 MEGA World"
+
+#: includes/mw_header.php:78
+msgid "You must use an up-to-date browser such as"
+msgstr "您必须使用最新版本的浏览器，例如"
+
+#: includes/mw_header.php:103
+msgid "Invalid email address."
+msgstr "无效邮箱。"
+
+#: includes/xgettext_strings.php:9
+msgid "Human"
+msgstr "人类"
+
+#: includes/xgettext_strings.php:10
+msgid "Dwarf"
+msgstr "小矮人"
+
+#: includes/xgettext_strings.php:11
+msgid "Elf"
+msgstr "小精灵"
+
+#: includes/xgettext_strings.php:12
+msgid "Orc"
+msgstr "妖魔"
+
+#: includes/xgettext_strings.php:16
+msgid "Strength"
+msgstr "力度值"
+
+#: includes/xgettext_strings.php:17
+msgid "Constitution"
+msgstr "构成"
+
+#: includes/xgettext_strings.php:18
+msgid "Dexterity"
+msgstr "灵敏度"
+
+#: includes/xgettext_strings.php:19
+msgid "Intelligence"
+msgstr "智能"
+
+#: includes/xgettext_strings.php:20
+msgid "Wisdom"
+msgstr "智慧"
+
+#: includes/xgettext_strings.php:21
+msgid "Charisma"
+msgstr "领导力"
+
+#: includes/xgettext_strings.php:22
+msgid "Determines physical attack power and carrying ability."
+msgstr "确定物理攻击力和承载能力。"
+
+#: includes/xgettext_strings.php:23
+msgid ""
+"Increases health points, damage received when attacked, and reduces damage "
+"over time attacks (eg poisoning)."
+msgstr ""
+"增加生命值，受到攻击时受到的伤害，并减少因长期攻击受到的伤害（例如中毒）。"
+
+#: includes/xgettext_strings.php:24
+msgid ""
+"Improves movement, attack speed (including casting), and chance of dodging "
+"attacks. Some spells and skills may have dexterity requirements for learning "
+"and casting."
+msgstr ""
+"提高移动、攻击速度（包括施法）和躲避攻击的机会。一些法术和技能在学习和施放时"
+"可能对灵敏度有要求。"
+
+#: includes/xgettext_strings.php:25
+msgid ""
+"Affects mana points for casting spells. Some spells and skills have "
+"intelligence requirements for learning and casting."
+msgstr "影响施法的法力值。一些法术和技能在学习和施放时有智力要求。"
+
+#: includes/xgettext_strings.php:26
+msgid ""
+"Allows more efficient attacking, blocking, casting, attack reaction, and "
+"dodging of attacks."
+msgstr "允许更有效的攻击、阻挡、施法、攻击反应和躲避攻击。"
+
+#: includes/xgettext_strings.php:27
+msgid ""
+"Determines opportunity to get help and hints from NPCs, including trading "
+"with them and getting additional quests."
+msgstr "确定从 NPC 那里获得帮助和提示的机会，包括与他们交易和获得额外的任务。"
+
+#: includes/xgettext_strings.php:30
+msgid "Skin"
+msgstr "皮肤"
+
+#: includes/xgettext_strings.php:31
+msgid "Shoes"
+msgstr "鞋子"
+
+#: includes/xgettext_strings.php:32
+msgid "Bottom"
+msgstr "下装"
+
+#: includes/xgettext_strings.php:33
+msgid "Top"
+msgstr "上衣"
+
+#: includes/xgettext_strings.php:34
+msgid "Mouth"
+msgstr "嘴巴"
+
+#: includes/xgettext_strings.php:35
+msgid "Beard"
+msgstr "胡须"
+
+#: includes/xgettext_strings.php:36
+msgid "Nose"
+msgstr "鼻子"
+
+#: includes/xgettext_strings.php:37
+msgid "Eyes"
+msgstr "眼睛"
+
+#: includes/xgettext_strings.php:38
+msgid "Eyebrows"
+msgstr "眉毛"
+
+#: includes/xgettext_strings.php:39
+msgid "Hair"
+msgstr "头发"
+
+#: includes/xgettext_strings.php:43
+msgid "Armour Store"
+msgstr "盔甲商店"
+
+#: includes/xgettext_strings.php:44
+msgid "Bulletin Board"
+msgstr "公告栏"
+
+#: includes/xgettext_strings.php:45
+msgid "Brick House"
+msgstr "砖房"
+
+#: includes/xgettext_strings.php:46
+msgid "Brick Road"
+msgstr "砖砌道路"
+
+#: includes/xgettext_strings.php:47
+msgid "Plaza"
+msgstr "购物中心"
+
+#: includes/xgettext_strings.php:48
+msgid "Camp"
+msgstr "露营地"
+
+#: includes/xgettext_strings.php:49
+msgid "Castle"
+msgstr "城堡"
+
+#: includes/xgettext_strings.php:50
+msgid "Castle Gate"
+msgstr "城堡大门"
+
+#: includes/xgettext_strings.php:51
+msgid "Castle Tower"
+msgstr "城堡大厦"
+
+#: includes/xgettext_strings.php:52
+msgid "Castle Wall"
+msgstr "城墙"
+
+#: includes/xgettext_strings.php:53
+msgid "Town Centre"
+msgstr "市中心"
+
+#: includes/xgettext_strings.php:54
+msgid "City Street"
+msgstr "城市街道"
+
+#: includes/xgettext_strings.php:55
+msgid "Construction Site"
+msgstr "建筑工地"
+
+#: includes/xgettext_strings.php:56
+msgid "Dungeon"
+msgstr "地下城"
+
+#: includes/xgettext_strings.php:57
+msgid "Garden"
+msgstr "园林"
+
+#: includes/xgettext_strings.php:58
+msgid "Rural Houses"
+msgstr "农村房屋"
+
+#: includes/xgettext_strings.php:59
+msgid "Fountain"
+msgstr "喷泉"
+
+#: includes/xgettext_strings.php:60
+msgid "Grocery"
+msgstr "杂货店"
+
+#: includes/xgettext_strings.php:61
+msgid "Harbor"
+msgstr "港口"
+
+#: includes/xgettext_strings.php:62
+msgid "House"
+msgstr "住宅"
+
+#: includes/xgettext_strings.php:63
+msgid "Lake"
+msgstr "湖"
+
+#: includes/xgettext_strings.php:64
+msgid "Library"
+msgstr "图书馆"
+
+#: includes/xgettext_strings.php:65
+msgid "Meeting"
+msgstr "汇合点"
+
+#: includes/xgettext_strings.php:66
+msgid "Mountains"
+msgstr "山脉"
+
+#: includes/xgettext_strings.php:67
+msgid "Ocean"
+msgstr "海洋"
+
+#: includes/xgettext_strings.php:68
+msgid "Path"
+msgstr "道路"
+
+#: includes/xgettext_strings.php:69
+msgid "Path Corner"
+msgstr "路径角落"
+
+#: includes/xgettext_strings.php:70
+msgid "Crossroads"
+msgstr "十字路口"
+
+#: includes/xgettext_strings.php:71
+msgid "Plains"
+msgstr "平原"
+
+#: includes/xgettext_strings.php:72
+msgid "Doorway"
+msgstr "门口"
+
+#: includes/xgettext_strings.php:73
+msgid "Restaurant"
+msgstr "餐馆"
+
+#: includes/xgettext_strings.php:74
+msgid "River"
+msgstr "河流"
+
+#: includes/xgettext_strings.php:75
+msgid "Riverbend"
+msgstr "河湾"
+
+#: includes/xgettext_strings.php:76
+msgid "River End"
+msgstr "河流末端"
+
+#: includes/xgettext_strings.php:77
+msgid "Ruins"
+msgstr "废墟"
+
+#: includes/xgettext_strings.php:78
+msgid "School"
+msgstr "学校"
+
+#: includes/xgettext_strings.php:79
+msgid "Stable"
+msgstr "马厩"
+
+#: includes/xgettext_strings.php:80
+msgid "Stone Pillar"
+msgstr "石柱"
+
+#: includes/xgettext_strings.php:81
+msgid "Stone Wall"
+msgstr "石墙"
+
+#: includes/xgettext_strings.php:82
+msgid "Cottage"
+msgstr "村舍"
+
+#: includes/xgettext_strings.php:83
+msgid "Village Houses"
+msgstr "乡村住宅"
+
+#: includes/xgettext_strings.php:84
+msgid "Weapon Store"
+msgstr "武器商店"
+
+#: includes/xgettext_strings.php:85
+msgid "Workshop"
+msgstr "车间"
+
+#: classes/invaliduserexception.class.php:14
+#, php-format
+msgid "User \"%s\" does not exist."
+msgstr "用户“%s”不存在。"
+
+#: classes/profession.class.php:141
+msgid "There are no requirements to join this profession."
+msgstr "加入这一职业没有任何要求。"
+
+#: classes/profession.class.php:143
+msgid "To join this profession, you require"
+msgstr "要加入这一职业，你需要"
+
+#: classes/profession.class.php:144
+msgid "<em>all</em> of the following professions"
+msgstr "<em>所有</em>以下职业"
+
+#: classes/profession.class.php:145
+msgid "any of the following professions"
+msgstr "以下任何职业"
+
+#: classes/profession.class.php:146
+msgid "the following profession"
+msgstr "以下职业"
+
+#: classes/profession.class.php:148
+msgid "and experience:"
+msgstr "和经验值："
+
+#: classes/item.class.php:182
+msgid "Eat This Item"
+msgstr "使用该道具"
+
+#: classes/item.class.php:186
+msgid "Dig at This Location"
+msgstr "在这一地点进行挖掘"
+
+#: classes/item.class.php:188
+msgid "Use This Item"
+msgstr "使用该道具"
+
+#: classes/questtool.class.php:152
+msgid "You have found the following"
+msgstr "您已找到以下东西"
+
+#: classes/questtool.class.php:180 classes/player.class.php:1194
+msgid "Your bag is full!"
+msgstr "您的背包已满！"
+
+#: classes/questtool.class.php:180
+msgid "Try again after freeing up space."
+msgstr "释放空间后再试。"
+
+#: classes/playerquest.class.php:163
+msgid "This quest has already been completed and is not repeatable."
+msgstr "此任务已完成，不可重复。"
+
+#: classes/playerquest.class.php:165
+#, php-format
+msgid "You must wait one minute before repeating this quest."
+msgid_plural "You must wait another %d minutes before repeating this quest."
+msgstr[0] ""
+"您必须等待一分钟才能重复此任务。\n"
+"您必须等待%d 分钟才能重复此任务。"
+
+#: classes/playerquest.class.php:169
+#, php-format
+msgid ""
+"You must wait one minute before attempting to complete this quest again."
+msgid_plural ""
+"You must wait another %d minutes before attempting to complete this quest "
+"again."
+msgstr[0] ""
+"您必须等待一分钟才能再次尝试完成此任务。\n"
+"您必须等待%d分钟才能再次尝试完成此任务。"
+
+#: classes/playerquest.class.php:189
+msgid "It seems you don't have everything you need yet."
+msgstr "你似乎还没有得到你所需要的一切。"
+
+#: classes/playerquest.class.php:189
+#, php-format
+msgid "You are missing an item."
+msgid_plural "You are missing %d items."
+msgstr[0] ""
+"您缺少一个道具。\n"
+"您缺少%d个道具。"
+
+#: classes/playerquest.class.php:206
+#, php-format
+msgid "You need to free up a slot"
+msgid_plural "You need to free up %d slots"
+msgstr[0] ""
+"您需要释放一个插槽\n"
+"您需要释放 %d个插槽"
+
+#: classes/playerquest.class.php:208
+msgid "in your bag before you can complete this quest."
+msgstr "在您完成此任务之前放入您的包中。"
+
+#: classes/playerquest.class.php:423
+msgid "Reward"
+msgstr "奖励"
+
+#: classes/playerquest.class.php:428
+msgid "Experience"
+msgstr "经验值"
+
+#: classes/playerquest.class.php:430
+msgid "Profession XP"
+msgstr "职业经验值"
+
+#: classes/playerquest.class.php:447
+msgid "Items Awarded"
+msgstr "道具奖励"
+
+#: classes/playerquest.class.php:497
+msgid "Submit Answer"
+msgstr "提交答案"
+
+#: classes/playerquest.class.php:518 classes/playerquest.class.php:538
+msgid "Specify true or false"
+msgstr "明确对错"
+
+#: classes/playerquest.class.php:519
+msgid "Choose one"
+msgstr "单选"
+
+#: classes/playerquest.class.php:520
+msgid "Choose any correct items"
+msgstr "选择正确道具"
+
+#: classes/playerquest.class.php:521
+msgid "Drag items into the correct order"
+msgstr "按正确顺序拖动道具"
+
+#: classes/playerquest.class.php:522
+msgid "Type in the correct answer"
+msgid_plural "Type in the correct answers"
+msgstr[0] "输入正确答案"
+
+#: classes/playerquest.class.php:530
+msgid "Fill in the blanks"
+msgstr "填空"
+
+#: classes/playerquest.class.php:548 classes/playerquest.class.php:708
+msgid "True"
+msgstr "正确"
+
+#: classes/playerquest.class.php:549 classes/playerquest.class.php:711
+msgid "False"
+msgstr "错误"
+
+#: classes/playerquest.class.php:561
+msgid "Choose the correct option"
+msgstr "选择正确选项"
+
+#: classes/playerquest.class.php:578
+msgid "Choose all correct options"
+msgstr "选择所有正确选项"
+
+#: classes/playerquest.class.php:596
+msgid "Answer the question below."
+msgid_plural "Answer the questions below"
+msgstr[0] "请回答以下问题。"
+
+#: classes/playerquest.class.php:618
+msgid "Calculate the correct value below"
+msgid_plural "Calculate the correct values below"
+msgstr[0] "计算以下的正确值"
+
+#: classes/playerquest.class.php:646
+msgid "Can you find the location?"
+msgstr "你能找到定位吗？"
+
+#: classes/playerquest.class.php:646
+msgid ""
+"If it doesn't seem to be anywhere on the map, you can drop the quest and I "
+"may give you another place to look."
+msgstr "如果地图上没有，你可以放弃任务，我可以给你另一个地方看看。"
+
+#: classes/playerquest.class.php:654
+msgid "Click the microphone button and"
+msgstr "单击麦克风按钮并"
+
+#: classes/playerquest.class.php:654
+msgid "speak the answer"
+msgid_plural "speak the answers"
+msgstr[0] "说出答案"
+
+#: classes/playerquest.class.php:673
+msgid "This quest type"
+msgstr "此任务类型"
+
+#: classes/playerquest.class.php:673
+msgid "is not currently supported."
+msgstr "目前不支持。"
+
+#: classes/playerquest.class.php:732
+msgid "Your answer"
+msgstr "您的答案"
+
+#: classes/playerquest.class.php:999
+msgid "Checking answers is not supported for this quest type."
+msgstr "此任务类型不支持检测答案。"
+
+#: classes/playeritem.class.php:199
+msgid "You can't remove more of an item than you have."
+msgstr "删除的道具不能超过你所拥有的道具。"
+
+#: classes/playeritem.class.php:200
+#, php-format
+msgid "Can't fit this many items in a slot. Maximum of this item is %d."
+msgstr "一个插槽无法容纳这么多物品。 此项最多为 %d。"
+
+#: classes/nobagslotsavailableexception.class.php:13
+msgid "No bag slots are available to store this item."
+msgstr "没有包槽可以存放这个物品。"
+
+#: classes/player.class.php:706
+msgid "You don't have enough money."
+msgstr "您没有足够的金币。"
+
+#: classes/player.class.php:710
+msgid "You don't have enough room in your bag."
+msgstr "你的背包里没有足够的空间了。"
+
+#: classes/player.class.php:710
+#, php-format
+msgid "You need one slot and have none."
+msgid_plural "You need %d slots and have %d."
+msgstr[0] ""
+"您需要一个插槽，但是目前没有。\n"
+"您需要%d个插槽，但是目前只有%d。"
+
+#: classes/player.class.php:728
+msgid "Player does not have this much money."
+msgstr "玩家没有这么多金币。"
+
+#: classes/player.class.php:747
+msgid "Player does not have this many XP."
+msgstr "玩家经验值不够。"
+
+#: classes/player.class.php:827
+#, php-format
+msgid "You must be level %d to use this item."
+msgstr "您必须达到%d等级才能使用该道具。"
+
+#: classes/player.class.php:865
+msgid "You tried digging here but didn't find anything interesting."
+msgstr "你尝试在这里挖掘，但没有发现任何有趣的东西。"
+
+#: classes/player.class.php:887
+msgid "You can't split an item into fewer than one."
+msgstr "你不能把一个物品分成少于一个的部分。"
+
+#: classes/player.class.php:888
+msgid "You can only split fewer of an item than there is of it."
+msgstr "你只能拆分比它的数量少的物品。"
+
+#: classes/player.class.php:913
+msgid "There is no room in this slot to stack more items."
+msgstr "此插槽中没有空间可堆叠更多物品。"
+
+#: classes/player.class.php:917
+msgid "There are no other items of this kind to stack that aren't full."
+msgstr "没有其他未满的此类物品可以堆叠。"
+
+#: classes/player.class.php:931
+#, php-format
+msgid "One more of the item has been stacked into the slot."
+msgid_plural "%d more of the item have been stacked into the slot."
+msgstr[0] ""
+"另一个物品已被拖动至插槽中。\n"
+"%d物品已被拖动至插槽中。"
+
+#: classes/player.class.php:948
+msgid "Player already has this profession."
+msgstr "玩家已拥有这一职业。"
+
+#: classes/player.class.php:950
+msgid "Player does not meet prerequisites for this profession."
+msgstr "玩家不符合该职业的前提条件。"
+
+#: classes/player.class.php:1089
+msgid "You don't have enough money to use this portal."
+msgstr "您没有足够的金币来使用这个门户网站。"
+
+#: classes/player.class.php:1093
+msgid "You aren't a high enough level to use this portal."
+msgstr "您的等级不够高，无法使用此门户。"
+
+#: classes/player.class.php:1149
+msgid ""
+"It doesn't seem that the NPC is offering this quest to you at the moment."
+msgstr "目前 NPC 似乎并未向您提供此任务。"
+
+#: classes/player.class.php:1174
+msgid "You have received the following"
+msgstr "您已获得以下物品"
+
+#: classes/player.class.php:1185
+msgid "No room for"
+msgstr "没有空间"
+
+#: classes/player.class.php:1195
+#, php-format
+msgid "Get this item from %s"
+msgid_plural "Get these items from %s"
+msgstr[0] "从%s获取此物品"
+
+#: classes/player.class.php:1195
+msgid "after freeing up space."
+msgstr "释放空间后。"
+
+#: classes/player.class.php:1264
+#, php-format
+msgid "level %d achieved."
+msgstr "达到%d等级。"
+
+#: classes/invalidpasswordexception.class.php:13
+msgid "Invalid password."
+msgstr "无效密码。"

@@ -1,0 +1,667 @@
+/* Input to TailwindCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Custom form styles */
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select
+    {
+        @apply rounded-md shadow-sm px-2 py-1
+        border border-black dark:border-gray-300 text-black dark:text-white bg-gray-100 dark:bg-gray-850
+        hover:bg-white dark:hover:bg-black
+        focus:bg-white focus:outline-none focus:border-gray-900 focus:ring dark:focus:bg-black focus:ring-cyan-200/50
+        placeholder-gray-500 placeholder-opacity-60;
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+        @apply dark:text-cyan-700 shadow-sm text-cyan-500
+        border border border-black dark:border-gray-300
+        checked:border checked:border-black dark:checked:border-gray-300 dark:checked:text-cyan-600
+        focus:outline-none focus:border-gray-900 focus:ring focus:ring-cyan-200/50
+        focus:ring-offset-0 focus:ring-offset-transparent;
+    }
+
+    [type='checkbox'] {
+        @apply rounded;
+    }
+
+    [type='radio'] {
+        @apply rounded-full;
+    }
+
+    select {
+        @apply pr-6;
+        background-position: right 0.05rem center;
+    }
+
+    /* Give keyboard keys a "3D" effect that is currently a bit difficult with Tailwind
+    This effect doesn't show until a border size is specified. */
+    kbd {
+        border-top-color:rgba(255,255,255,0.4);
+        border-left-color:rgba(255,255,255,0.2);
+        border-bottom-color:rgba(0,0,0,0.5);
+        border-right-color:rgba(0,0,0,0.4);
+    }
+
+} /* end @layer base */
+
+@layer components {
+    /* APPLY: This section is used for custom classes I use all the time so I don't have to repeat large groups of tailwind class names */
+
+    /* This is a custom class because error classes are often handled with JavaScript to clear error messages.
+    Seems handier to just style those rather than adding error AND the colors */
+    .error {
+        @apply text-red-600 dark:text-red-500;
+    }
+
+    /* Typical blue link to another page or external URL */
+    .link {
+        @apply text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300
+        focus:outline-none focus:border-gray-900 focus:ring focus:ring-cyan-200/50
+        rounded-md p-0.5 appearance-none whitespace-normal;
+        touch-action: manipulation;
+    }
+
+    .btn {
+        @apply px-2 py-1
+        border rounded-md tracking-wider
+        border-black dark:border-gray-300 text-black dark:text-white dark:bg-gray-850 bg-gray-200
+        focus:outline-none focus:border-gray-900 focus:ring focus:ring-cyan-300/50 dark:focus:bg-black
+        hover:bg-white dark:hover:bg-black
+        active:bg-gray-100 dark:active:bg-gray-900
+        disabled:opacity-25 transition ease-in-out duration-100;
+        box-shadow: 2px -2px 0px 0px #42bee0AA;
+        touch-action: manipulation;
+    }
+
+    .btn.highlight {
+        @apply focus:ring focus:ring-yellow dark:focus:ring-yellow-light/70;
+        box-shadow: 2px -2px 0px 0px #ffe505;
+    }
+
+    .btn.destructive {
+        @apply focus:ring focus:ring-red-600 dark:focus:ring-red-500/70;
+        box-shadow: 2px -2px 0px 0px #DC2626;
+    }
+
+    /* Give buttons an animated "depress" effect */
+    .btn:active {
+        box-shadow: none;
+        transform: scale(0.98);
+    }
+
+    .panelButton {
+        @apply relative block text-xs text-white text-center flex-1 p-1 pb-0 bg-gray-500/20 transition-all duration-300 ease-out;
+        --bevel:3px;
+        background-image: linear-gradient(rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) var(--bevel), rgba(0,0,0,0.3) calc(100% - var(--bevel)), rgba(0,0,0,0.5) 100%),
+        linear-gradient(90deg, rgba(255,255,255,0.2) 0%, transparent var(--bevel), transparent calc(100% - var(--bevel)), rgba(0,0,0,0.2) 100%);
+        text-shadow:0 0 3px rgba(0,0,0,0.6);
+    }
+
+    .panelButton:hover {
+        background-image: linear-gradient(rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.0) var(--bevel), rgba(0,0,0,0.15) calc(100% - var(--bevel)), rgba(0,0,0,0.3) 100%);
+    }
+
+    .panelButton.active, .panelButton:active {
+        background-color: rgba(255,255,255,1);
+        color: black;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 1);
+        background-image: linear-gradient(rgba(128,128,128,0.1) 0%, rgba(0,0,0,0.15) var(--bevel), rgba(0,0,0,0.25) calc(100% - var(--bevel)), rgba(0,0,0,0.3) 100%);
+    }
+
+    .panelButton i {
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    /* These are used in NPC interactions to delineate sections of content */
+    .insetSection {
+        @apply p-3 pt-2 mt-4 mb-4 bg-gray-400 bg-opacity-10 dark:bg-black dark:bg-opacity-10 rounded-lg shadow-inner-dark;
+    }
+
+    /* These are headings for sections in the NPC info screens and similar. */
+    .insetSection h3 {
+        @apply mb-2 -mt-2 -mx-3 pt-2 pb-1 text-lg font-medium text-center rounded-t-lg border-b border-gray-950 border-opacity-20 opacity-70;
+        background-image:linear-gradient(transparent, rgba(128,128,128,0.1));
+    }
+
+    .insetSection li {
+        @apply my-2 leading-snug;
+    }
+
+    .dark .insetSection h3 {
+        background-image:linear-gradient(transparent, rgba(128,128,128,0.05));
+    }
+
+    /* Used to render the options in quizzes */
+    .quizItem {
+        @apply flex mb-3 p-1 px-2 rounded-lg bg-black bg-opacity-5 dark:bg-gray-600 dark:bg-opacity-10 border border-gray-500 border-opacity-5 shadow;
+    }
+
+    .quizItemHover {
+        @apply group-hover:bg-gray-700 group-hover:bg-opacity-10 dark:group-hover:bg-gray-500 dark:group-hover:bg-opacity-10;
+    }
+
+    .trueFalse {
+        @apply px-2 py-1 mt-1 mr-1 flex items-center rounded-lg hover:bg-gray-400 hover:bg-opacity-20;
+    }
+
+    .tooltip {
+        @apply z-40 hidden absolute p-1.5 rounded-lg text-white bg-opacity-90
+        bg-gray-800 text-center shadow-md-dark font-sans
+        inset-x-6 mt-2 sm:top-full sm:w-48 sm:-ml-24 sm:left-1/2;
+    }
+
+    #zoomButtons button {
+        @apply flex justify-center items-center w-8 h-8 m-2 text-lg rounded-full
+        text-black border border-black border-opacity-20 bg-white bg-opacity-20
+        hover:text-yellow
+        focus:outline-none focus:ring focus:ring-cyan-200 focus:ring-opacity-50;
+        text-shadow: 0 0 3px rgba(255,255,255,0.3);
+        touch-action: manipulation;
+    }
+
+    #zoomButtons button:hover {
+        text-shadow: 0 0 5px rgba(0,0,0,1);
+    }
+
+    #zoomButtons button:active {
+        transform: scale(0.97);
+        text-shadow: 0 0 2px rgba(0,0,0,0.7);
+    }
+
+    /* Other complex styles that aren't easy to create with Tailwind */
+
+    /* Cute banner used for displaying town names */
+    .banner {
+        position: relative;
+        word-spacing:4px;
+        display: inline-block;
+        height: 28px;
+        min-width:200px;
+        font: normal 22px/22px 'Sansita Swashed';
+        color: rgba(0,0,0,0.8);
+        background-color: #ffe507;
+        border-radius: 3px;
+        box-shadow: 0 0 30px rgba(0,0,0,.15) inset,
+        0 6px 10px rgba(0,0,0,.15);
+    }
+
+    .banner::before,
+    .banner::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -24px;
+        top: 14px;
+        display: block;
+        width: 49px;
+        height: 0px;
+        border: 12px solid #d1bc07;
+        border-right: 25px solid #8c7d00;
+        border-bottom-color: #d1bc07;
+        border-left-color: transparent;
+    }
+
+    .banner::after {
+        left: auto;
+        right: -29px;
+        border-left: 20px solid #8c7d00;
+        border-right: 15px solid transparent;
+    }
+
+    /*IE Warning*/
+    #browserChoice img{width:70px;height:70px;margin:8px}
+    #browserChoice a {color:rgb(8,145,178);}
+
+
+    /* Normalize content edited in the management interface which may have serious issues.
+    All content that is editable by management users should be in a div with this class. */
+    .managementContent {
+        @apply mb-2;
+    }
+
+
+    /*  Typically users expect p tags to put space above and below an element. */
+    .managementContent p {
+        margin-bottom: 0.5em;
+    }
+
+    /* Images should max out at 100% so they always fit responsively */
+    .managementContent img {
+        max-width:100%;
+    }
+
+    /* Use our link styling on all a tags */
+    .managementContent a {
+        @apply link;
+    }
+
+    /* Make typical looking bullet lists for ULs */
+    .managementContent ul {
+        @apply list-disc pl-8
+    }
+
+    /* OLs are numbered */
+    .managementContent ol {
+        @apply list-decimal pl-8
+    }
+
+    .managementContent pre, .managementContent code {
+        @apply text-sm;
+    }
+
+
+}/* end @layer components */
+
+
+/**
+ * Fonts
+ */
+
+@font-face {
+    font-family: 'OCRAStd';
+    src: url('../webfonts/OCRAStd.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sansita Swashed';
+    src: url('../webfonts/SansitaSwashed-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/**
+ * Normal CSS that is difficult to do with Tailwind, used in maps.php
+ */
+:root {
+    --tileW: 200px;
+    --tileH: 100px;
+    --arrowW: 35px;
+}
+
+/* This allows you to use a data-tooltip attribute to have plain text tooltips only using CSS */
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    font-size:13px;
+    position:absolute;
+    top:60px;
+    left:-15px;
+    right:10px;
+    width:calc(100% + 20px);
+    /* Same z-height as modal dialog (40) */
+    z-index:50;
+    max-width:500px;
+    margin: 0 auto;
+    padding:6px;
+    border-radius:10px;
+    background:rgba(50,50,50,0.9);
+    color: #fff;
+    text-align:center;
+    box-shadow: 0 0 5px rgba(0,0,0,1);
+    display:none; /* hide by default */
+}
+[data-tooltip]:hover:before {
+    display:block;
+}
+
+.tile, .axisLabel {
+    width: var(--tileW, 200px);
+    /* In practice, tile bases are half the height of their width. Some elements can extend "above" the tile,
+    and will be layered on the tile above it, visually. Like shadows or tall towers */
+    height: calc(var(--tileW)*.75);
+    position:absolute;
+    background-repeat:no-repeat;
+    background-size:100% auto;
+    background-position:center bottom;
+    /* For centering text in map tiles */
+    color:white;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.axisLabel {
+    text-shadow: none;
+    color: black;
+}
+
+.dark .axisLabel {
+    color:white;
+}
+
+.axisLabel {
+    padding-left:calc(var(--tileW)/2);
+}
+
+.cursor {
+    background-position: top center;
+    background-repeat: no-repeat;
+    position:absolute;
+    color:yellow;
+    width:var(--tileW);
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    font-size:125%;
+    /*text-shadow: 0 1px 1px rgba(0,0,0,0.8);*/
+    /*filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));*/
+    overflow:visible;
+    /* This hack helps visually center the avatar on the tile */
+    margin-top:calc(var(--tileH)/3.5 * -1);
+    transition:all .4s ease-in-out 0s;
+}
+
+.cursor .avatar {
+    width:calc(var(--tileH)*0.8);
+}
+
+@keyframes flash{
+    0%{opacity:1}
+    50%{opacity:0.4}
+}
+
+/* Considering using this as a loading animation for a clicked button */
+@keyframes pulsate {
+    from {
+        transform: scale(0.97);
+        transform-origin: center center;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        transform: scale(1);
+        animation-timing-function: ease-in-out;
+    }
+    100% {
+        transform: scale(0.97);
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.pulsate {
+    animation: pulsate 1.5s ease-in-out infinite both;
+}
+
+/* this is ALWAYS collapsed */
+#panelParent .panel.collapsed {
+    display:none;
+}
+
+/* Collapsed on medium screens */
+@media (max-width:1250px) {
+    #panelParent .panel.collapsedM {
+        display:none;
+    }
+}
+
+/* Collapsed only on small screens */
+@media (max-width:800px) {
+    #panelParent .panel.collapsedS {
+        display:none;
+    }
+}
+
+
+/* The control arrows have a ton of style to get them to be positioned correctly and look appropriate.*/
+#controls.seeThrough {
+    background-color:rgba(255,255,255,0.04);
+    border-color: transparent;
+}
+
+#controls.seeThrough svg {
+    opacity:0.2;
+}
+
+#controls.seeThrough .upleft,
+#controls.seeThrough .upright,
+#controls.seeThrough .downleft,
+#controls.seeThrough .downright {
+    opacity:0.1;
+}
+
+#controls.seeThrough .center {
+    opacity:0.6;
+}
+
+#controls.seeThrough .center circle {
+    stroke-width:5;
+    stroke:white;
+}
+
+#controls img, #controls svg {
+    width:var(--arrowW);
+    height:var(--arrowW);
+    display:block;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
+    padding:2px;
+    opacity:0.8;
+    font-family: Helvetica, sans-serif;
+    touch-action: manipulation;
+}
+
+#controls svg text{
+    text-anchor: middle;
+    font-size: 28px;
+    fill: #DDD;
+}
+
+/* Diagonals are a bit more translucent */
+#controls .upleft,#controls .upright,#controls .downleft,#controls .downright {
+    opacity:0.6;
+}
+
+#controls svg:hover {
+    fill:#ffe507;
+}
+
+#zoomButtons div:active, #zoomButtons div.active,
+#controls svg:active, #controls svg.active {
+    filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0.9));
+    fill:#f3da05;
+    color:#f3da05;
+}
+
+#controls .arrow.upleft {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(-45deg) scale(0.6) translateY(10px);
+}
+
+#controls .arrow.up {
+    top:2px;
+    left:calc(50% - var(--arrowW)/2);
+}
+
+#controls .arrow.upright {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(45deg) scale(0.6) translateY(10px);
+}
+
+#controls .arrow.right {
+    top:calc(50% - var(--arrowW)/2);
+    right:2px;
+    transform: rotate(90deg);
+}
+
+#controls .arrow.left {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(-90deg);
+}
+
+#controls .arrow.downleft {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(-135deg) scale(0.6) translateY(10px);
+}
+
+#controls .arrow.down {
+    bottom:2px;
+    left:calc(50% - var(--arrowW)/2);
+    transform: rotate(180deg) translateY(-4px);
+}
+
+#controls .arrow.downright {
+    top:calc(50% - var(--arrowW)/2);
+    left:2px;
+    transform: rotate(135deg) scale(0.6) translateY(10px);
+}
+
+#controls .upleft, #controls .up, #controls .upright {
+    padding-top:0;
+}
+
+#controls .downleft, #controls .down, #controls .downright {
+    padding-bottom:0;
+}
+
+#controls * {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Add text-shadows to titleInfoSummary for improved legibility */
+.dark #tileInfoSummary {
+    text-shadow: 0 0 4px rgba(0,0,0,1);
+}
+.light #tileInfoSummary {
+    text-shadow: 0 0 4px rgba(255,255,255,1);
+}
+
+.bagItemQty {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:2px;
+    right:2px;
+    border-radius:50%;
+    width:22px;
+    height:22px;
+    background-color:rgba(0,0,0,0.7);
+    color: white;
+}
+
+.dark .bagItemQty {
+    background-color:rgba(255,255,255,0.7);
+    color:black;
+}
+
+.bagItem:active {
+    box-shadow:none!important;
+    /* This hack makes rounded corners transparent...*/
+    opacity:0.9999;
+}
+
+/* If you're wondering why I don't just use "transparent" for the from color, the answer is a Safari bug I have to work around */
+.bagItemName {
+    text-shadow: 0 0 3px white;
+    background:linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.7));
+}
+
+.dark .bagItemName {
+    text-shadow: 0 0 3px black;
+    background:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
+}
+
+
+/* Use a precise gradient matching the background color to make the text fade as you scroll */
+#chatForm {
+    background: linear-gradient(rgba(229,229,229,0) 0%, rgba(229,229,229,1) 34%);
+}
+.dark #chatForm {
+    background: linear-gradient(rgba(38,38,38,0) 0%, rgba(38,38,38,1) 34%);
+}
+
+/* Messagelist HTML content is stored in users' browser localstorage so we style it here
+instead of using tailwind classes */
+.message {padding-top:7px;}
+.message.you {color: #00188d;}
+.dark .message.you {color: #bedbff;}
+.message.private {color: #c10000;}
+.dark .message.private {color: #da9696;}
+.message.systemMessage {
+    display:flex;
+    text-align: center;
+    flex-direction: column-reverse;
+    padding-bottom:5px;
+}
+.message.systemMessage .msgFromPlayer {display: none;}
+.message.systemMessage .msg {font-size: 1.125rem;padding-top: .5rem;}
+.message.private.you {color: #940090;}
+.dark .message.private.you {color: #da96d8;}
+.msgFromPlayer {font-weight: bold;}
+.msgFromPlayer span {font-weight: normal;font-style: italic;}
+#messageList span+span {padding-left: .5rem;}
+.msgTime {opacity: .7;}
+.msgTime .seconds {font-size:0.7rem;}
+
+
+/* Simple popup message that disappears on its own after a moment or when clicked */
+.toast {
+    text-shadow: 0 0 3px rgba(255,255,255,.8);
+    transition: transform 0.15s ease-out, opacity .9s ease;
+    transform: translate(0px, -100px);
+}
+.dark .toast {text-shadow: 0 0 3px rgba(0,0,0,0.8);}
+
+.grabber {text-shadow: 1px 1px 1px #0005, -1px -1px 1px #fff;}
+.dark .grabber {text-shadow: 1px 1px 1px #0007, -1px -1px 1px #fff3;}
+
+/* Very small screens, iPhone 5 et al (iPhone 6/7/8 are 375px)*/
+@media (max-width: 360px) {
+    #messageList .msg {
+        display:block;
+    }
+}
+
+/*Reposition controls on larger heights*/
+@media (min-height: 600px) {
+    #controls {
+        bottom:270px;
+    }
+}
+
+/*Gaurdian chat modal styling*/
+.guardian-chat-panel {
+    min-width: 450px;
+    min-height: 450px;
+    position: relative;
+}
+
+.guardian-chat-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+    resize: none;
+}
+
+.guardian-chat-box {
+    height: 400px;
+    overflow-y: scroll;
+}
