@@ -71,6 +71,33 @@
                     <dd>Add/Edit Monster</dd>
                 </div>
             </dl>
+            <dl class="bg-white dark:bg-gray-800 shadow p-2 sm:mx-auto text-sm rounded-lg flex flex-wrap flex-auto">
+                <div class="py-2 px-4 w-full sm:w-1/2">
+                    <dt class="text-lg">
+                        {{--Note the crappy hack below to capitalize NPC. This won't scale if we have many words that need custom replacements.--}}
+                        <a href="{{route('monster')}}" class="link pr-1">Potion</a>
+                    </dt>
+                    <dd>Add/Edit Potion</dd>
+                </div>
+            </dl>
+            <dl class="bg-white dark:bg-gray-800 shadow p-2 sm:mx-auto text-sm rounded-lg flex flex-wrap flex-auto">
+                <div class="py-2 px-4 w-full sm:w-1/2">
+                    <dt class="text-lg">
+                        {{--Note the crappy hack below to capitalize NPC. This won't scale if we have many words that need custom replacements.--}}
+                        <a href="{{route('monster')}}" class="link pr-1">Armor</a>
+                    </dt>
+                    <dd>Add/Edit Armor</dd>
+                </div>
+            </dl>
+            <dl class="bg-white dark:bg-gray-800 shadow p-2 sm:mx-auto text-sm rounded-lg flex flex-wrap flex-auto">
+                <div class="py-2 px-4 w-full sm:w-1/2">
+                    <dt class="text-lg">
+                        {{--Note the crappy hack below to capitalize NPC. This won't scale if we have many words that need custom replacements.--}}
+                        <a href="{{route('monster')}}" class="link pr-1">Weapon</a>
+                    </dt>
+                    <dd>Add/Edit Weapon</dd>
+                </div>
+            </dl>
         </div>
     </div>
 
