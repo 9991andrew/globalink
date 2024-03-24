@@ -7,16 +7,6 @@
             @endisset
         </x-slot>
         <x-slot name="content">
-            @if(!$editing->id)
-            <x-input.group for="quest_id" label="Choose a quest:  ">
-                <select id="quest_id" wire:model="editing.quest_id" wire:change="updateName()">
-                    <option value="0" selected disabled>Choose a quest</option>
-                    @foreach($quests as $quest)
-                        <option value="{{ $quest[0] }}">{{ $quest[1] }}</option>
-                    @endforeach
-                </select>
-            </x-input.group>
-            @endif
             <x-input.group for="name" label="Name" :error="$errors->first('editing.name')">
                 <x-input wire:model="editing.name" id="name" type="text" readonly />
             </x-input.group>
@@ -41,13 +31,6 @@
                 <input id="timeout" wire:model="editing.timeout" type="text" size ="5" pattern="[1-9][0-9]{1,3}" />
             </x-input.group>
 
-            <x-input.group for="lang" label="Select a language to use:  ">
-                <select id="lang" wire:model="editing.lang">
-                    @foreach($languages as $k => $v)
-                        <option value="{{ $k }}">{{ $v }}</option>
-                    @endforeach
-                </select>
-            </x-input.group>
         </x-slot>
         <x-slot name="footer">
             <x-button class="highlight" type="submit">Save</x-button>

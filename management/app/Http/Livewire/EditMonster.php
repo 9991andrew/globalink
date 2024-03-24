@@ -23,14 +23,10 @@ class EditMonster extends EditObject
     public function rules(): array
     {
         return [
-            'editing.quest_id' => ['required', 'numeric', 'gt:0'],
             'editing.name' => ['required', 'max:255'],
-            'editing.maxbpm' => ['nullable', 'boolean'],
-            'editing.autobpm' => ['nullable', 'boolean'],
-            'editing.ngrampos' => ['nullable', 'boolean'],
-            'editing.canonical' => ['nullable', 'boolean'],
-            'editing.timeout' => ['numeric', 'required'],
-            'editing.lang' => ['max:5', 'required'],
+            'editing.hp' => ['nullable', 'max:255'],
+            'editing.item_id' => ['max:255'],
+            'editing.drop_rate' => ['max:255'],
         ];
     }
 

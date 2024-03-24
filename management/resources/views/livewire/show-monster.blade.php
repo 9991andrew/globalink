@@ -15,13 +15,10 @@
 
     <x-slot name="tableHeadings">
         <x-datatable.th :sorts="$sorts" field="id">ID</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="name" class="text-left">Name</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="maxbpm" class="text-center">Max BPM</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="autobpm" class="text-center">Auto BPM</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="ngrampos" class="text-center">N-gram POS</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="canonical" class="text-center">Canonical</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="timeout" class="text-center">Timeout</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="lang" class="text-center">Language</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="name" class="text-left">name</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="hp" class="text-center">hp</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="item_id" class="text-center">item id</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="drop_rate" class="text-center">drop rate</x-datatable.th>
     </x-slot>
 
     {{-- Begin main slot - all the data rows --}}
