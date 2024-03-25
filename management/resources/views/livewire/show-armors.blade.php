@@ -17,17 +17,14 @@
         <x-datatable.th :sorts="$sorts" field="id">ID</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="min_hp" class="text-left">Min HP</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="max_hp" class="text-center">Max HP</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="min_mp_consumtion" class="text-center">Minimum MP Consumption</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="max_mp_consumtion" class="text-center">Maximum MP Consumption</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="min_atk" class="text-center">Min Atk</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="max_atk" class="text-center">Max Atk</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="min_def" class="text-center">Min Def</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="max_def" class="text-center">Max Def</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="min_dex" class="text-center">Min Dex</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="max_dex" class="text-center">Max Dex</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="weapon_type" class="text-center">Weapon Type</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="attack_type" class="text-center">Attack Type</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="ImageId" class="text-center">Image ID</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="armor_type" class="text-center">Armor Type</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="ImageID" class="text-center">Image ID</x-datatable.th>
     </x-slot>
 
     {{-- Begin main slot - all the data rows --}}
@@ -51,16 +48,12 @@
 
             <td class="text-center">{{ $object->min_hp }}</td>
             <td class="text-center">{{ $object->max_hp }}</td>
-            <td class="text-center">{{ $object->min_mp_consumtion }}</td>
-            <td class="text-center">{{ $object->max_mp_consumtion }}</td>
             <td class="text-center">{{ $object->min_atk }}</td>
             <td class="text-center">{{ $object->max_atk }}</td>
             <td class="text-center">{{ $object->min_def }}</td>
-            <td class="text-center">{{ $object->max_def }}</td>
-            <td class="text-center">{{ $object->min_dex }}</td>
             <td class="text-center">{{ $object->max_dex }}</td>
-            <td class="text-center">{{ $object->weapon_type }}</td>
-            <td class="text-center">{{ $object->attack_type }}</td>
+            <td class="text-center">{{ $object->min_dex }}</td>
+            <td class="text-center">{{ $object->armor_type }}</td>
             <td class="text-center">{{ $object->ImageID }}</td>
 
             <td class="text-center">
@@ -72,5 +65,5 @@
         </tr>
     @endforeach
     {{-- End main slot --}}
-    <x-slot name="editModal"><livewire:edit-weapon /></x-slot>
+    <x-slot name="editModal"><livewire:edit-armors /></x-slot>
 </x-data-table>

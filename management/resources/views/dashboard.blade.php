@@ -84,7 +84,7 @@
                 <div class="py-2 px-4 w-full sm:w-1/2">
                     <dt class="text-lg">
                         {{--Note the crappy hack below to capitalize NPC. This won't scale if we have many words that need custom replacements.--}}
-                        <a href="{{route('monster')}}" class="link pr-1">Armor</a>
+                        <a href="{{route('armors')}}" class="link pr-1">Armor</a>
                     </dt>
                     <dd>Add/Edit Armor</dd>
                 </div>

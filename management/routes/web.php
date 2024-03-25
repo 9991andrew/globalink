@@ -154,7 +154,9 @@ Route::middleware('auth')->group(function() {
     Route::get('/weapon',
     \App\Http\Livewire\ShowWeapon::class
     )->name('weapon');
-
+    Route::get('/armors',
+    \App\Http\Livewire\ShowArmors::class
+    )->name('armors');
     Route::view('/help', 'guide')->name('help');
 
 });
