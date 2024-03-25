@@ -146,6 +146,10 @@ Route::middleware('auth')->group(function() {
     Route::get('/monster',
     \App\Http\Livewire\ShowMonster::class
     )->name('monster');
+    
+    Route::get('/weapon',
+    \App\Http\Livewire\ShowWeapon::class
+    )->name('weapon');
 
     Route::view('/help', 'guide')->name('help');
 
