@@ -147,6 +147,10 @@ Route::middleware('auth')->group(function() {
     \App\Http\Livewire\ShowMonster::class
     )->name('monster');
     
+    Route::get('/potions',
+    \App\Http\Livewire\ShowPotions::class
+    )->name('potions');
+
     Route::get('/weapon',
     \App\Http\Livewire\ShowWeapon::class
     )->name('weapon');
