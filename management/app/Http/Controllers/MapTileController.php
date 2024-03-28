@@ -6,6 +6,7 @@ use App\Models\Building;
 use App\Models\Map;
 use App\Models\MapTile;
 use App\Models\Npc;
+use App\Models\Monster;
 use Illuminate\Http\Request;
 
 class MapTileController extends Controller
@@ -43,7 +44,18 @@ class MapTileController extends Controller
             'skill_name' => (isset($tile->mapTileType->skill_id_req)?$tile->mapTileType->skill->name:''),
             'npcs' => $npcs->toArray(),
             'buildings' => $buildings->toArray(),
+            'encounter' => null,
         ];
+
+        if (rand(0,9) < 1) {
+            $monster = Monster::inRandomOrder()->first();
+            $data['encounter'] = [
+                'monsterName' => $monster->name,
+                'monsterHP'=> $monster->hp,
+                'item_id' => $monster->item_id,
+                'drop_rate' => $monster->drop_rate,
+            ];
+        }
 
         return response()->json($data);
 

@@ -8,31 +8,39 @@
         </x-slot>
         <x-slot name="content">
             <x-input.group for="req_lv" label="REQ LV" :error="$errors->first('editing.req_lv')">
-                <x-input wire:model="editing.req_lv" id="req_lv" type="numeric"/>
+                <x-input wire:model="editing.req_lv" id="req_lv" type="number"/>
             </x-input.group>
 
             <x-input.group for="hp" label="HP ">
-                <input id="hp" wire:model="editing.hp" type="numeric"/>
+                <input id="hp" wire:model="editing.hp" type="number"/>
             </x-input.group>
 
             <x-input.group for="mp" label="MP">
-                <input id="mp" wire:model="editing.mp" type="numeric" />
+                <input id="mp" wire:model="editing.mp" type="number" />
             </x-input.group>
 
             <x-input.group for="atk" label="ATK">
-                <input id="atk" wire:model="editing.atk" type="numeric" />
+                <input id="atk" wire:model="editing.atk" type="number" />
             </x-input.group>
 
             <x-input.group for="def" label="DEF">
-                <input id="def" wire:model="editing.def" type="numeric" />
+                <input id="def" wire:model="editing.def" type="number" />
             </x-input.group>
 
             <x-input.group for="dex" label="DEX">
-                <input id="dex" wire:model="editing.dex" type="numeric"/>
+                <input id="dex" wire:model="editing.dex" type="number"/>
             </x-input.group>
-
-            <x-input.group for="ImageID" label="Image">
-                <input id="ImageID" wire:model="editing.ImageID" type="numeric"/>
+            <x-input.group label="Image">
+                @if($newImage)
+                    <img class="w-full m-auto" src="{{ $newImage->temporaryUrl() }}" style="max-width:200px;">
+                @else
+                    @isset($editing->id)
+                        <img class="w-full m-auto" src="{{$editing->imageUrl}}" style="max-width:200px;">
+                    @endisset
+                @endif
+            </x-input.group>
+            <x-input.group label="Upload New Image" for="newImage{{ $iteration }}" :error="$errors->first('newImage')">
+                <x-input type="file" id="newImage{{ $iteration }}" wire:model="newImage" />
             </x-input.group>
         </x-slot>
         <x-slot name="footer">

@@ -21,7 +21,7 @@
         <x-datatable.th :sorts="$sorts" field="atk" class="text-center">Atk</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="def" class="text-center">Def</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="dex" class="text-center">Dex</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="ImageID" class="text-center">Image</x-datatable.th>
+        <x-datatable.th >Image</x-datatable.th>
     </x-slot>
 
     {{-- Begin main slot - all the data rows --}}
@@ -35,20 +35,14 @@
                 <x-button.edit x-on:click="loadModal({{$object->id}})">{{ $object->id }}</x-button.edit>
             </td>
 
-            <td class="text-black dark:text-white text-base">
-                @if($object->ismap)
-                    {{ $object->name }} (Map)
-                @else
-                    {{ $object->name }}
-                @endif
-            </td>
 
-            <td class="text-center">{{ $object->maxbpm }}</td>
-            <td class="text-center">{{ $object->autobpm }}</td>
-            <td class="text-center">{{ $object->ngrampos }}</td>
-            <td class="text-center">{{ $object->canonical }}</td>
-            <td class="text-center">{{ $object->timeout }}</td>
-            <td class="text-center">{{ $object->lang }}</td>
+            <td class="text-center">{{ $object->req_lv }}</td>
+            <td class="text-center">{{ $object->hp }}</td>
+            <td class="text-center">{{ $object->mp }}</td>
+            <td class="text-center">{{ $object->atk }}</td>
+            <td class="text-center">{{ $object->def }}</td>
+            <td class="text-center">{{ $object->dex }}</td>
+            <td class="text-center"><img width="50" src="{{ $object->tnUrl }}"></td>
 
             <td class="text-center">
                 <x-button.edit x-on:click="loadModal({{$object->id}})" />

@@ -11,7 +11,6 @@ class ShowWeapon extends DataTable
 
     // Any filters we will use to search
     public $filters = [
-        'ImageID' => '',
         'id' => '',
     ];
 
@@ -19,7 +18,6 @@ class ShowWeapon extends DataTable
     protected function rules(): array
     {
         return array_merge(parent::rules(), [
-            'filters.ImageID' => 'numeric',
             'filters.id' => 'numeric',
         ]);
     }

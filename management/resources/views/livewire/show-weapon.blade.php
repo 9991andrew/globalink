@@ -15,10 +15,10 @@
 
     <x-slot name="tableHeadings">
         <x-datatable.th :sorts="$sorts" field="id">ID</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="min_hp" class="text-left">Min HP</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="min_hp" class="text-center">Min HP</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="max_hp" class="text-center">Max HP</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="min_mp_consumtion" class="text-center">Minimum MP Consumption</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="max_mp_consumtion" class="text-center">Maximum MP Consumption</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="min_mp_consumtion" class="text-center">Min MP </x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="max_mp_consumtion" class="text-center">Max MP </x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="min_atk" class="text-center">Min Atk</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="max_atk" class="text-center">Max Atk</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="min_def" class="text-center">Min Def</x-datatable.th>
@@ -27,7 +27,7 @@
         <x-datatable.th :sorts="$sorts" field="max_dex" class="text-center">Max Dex</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="weapon_type" class="text-center">Weapon Type</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="attack_type" class="text-center">Attack Type</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="ImageId" class="text-center">Image ID</x-datatable.th>
+        <x-datatable.th>Image</x-datatable.th>
     </x-slot>
 
     {{-- Begin main slot - all the data rows --}}
@@ -41,13 +41,7 @@
                 <x-button.edit x-on:click="loadModal({{$object->id}})">{{ $object->id }}</x-button.edit>
             </td>
 
-            <td class="text-black dark:text-white text-base">
-                @if($object->ismap)
-                    {{ $object->name }} (Map)
-                @else
-                    {{ $object->name }}
-                @endif
-            </td>
+           
 
             <td class="text-center">{{ $object->min_hp }}</td>
             <td class="text-center">{{ $object->max_hp }}</td>
@@ -61,8 +55,9 @@
             <td class="text-center">{{ $object->max_dex }}</td>
             <td class="text-center">{{ $object->weapon_type }}</td>
             <td class="text-center">{{ $object->attack_type }}</td>
-            <td class="text-center">{{ $object->ImageID }}</td>
-
+            <td class="text-center"><img width="50" src="{{ $object->tnUrl }}"></td>
+            
+            
             <td class="text-center">
                 <x-button.edit x-on:click="loadModal({{$object->id}})" />
             </td>

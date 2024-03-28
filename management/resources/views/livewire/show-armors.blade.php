@@ -24,7 +24,7 @@
         <x-datatable.th :sorts="$sorts" field="min_dex" class="text-center">Min Dex</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="max_dex" class="text-center">Max Dex</x-datatable.th>
         <x-datatable.th :sorts="$sorts" field="armor_type" class="text-center">Armor Type</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="ImageID" class="text-center">Image ID</x-datatable.th>
+        <x-datatable.th>Image</x-datatable.th>
     </x-slot>
 
     {{-- Begin main slot - all the data rows --}}
@@ -38,30 +38,27 @@
                 <x-button.edit x-on:click="loadModal({{$object->id}})">{{ $object->id }}</x-button.edit>
             </td>
 
-            <td class="text-black dark:text-white text-base">
-                @if($object->ismap)
-                    {{ $object->name }} (Map)
-                @else
-                    {{ $object->name }}
-                @endif
-            </td>
 
             <td class="text-center">{{ $object->min_hp }}</td>
             <td class="text-center">{{ $object->max_hp }}</td>
             <td class="text-center">{{ $object->min_atk }}</td>
             <td class="text-center">{{ $object->max_atk }}</td>
             <td class="text-center">{{ $object->min_def }}</td>
+            <td class="text-center">{{ $object->max_def }}</td>
             <td class="text-center">{{ $object->max_dex }}</td>
             <td class="text-center">{{ $object->min_dex }}</td>
             <td class="text-center">{{ $object->armor_type }}</td>
-            <td class="text-center">{{ $object->ImageID }}</td>
-
+            <td class="text-center"><img width="50" src="{{ $object->tnUrl }}"></td>
+            
+            
             <td class="text-center">
                 <x-button.edit x-on:click="loadModal({{$object->id}})" />
             </td>
             <td class="text-center">
                 <x-button.delete x-on:click="confirmAction('{{$object->id}}', '{{addSlashes($object->name)}}')" />
             </td>
+
+
         </tr>
     @endforeach
     {{-- End main slot --}}
