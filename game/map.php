@@ -77,12 +77,37 @@ body {
     position:fixed;
     width:100%;
 }
+#encounterForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f8ff; 
+    padding: 50px; 
+    z-index: 1000; 
+    border: 3px solid #008b8b;
+    border-radius: 15px; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); 
+    color: #333; 
+    font-family: 'Arial', sans-serif; 
+    text-align: center; 
+}
+
+
 
 /* Background images for each type of map tile */
 <?=MapTile::getMapTileStyles()?>
 </style>
 
 <?php // I think that height: calc is to allow dynamic adjustment of the screen height for phone keyboards ?>
+<div id="encounterForm" style="display: none;">
+    <div class="encounter-content">
+        <p>You've encountered something!</p>
+        <button onclick="handleEncounterDecision('fight')">Fight</button>
+        <button onclick="handleEncounterDecision('flee')">Flee</button>
+        <!-- Add more options as necessary -->
+    </div>
+</div>
 <div id="gameUI" class="flex flex-col h-screen" style="height:calc(var(--vh, 1vh) * 100);">
     <div id="statusBar" class="font-ocr flex items-center justify-between z-30 shadow-md-dark text-sm text-white bg-black dark:text-black dark:bg-white">
         <button type="button" id="menu"

@@ -1,23 +1,26 @@
 <?php
 
 namespace App\Http\Livewire;
-use App\Models\Wsnlp;
-use App\Models\Quest;
-use App\Models\Npc;
-use Illuminate\Validation\Rule;
-use Livewire\Component;
-use Illuminate\Support\Str;
+use App\Models\Item;
+use App\Models\Map;
+
 
 class EditMonster extends EditObject
 {
     public $objectClass = 'App\Models\Monster';
-    public $quests;
-    public $languages;
+    public $name;
+    public $hp;
+    public $item_id;
+    public $drop_rate;
+    public $items;
+    public $map_id;
+    public $maps;
 
     public function mount()
     {
-       // $this->editing = $this->makeBlankObject();
-
+        $this->editing = $this->makeBlankObject();
+        $this->items = Item::all();
+        $this->maps = Map::all();
     }
 
     public function rules(): array
@@ -25,8 +28,9 @@ class EditMonster extends EditObject
         return [
             'editing.name' => ['required', 'max:255'],
             'editing.hp' => ['nullable', 'max:255'],
-            'editing.item_id' => ['max:255'],
-            'editing.drop_rate' => ['max:255'],
+            'editing.item_id' => ['nullable','max:255'],
+            'editing.drop_rate' => ['nullable','max:255'],
+            'editing.map_id'=>['nullable', 'max:255'],
         ];
     }
 
@@ -37,19 +41,19 @@ class EditMonster extends EditObject
     public function makeBlankObject()
     {
         return $this->objectClass::make([
-            'quest_id' => 0,
-            'name' => '',
-            'maxbpm' => 0,
-            'autobpm' => 0,
-            'ngrampos' => 0,
-            'canonical' => 0,
-            'timeout' => 600,
-            'lang' => 'en',
+            'name'=> '',
+            'hp'=> 0,
+            'item_id'=>0,
+            'drop_rate'=>0,
+            'map_id'=>0,
         ]);
     }
 
+    public function useItem() {
+        }
     public function save()
     {
+    
         $this->validate();
         $this->editing->save();
         $this->showModal = false;

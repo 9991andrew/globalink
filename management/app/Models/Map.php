@@ -33,6 +33,9 @@ class Map extends Model
     /**
      * Get the players currently on this map
      */
+    public function monsters() {
+        return $this->hasMany(Monster::class);
+    }
     public function players()
     {
         return $this->hasMany(Player::class);

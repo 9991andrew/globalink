@@ -9,16 +9,20 @@ class ShowMonster extends DataTable
     // Any filters we will use to search
     public $filters = [
         'id' => '',
-        'name' => '',
     ];
 
     // Add any rules on top of the default ones
     protected function rules(): array
     {
         return array_merge(parent::rules(), [
-            'filters.name' => '',
             'filters.id' => 'numeric',
         ]);
+    }
+    
+    public function getRowsQueryProperty()
+    {
+        $query = $this->filter($this->objectClass::select(), $this->filters);
+        return $this->applySorting($query);
     }
     public function delete()
     {

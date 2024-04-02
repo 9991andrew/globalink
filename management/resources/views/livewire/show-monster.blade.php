@@ -14,11 +14,13 @@
     </x-slot>
 
     <x-slot name="tableHeadings">
-        <x-datatable.th :sorts="$sorts" field="id">ID</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="name" class="text-left">name</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="hp" class="text-center">hp</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="item_id" class="text-center">item id</x-datatable.th>
-        <x-datatable.th :sorts="$sorts" field="drop_rate" class="text-center">drop rate</x-datatable.th>
+    <x-datatable.th :sorts="$sorts" field="id" class="text-left">ID</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="name" class="text-left">Name</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="hp" class="text-center">HP</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="item_id" class="text-center">Item</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="drop_rate" class="text-center">Item Drop Rate</x-datatable.th>
+        <x-datatable.th :sorts="$sorts" field="map_id" class="text-center">Map ID</x-datatable.th>
+        
     </x-slot>
 
     {{-- Begin main slot - all the data rows --}}
@@ -32,21 +34,12 @@
                 <x-button.edit x-on:click="loadModal({{$object->id}})">{{ $object->id }}</x-button.edit>
             </td>
 
-            <td class="text-black dark:text-white text-base">
-                @if($object->ismap)
-                    {{ $object->name }} (Map)
-                @else
-                    {{ $object->name }}
-                @endif
-            </td>
 
-            <td class="text-center">{{ $object->maxbpm }}</td>
-            <td class="text-center">{{ $object->autobpm }}</td>
-            <td class="text-center">{{ $object->ngrampos }}</td>
-            <td class="text-center">{{ $object->canonical }}</td>
-            <td class="text-center">{{ $object->timeout }}</td>
-            <td class="text-center">{{ $object->lang }}</td>
-
+            <td class="text-center">{{ $object->name }}</td>
+            <td class="text-center">{{ $object->hp }}</td>
+            <td class="text-center">{{ $object->item_id }}</td>
+            <td class="text-center">{{ $object->drop_rate }}</td>
+            <td class="text-center">{{ $object->map_id }}</td>
             <td class="text-center">
                 <x-button.edit x-on:click="loadModal({{$object->id}})" />
             </td>

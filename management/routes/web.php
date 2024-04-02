@@ -26,8 +26,9 @@ Route::middleware('auth')->group(function() {
     Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
-
-
+    //Route::get('/encounter',
+      //  \App\Http\Livewire\Encounter::class
+    //)->name('encounter');
     
     Route::get('/users',
 \App\Http\Livewire\ShowUsers::class
@@ -143,6 +144,8 @@ Route::middleware('auth')->group(function() {
         \App\Http\Livewire\ShowMapAsk4::class
     )->name('mapask4');
     
+    
+
     Route::get('/monster',
     \App\Http\Livewire\ShowMonster::class
     )->name('monster');
@@ -154,9 +157,11 @@ Route::middleware('auth')->group(function() {
     Route::get('/weapon',
     \App\Http\Livewire\ShowWeapon::class
     )->name('weapon');
+
     Route::get('/armors',
     \App\Http\Livewire\ShowArmors::class
     )->name('armors');
+
     Route::view('/help', 'guide')->name('help');
 
 });

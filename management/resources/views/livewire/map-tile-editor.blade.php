@@ -167,12 +167,23 @@
                         </ul>
                     </div>
                 </div><!--panelNpcs-->
+                <div id="panelMonsters" class="panel collapsed shadow-inset-dark p-1 flex-1 flex flex-wrap justify-center overflow-y-scroll min-h-[12rem]">
+                    <ul>
+                    @foreach(\App\Models\Monster::orderBy('item_id')->get() as $monster)
+    <li class="flex items-center"> 
+        <a class="link" href="{{ route('monster', ['id' => $monster->id]) }}">{{ $monster->name ?: '-unnamed-' }}</a>
+    </li>
+@endforeach
+                    </ul>
+                
+                        </div><!--panelMonsters-->
             </div><!--panelParent-->
 
             <div wire:ignore id="panelButtons" class="flex bg-gray-300 dark:bg-gray-700 space-x-0.5 select-none z-10" style="margin-bottom: env(safe-area-inset-bottom)">
                 <span id="buttonTiles" class="panelButton tiles"><i class="fas fa-square"></i>Tiles</span>
                 <span id="buttonBuildings" class="panelButton buildings"><i class="fas fa-building"></i>Buildings</span>
                 <span id="buttonNpcs" class="panelButton npcs"><i class="fas fa-user-cog"></i>NPCs</span>
+                <span id="buttonMonsters" class="panelButton monsters"> <i class="fas fa-user-cog"> </i>Monsters</span>
             </div>
         </div>
 

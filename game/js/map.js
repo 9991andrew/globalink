@@ -298,7 +298,6 @@ function move(xInc, yInc, smooth = true) {
 
     tileTypeName = tileTypes.filter(tile => tile.id === mapTiles[x][y][0])[0].name;
     document.getElementById('currentTileType').innerHTML = tileTypeName;
-
     // Update NPCs and buildings in the info area
     let possibleNpcs = mapTiles[x][y][3];
 
@@ -362,8 +361,27 @@ function move(xInc, yInc, smooth = true) {
 
     //Do the animation and update the player position on the map
     updateCursor(x, y, smooth);
+
+  showEncounter();
 }// end move()
 
+
+
+function getMonsterData() {
+    const formData = new FormData();
+    formData.append('mapId', mapId);
+    fetchPost("monsterEncounter.php", formData).then(data=>{
+        if(data.monster) {
+            console.log("Monster spawned: ", data.monster);
+        }else{
+            console.log(data.message);
+        }
+    });
+}
+
+function showEncounter() {
+    document.getElementById('encounterForm').style.display = 'hidden';
+}
 
 function updateCursor(x, y, smooth = false) {
     document.getElementById('currentCoords').innerHTML = TXT.location_label+ '<strong class="ml-2">'+ x + '</strong>, <strong>' + y + '</strong>';
@@ -1628,7 +1646,8 @@ document.addEventListener('DOMContentLoaded',function() {
             playerHash
             playerBag
             playerBagHash
-            statTypes`);
+            statTypes
+            `);
         showToast('Required variables are undefined. See the console for more information.', 'error', 0);
     }
 
@@ -1755,7 +1774,7 @@ document.addEventListener('DOMContentLoaded',function() {
 
     updatePlayerStatus();
     updatePlayerBag();
-
+    mapMonsters = getMonsterData();
     // Handle submitting the chatForm
     document.getElementById('chatForm').addEventListener('submit', function (e) {
         // prevent form from submitting

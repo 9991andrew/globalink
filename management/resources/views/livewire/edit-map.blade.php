@@ -36,6 +36,13 @@
                     @endforeach
                 </ul>
             </x-input.group>
+            <x-input.group label="Monsters">
+                <ul class="gap-x-5 grid grid-cols-3 text-sm">
+                    @foreach($editing->monster as $monster)
+                        <li><span class="text-xs text-gray-500">{{$monster->id}}&nbsp;</span><a class="link" href="{{route('monster')}}/?filters[id]={{$npc->monster}}">{{ $npc->monster }}</a></li>
+                    @endforeach
+                </ul>
+            </x-input.group>
 
             <x-input.group label="Buildings">
                 <ul class="gap-x-5 grid grid-cols-3 text-sm">
