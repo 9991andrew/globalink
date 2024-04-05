@@ -75,6 +75,35 @@
 
             @if(is_int($editing->id))
 
+            <x-input.group for="experience" label="Experience">
+                    {{ $editing->experience }} <span class="text-sm text-gray-500 text-opacity-80">XP</span>
+                </x-input.group>
+
+                <x-input.group for="professions" label="Professions">
+                    <div class="flex space-x-2">
+                        <select wire:model="profession_id" id="profession_id" class="flex-1 min-w-0">
+                            <option value="">Select a profession</option>
+                            @php
+                                $existingProfs = $editing->professions->pluck('id')->toArray();
+                            @endphp
+                            @foreach(Profession::whereNotIn('id', $existingProfs)->get() as $profession)
+                                <option value="{{$profession->id}}">{{$profession->name}}</option>
+                            @endforeach
+                        </select>
+                        <x-button type="button" class="ml-2" wire:click="addProfession">Add</x-button>
+                    </div>
+
+                    <ul class="mt-2">
+                    @foreach($editing->professions as $profession)
+                        <li wire:key="player{{$editing->id}}profession{{$profession->id}}">
+                            <button type="button" x-on:click="$dispatch('confirm-action', { id:'{{$editing->id}}', name:'{{addSlashes($profession->name)}}', className:'Player', pivot:'professions', pivotId:{{$profession->id}} })">
+                                <i class="fas fa-times text-red-500"></i>
+                            </button>
+                            <a class="link" href="{{route('professions')}}?filters%5Bid%5D={{ $profession->id }}"><span class="text-sm text-gray-500 text-opacity-80 mr-1">{{ $profession->id }}</span>{{ $profession->name }}</a> <span class="text-sm"><span class="text-gray-500 text-xs">Level</span> {{$profession->pivot->profession_level}} <span class="text-gray-500 text-xs ml-1">XP</span> {{ $profession->pivot->profession_xp }}</span>
+                        </li>
+                    @endforeach
+                    </ul>
+                </x-input.group>
 
 
                 <x-input.group for="skills" label="Skills">
