@@ -38,6 +38,7 @@ class EditPotions extends EditObject
     public function makeBlankObject()
     {
         return $this->objectClass::make([
+            'id'=>'',
             'req_lv' => 0,
             'hp' => 0,
             'mp' => 0,

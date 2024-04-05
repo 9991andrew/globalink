@@ -77,37 +77,140 @@ body {
     position:fixed;
     width:100%;
 }
-#encounterForm {
+.encounter-box {
+    display: none; 
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #f0f8ff; 
-    padding: 50px; 
+    width: 90vw; 
+    height: 80vh;
+    background-color: #1a1a1a; 
+    border-radius: 10px; 
+    padding: 20px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
     z-index: 1000; 
-    border: 3px solid #008b8b;
-    border-radius: 15px; 
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15); 
-    color: #333; 
+    overflow: auto; 
     font-family: 'Arial', sans-serif; 
-    text-align: center; 
+    color: #f0f0f0; 
 }
 
 
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75); 
+    z-index: 999; 
+    display: none; 
+}
+
+
+.player-info, .monster-info {
+    text-align: center;
+    color: #f0f0f0; 
+}
+
+.encounter-actions button {
+    background-color: #4CAF50; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.encounter-actions button:hover {
+    background-color: #367c39; 
+}
+
+.monster-info h3, .monster-info p {
+    color: #ff6347; 
+}
+
+.encounter-content {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 100%; 
+    padding: 20px; 
+}
+
+.player-info, .monster-info {
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.encounter-actions {
+    flex-basis: 100px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+.player-info, .monster-info {
+    flex: 1; 
+    text-align: center; 
+}
+.encounter-title h2 {
+    color: #E53E3E; 
+    text-align: center; 
+    margin-bottom: 30px; 
+    font-size: 28px; 
+    margin-top: 20px; 
+}
 
 /* Background images for each type of map tile */
 <?=MapTile::getMapTileStyles()?>
 </style>
 
 <?php // I think that height: calc is to allow dynamic adjustment of the screen height for phone keyboards ?>
-<div id="encounterForm" style="display: none;">
+<div id="modalBackdrop" class="modal-backdrop"></div>
+
+<!-- Encounter Box (Modal) -->
+<div id="encounterForm" class="encounter-box">
+    <div class="encounter-title">
+        <h2>You have encountered a monster...</h2>
+    </div>
+
     <div class="encounter-content">
-        <p>You've encountered something!</p>
-        <button onclick="handleEncounterDecision('fight')">Fight</button>
-        <button onclick="handleEncounterDecision('flee')">Flee</button>
-        <!-- Add more options as necessary -->
+        <!-- Player Info on the Left -->
+        <div class="player-section">
+            <div class="player-info">
+                <h3 id="playerName">Player Name</h3>
+                <p id="playerHP">HP: 100</p>
+                <!-- Player's Weapons -->
+                <h3>Weapons</h3>
+                <ul id="weaponList"></ul>
+                <!-- Player's Potions -->
+                <h3>Potions</h3>
+                <ul id="potionList"></ul>
+                <!-- Player's Armor -->
+                <h3>Armor</h3>
+                <ul id="armorList"></ul>
+            </div>
+        </div>
+        
+        <!-- Actions (Buttons) in the Middle -->
+        <div class="encounter-actions">
+            <button onclick="handleEncounterDecision('fight')">Fight</button>
+            <button onclick="handleEncounterDecision('flee')">Flee</button>
+        </div>
+
+        <!-- Monster Info on the Right -->
+        <div class="monster-info">
+            <h3 id="monsterName">Monster Name</h3>
+            <p id="monsterHP">HP: 50</p>
+            <p id="monsterDrops">Drops: Gold Coin</p>
+        </div>
     </div>
 </div>
+
 <div id="gameUI" class="flex flex-col h-screen" style="height:calc(var(--vh, 1vh) * 100);">
     <div id="statusBar" class="font-ocr flex items-center justify-between z-30 shadow-md-dark text-sm text-white bg-black dark:text-black dark:bg-white">
         <button type="button" id="menu"

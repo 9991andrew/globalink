@@ -71,5 +71,8 @@ class Weapon extends Model
     {
         return $this->getImageFilenameAttribute(false, true);
     }
+    public function player() {
+        return $this->belongsToMany(Player::class);
+    }
 
 }

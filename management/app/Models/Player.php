@@ -80,4 +80,23 @@ class Player extends Model
     }
 
 
+    /*
+     * Potions the player has
+    */
+    public function potion() {
+        return $this->hasMany(Potions::class);
+    }
+    /*
+     * Weapons the player has
+    */
+    public function weapons() {
+        return $this->hasMany(Weapon::class);
+    }
+    /*
+     * Armors the player has
+    */
+    public function armor() {
+        return $this->hasMany(Armors::class);
+    }
+
 }

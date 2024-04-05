@@ -40,6 +40,7 @@ class EditWeapon extends EditObject
     public function makeBlankObject()
     {
         return $this->objectClass::make([
+            'id'=>'',
             'req_lv' => 0,
             'min_hp' => 0,
             'max_hp' => 0,

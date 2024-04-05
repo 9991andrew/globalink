@@ -91,7 +91,7 @@ class Monster extends Dbh {
                 }
     
                 // Use probability to determine if a monster should spawn on this tile
-                if (rand(1, 100) <= $probability * 0.5) {
+                if (rand(1, 100) <= round($probability * 0.5)) {
                     $index = array_rand($monsters); // Select a random monster from the array
                     $monster = clone $monsters[$index]; // Clone the monster to avoid modifying the original
                     $monster->setCoordinate($x, $y); // Set the monster's coordinates
@@ -103,6 +103,16 @@ class Monster extends Dbh {
         return $spawnedMonsters;
     }
     
+    public function getItemDetailsById($itemId) {
+        // This is a placeholder. You'll need to implement the logic to query your database for the item.
+        // For example:
+        $query = "SELECT * FROM items WHERE id = ?";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->execute([$itemId]);
+        $itemDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        return $itemDetails; // Return the array of item details
+    }
     
     
 

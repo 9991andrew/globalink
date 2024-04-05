@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Livewire\WithFileUploads;
+use App\Models\Player;
 
 class EditArmors extends EditObject
 {
@@ -12,15 +13,22 @@ class EditArmors extends EditObject
     public $objectClass = 'App\Models\Armors';
     public $newImage;
     public $iteration;
+    public $player_id;
+    public $players;
     public function updatedNewImage()
     {
         $this->validate(['newImage' => 'nullable|image|max:1000']);
+    }
+    public function mount() {
+        $this->players = Player::all();
     }
 
     public function rules(): array
     {
         return [
+            
             'editing.req_lv' => ['required', 'max:255'],
+            'editing.player_id' => ['required', 'max:255'],
             'editing.min_hp' => ['numeric', 'required'],
             'editing.max_hp' => ['numeric', 'required'],
             'editing.min_atk' => ['required', 'numeric'],
@@ -41,6 +49,8 @@ class EditArmors extends EditObject
     public function makeBlankObject()
     {
         return $this->objectClass::make([
+            'id'=>'',
+            'player_id'=> 0,
             'req_lv' => 0,
             'min_hp' => 0,
             'max_hp' => 0,

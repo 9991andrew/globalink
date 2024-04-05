@@ -39,7 +39,8 @@ let updateData = new FormData();
 
 // Keep track of the last time the player moved so slow server updates don't cause them to move back
 let lastMoveTime = 0;
-
+//The array of the monsters on the map.
+let mapMonsters = [];
 /**
  * Do fetch post to resource URL with provided data and returns a promise.
  * If the request fails, or 'error' is not false, promise is rejected and a toast is shown with error info.
@@ -362,7 +363,9 @@ function move(xInc, yInc, smooth = true) {
     //Do the animation and update the player position on the map
     updateCursor(x, y, smooth);
 
-  showEncounter();
+
+    checkForEncounter(x,y);
+
 }// end move()
 
 
@@ -370,17 +373,46 @@ function move(xInc, yInc, smooth = true) {
 function getMonsterData() {
     const formData = new FormData();
     formData.append('mapId', mapId);
-    fetchPost("monsterEncounter.php", formData).then(data=>{
-        if(data.monster) {
-            console.log("Monster spawned: ", data.monster);
-        }else{
+    fetchPost("monsterEncounter.php", formData).then(data => {
+        if (data.monsters) {
+            mapMonsters = data.monsters;
+        } else {
             console.log(data.message);
         }
+        console.log(data);
+        console.log(player.stats[1]);
     });
+
+}
+function showEncounter(playerData, monsterData) {
+    console.log('Showing encounter with:', playerData, monsterData);
+    // Encounter modal
+    const encounterBox = document.getElementById('encounterForm');
+    // Modal backdrop
+    const backdrop = document.getElementById('modalBackdrop');
+
+    
+    // Updating text content based on provided data
+    document.getElementById('playerName').textContent = playerName || 'Player Name';
+    document.getElementById('playerHP').textContent = `HP: ${playerData.stats[9] || 'N/A'}`;
+    document.getElementById('monsterName').textContent = monsterData.name || 'Monster Name';
+    document.getElementById('monsterHP').textContent = `HP: ${monsterData.hp || 'N/A'}`;
+        // Display the modal and backdrop
+    encounterBox.style.display = 'block';
+    backdrop.style.display = 'block';
+    // Assuming monsterData includes item details
+    const itemDetails = monsterData.item.id ? `Item: ${monsterData.item.name} (Drop Rate: ${monsterData.drop_rate}%)` : 'None';
+    document.getElementById('monsterDrops').textContent = `Drops: ${itemDetails}`;
+
+
 }
 
-function showEncounter() {
-    document.getElementById('encounterForm').style.display = 'hidden';
+
+function checkForEncounter(x, y) {
+    const encounteredMonster = mapMonsters.find(monster => monster.x === x && monster.y === y);
+    if (encounteredMonster) {
+        showEncounter(player, encounteredMonster);
+    }
 }
 
 function updateCursor(x, y, smooth = false) {

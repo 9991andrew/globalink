@@ -8,6 +8,9 @@ use App\Models\Profession;
 use App\Models\Quest;
 use App\Models\Skill;
 use App\Models\User;
+use App\Models\Weapon;
+use App\Models\Armors;
+use App\Models\Potions;
 use Carbon\Carbon;
 use Livewire\Component;
 
@@ -16,10 +19,17 @@ class EditPlayer extends EditObject
     public $objectClass = 'Player';
     public $player_id;
     public $profession_id;
+    public $weapon_id;
+    public $potion_id;
+    public $armor_id;
     public $skill_id;
     public $quest_id;
     public $profession_xp=0;
     public $profession_level=0;
+    public $weapons;
+    public $potions;
+    public $armors;
+
     /**
      * Set all the rules so we can validate a player exists.
      * For a field to be editable at all it has to appear here.
@@ -40,6 +50,7 @@ class EditPlayer extends EditObject
     ];}
 
 
+
     public function professionRules(): array
     {
         // Make sure we don't allow these professions to be selected
@@ -55,6 +66,35 @@ class EditPlayer extends EditObject
 
         ];
     }
+    public function weaponsRules():array {
+        if(isset($this->player_id))
+            $existingWeapons = $this->editing->weapons()->pluck('id')->toArray();
+        else
+           $existingWeapons=[];
+        return [
+            'weapon_id' => ['required', 'numeric', 'exists:weapon,id', 'not_in:' . implode(',', $existingWeapons)],        ];
+    }
+    public function armorsRules():array {
+        if(isset($this->player_id))
+            $existingArmors = $this->editing->armor()->pluck('id')->toArray();
+        else
+           $existingArmors=[];
+           return [
+            'player_id' => ['required', 'numeric'],
+            'armor_id' => ['required', 'in:'.Weapon::whereNotIn('id', $existingArmors)->pluck('id')->implode(',')],
+        ];
+    }
+
+    public function potionRules():array {
+        if(isset($this->player_id))
+            $existingPotions = $this->editing->potion()->pluck('id')->toArray();
+        else
+           $existingPotions=[];
+           return [
+            'player_id' => ['required', 'numeric'],
+            'potion_id' => ['required', 'in:'.Potions::whereNotIn('id', $existingPotions)->pluck('id')->implode(',')],
+        ];
+    }
 
     public function addProfession()
     {
@@ -65,6 +105,42 @@ class EditPlayer extends EditObject
         $this->profession_id = null;
         $this->emit('rerenderParent');
         $this->emit('editorRefresh');
+    }
+    public function addArmor() {
+        $armor = \App\Models\Armors::find($this->armor_id);
+        if ($armor) {
+            $armor->id = $this->editing->id;
+            $armor->save();
+            
+            $this->armor_id = null; // Resetting weapon_id
+            $this->emit('rerenderParent'); // Potentially to refresh the list of weapons
+            $this->emit('editorRefresh'); // Assuming this is for UI refresh
+        }
+    }
+    public function addWeapon() {
+        // Assuming $this->weapon_id is the ID of an existing weapon
+        $weapon = \App\Models\Weapon::find($this->weapon_id);
+        if ($weapon) {
+            $weapon->id = $this->editing->id;
+            $weapon->save();
+            
+            $this->weapon_id = null; // Resetting weapon_id
+            $this->emit('rerenderParent'); // Potentially to refresh the list of weapons
+            $this->emit('editorRefresh'); // Assuming this is for UI refresh
+        }
+    }
+    
+    public function addPotion() {
+        // Assuming $this->weapon_id is the ID of an existing weapon
+        $potion = \App\Models\Potions::find($this->potion_id);
+        if ($potion) {
+            $potion->player_id = $this->editing->id;
+            $potion->save();
+            
+            $this->potion_id = null; // Resetting weapon_id
+            $this->emit('rerenderParent'); // Potentially to refresh the list of weapons
+            $this->emit('editorRefresh'); // Assuming this is for UI refresh
+        }
     }
 
 
@@ -125,5 +201,19 @@ class EditPlayer extends EditObject
         $this->editing->save();
         $this->emit('rerenderParent');
     }
+    public function getAvailableWeapons()
+{
+    return Weapon::whereNotIn('id', $this->editing->weapons()->pluck('id')->toArray())->get();
+}
+
+public function getAvailablePotions()
+{
+    return Potions::whereNotIn('id', $this->editing->potion()->pluck('id')->toArray())->get();
+}
+
+public function getAvailableArmors()
+{
+    return Armors::whereNotIn('id', $this->editing->armor()->pluck('id')->toArray())->get();
+}
 
 }

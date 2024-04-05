@@ -73,4 +73,7 @@ class Armors extends Model
     {
         return $this->getImageFilenameAttribute(false, true);
     }
+    public function player() {
+        return $this->belongsTo(Player::class);
+    }
 }

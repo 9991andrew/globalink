@@ -36,13 +36,19 @@ $spawnedMonsters = Monster::spawnMonsters($monsters, $tileProbability, $map->get
 
 if (!empty($spawnedMonsters)) {
     $data['monsters'] = array_map(function($monster) {
+        $itemDetails = $monster->getItemDetailsById($monster->getItemId());
         return [
             'id' => $monster->getId(),
             'name' => $monster->getName(),
             'hp' => $monster->getHp(),
-            'item_id' => $monster->getItemId(),
-            'x' => $monster->getX(), 
-            'y' => $monster->getY(), 
+            'item' => [ 
+                'id' => $monster->getItemId(),
+                'name' => $itemDetails['name'],
+                'description' => $itemDetails['description'], 
+            ],
+            'drop_rate' => $monster->getDropRate(),
+            'x' => $monster->getX(),
+            'y' => $monster->getY(),
         ];
     }, $spawnedMonsters);
 
@@ -52,6 +58,8 @@ if (!empty($spawnedMonsters)) {
     $data['message'] = "No monsters encountered.";
     $data['error'] = true;
 }
+
+
 
 echo json_encode($data);
 exit();
