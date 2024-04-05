@@ -344,7 +344,7 @@ function move(xInc, yInc, smooth = true) {
                 });
             }
         } else {
-            // Show the list of allowed professions
+
             html += '<ul class="error text-xs"><li><strong class="opacity-80">'+TXT.allowed_professions+'</strong></li>';
             building.profs.forEach(function(p) {
                 let prof = professions.find(obj => {return obj.id === p});
@@ -368,45 +368,89 @@ function move(xInc, yInc, smooth = true) {
 
 }// end move()
 
-
-
 function getMonsterData() {
     const formData = new FormData();
     formData.append('mapId', mapId);
     fetchPost("monsterEncounter.php", formData).then(data => {
-        if (data.monsters) {
-            mapMonsters = data.monsters;
-        } else {
-            console.log(data.message);
-        }
         console.log(data);
-        console.log(player.stats[1]);
+        if (data.monsters && data.monsters.length > 0) {
+            mapMonsters = data.monsters; 
+            populateGearList(data);
+        } else {
+            console.log("No monsters encountered.");
+        }
     });
+}
 
+function createGearTable(item) {
+    // Create a table and a tbody element
+    const table = document.createElement('table');
+    const tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+
+    // Helper function to add a row to the table
+    function addRow(key, value) {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th');
+        th.textContent = key;
+        const td = document.createElement('td');
+        td.textContent = value;
+        tr.appendChild(th);
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+    }
+
+
+    addRow('ID', item.id);
+    if (item.name) addRow('Name', item.name); // Only add row if name exists
+    addRow('HP', `${item.min_hp || '0'} - ${item.max_hp || '0'}`);
+    addRow('ATK', `${item.min_atk || '0'} - ${item.max_atk || '0'}`);
+    addRow('DEF', `${item.min_def || '0'} - ${item.max_def || '0'}`);
+    addRow('DEX', `${item.min_dex || '0'} - ${item.max_dex || '0'}`);
+    // Continue for other properties as needed
+
+    return table;
+}
+
+function populateListWithTables(items, listElement, itemType) {
+    console.log(itemType); 
+    listElement.innerHTML = ''; 
+    const header = document.createElement('h4');
+    header.textContent = itemType; 
+    header.className = 'gear-label'; 
+    listElement.parentNode.insertBefore(header, listElement);
+
+    if (items.length === 0) {
+        const noItemText = `No ${itemType} found`;
+        listElement.innerHTML = `<li>${noItemText}</li>`; 
+        return;
+    }
+
+    items.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.appendChild(createGearTable(item)); 
+        listElement.appendChild(listItem);
+    });
+}
+
+function populateGearList(data) {
+    populateListWithTables(data.gear.weapons, document.getElementById('weaponList'));
+    populateListWithTables(data.gear.armors, document.getElementById('armorList'));
+    populateListWithTables(data.gear.potions, document.getElementById('potionList'));
 }
 function showEncounter(playerData, monsterData) {
     console.log('Showing encounter with:', playerData, monsterData);
-    // Encounter modal
     const encounterBox = document.getElementById('encounterForm');
-    // Modal backdrop
     const backdrop = document.getElementById('modalBackdrop');
-
-    
-    // Updating text content based on provided data
     document.getElementById('playerName').textContent = playerName || 'Player Name';
     document.getElementById('playerHP').textContent = `HP: ${playerData.stats[9] || 'N/A'}`;
     document.getElementById('monsterName').textContent = monsterData.name || 'Monster Name';
     document.getElementById('monsterHP').textContent = `HP: ${monsterData.hp || 'N/A'}`;
-        // Display the modal and backdrop
     encounterBox.style.display = 'block';
     backdrop.style.display = 'block';
-    // Assuming monsterData includes item details
     const itemDetails = monsterData.item.id ? `Item: ${monsterData.item.name} (Drop Rate: ${monsterData.drop_rate}%)` : 'None';
     document.getElementById('monsterDrops').textContent = `Drops: ${itemDetails}`;
-
-
 }
-
 
 function checkForEncounter(x, y) {
     const encounteredMonster = mapMonsters.find(monster => monster.x === x && monster.y === y);
@@ -414,6 +458,11 @@ function checkForEncounter(x, y) {
         showEncounter(player, encounteredMonster);
     }
 }
+
+function handleEncounterDecision(fightOrFlee) {
+
+}
+
 
 function updateCursor(x, y, smooth = false) {
     document.getElementById('currentCoords').innerHTML = TXT.location_label+ '<strong class="ml-2">'+ x + '</strong>, <strong>' + y + '</strong>';

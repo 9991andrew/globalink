@@ -77,83 +77,6 @@
 
 
 
-
-                <x-input.group for="experience" label="Experience">
-                    {{ $editing->experience }} <span class="text-sm text-gray-500 text-opacity-80">XP</span>
-                </x-input.group>
-
-                <x-input.group for="professions" label="Professions">
-                    <div class="flex space-x-2">
-                        <select wire:model="profession_id" id="profession_id" class="flex-1 min-w-0">
-                            <option value="">Select a profession</option>
-                            @php
-                                $existingProfs = $editing->professions->pluck('id')->toArray();
-                            @endphp
-                            @foreach(Profession::whereNotIn('id', $existingProfs)->get() as $profession)
-                                <option value="{{$profession->id}}">{{$profession->name}}</option>
-                            @endforeach
-                        </select>
-                        <x-button type="button" class="ml-2" wire:click="addProfession">Add</x-button>
-                    </div>
-
-                    <ul class="mt-2">
-                    @foreach($editing->professions as $profession)
-                        <li wire:key="player{{$editing->id}}profession{{$profession->id}}">
-                            <button type="button" x-on:click="$dispatch('confirm-action', { id:'{{$editing->id}}', name:'{{addSlashes($profession->name)}}', className:'Player', pivot:'professions', pivotId:{{$profession->id}} })">
-                                <i class="fas fa-times text-red-500"></i>
-                            </button>
-                            <a class="link" href="{{route('professions')}}?filters%5Bid%5D={{ $profession->id }}"><span class="text-sm text-gray-500 text-opacity-80 mr-1">{{ $profession->id }}</span>{{ $profession->name }}</a> <span class="text-sm"><span class="text-gray-500 text-xs">Level</span> {{$profession->pivot->profession_level}} <span class="text-gray-500 text-xs ml-1">XP</span> {{ $profession->pivot->profession_xp }}</span>
-                        </li>
-                    @endforeach
-                    </ul>
-                </x-input.group>
-                <x-input.group for="weapons" label="Weapon">
-
-                <div class="flex space-x-2">
-                        <select wire:model="weapon_id" id="weapon_id" class="flex-1 min-w-0">
-                            <option value="">Select a Weapon</option>
-                            @php
-                              $existingWeapons = $editing->weapons()->pluck('id')->toArray();
-                            @endphp
-                            @foreach(App\Models\Weapon::whereNotIn('id', $existingWeapons)->get() as $weapon)
-                                <option value="{{$weapon->id}}">{{$weapon->id}}</option>
-                            @endforeach
-                        </select>
-                        <x-button type="button" class="ml-2" wire:click="addWeapon">Add</x-button>
-                </div>
-                </x-input.group> 
-                <x-input.group for="armors" label="Armor">
-                    <div class="flex space-x-2">
-                        <select wire:model="armor_id" id="armor_id" class="flex-1 min-w-0">
-                            <option value="">Select an Armor</option>
-                            @php
-                              $existingArmors = $editing->armor()->pluck('id')->toArray();
-                            @endphp
-                            @foreach(App\Models\Armors::whereNotIn('id', $existingArmors)->get() as $armor)
-                                <option value="{{$armor->id}}">{{$armor->id}}</option>
-                            @endforeach
-                        </select>
-                        <x-button type="button" class="ml-2" wire:click="addArmor">Add</x-button>
-                    </div>
-                </x-input.group>
-                <x-input.group for="potions" label="Potion">
-                    <div class="flex space-x-2">
-                        <select wire:model="potion_id" id="potion_id" class="flex-1 min-w-0">
-                            <option value="">Select a Potion</option>
-                            @php
-                              $existingPotions = $editing->potion()->pluck('id')->toArray();
-                            @endphp
-                            @foreach(App\Models\Potions::whereNotIn('id', $existingPotions)->get() as $potion)
-                                <option value="{{$potion->id}}">{{$potion->id}}</option>
-                            @endforeach
-                        </select>
-                        <x-button type="button" class="ml-2" wire:click="addPotion">Add</x-button>
-                   
-                    </div>
-                </x-input.group>
-
-
-
                 <x-input.group for="skills" label="Skills">
                     <div class="flex space-x-2">
                         <select wire:model="skill_id" id="skill_id" class="flex-1 min-w-0">
@@ -213,11 +136,6 @@
                         @endforeach
                     </ul>
                 </x-input.group>
-
-                
-
-
-
                 <x-input.group for="items" label="Player's Items">
                     <ul class="mt-2">
                         @foreach($editing->playerItems as $playerItem)
@@ -229,13 +147,7 @@
                             </li>
                         @endforeach
                     </ul>
-
-
-
-
                 </x-input.group>
-
-
             @endif
         </x-slot>
         <x-slot name="footer">

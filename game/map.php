@@ -164,6 +164,17 @@ body {
     font-size: 28px; 
     margin-top: 20px; 
 }
+/* Style for gear labels */
+.gear-label {
+    font-size: 20px; /* Adjust the size as needed */
+    font-weight: bold; /* Makes the font bold */
+    margin-top: 20px; /* Adds some space above the label for better separation */
+}
+
+/* Style for the list to add some space below */
+ul {
+    margin-bottom: 20px; /* Adds some space below the list for better separation */
+}
 
 /* Background images for each type of map tile */
 <?=MapTile::getMapTileStyles()?>

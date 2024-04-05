@@ -25,14 +25,16 @@ if (!isset($_POST["mapId"])) {
 }
 
 $mapId = $player->getMapId();
+
 $x = $player->getX();
 $y = $player->getY();
 $map = new Map($mapId);
+
 $monsters = [];
 $monsters = Monster::fetchAllMonstersForMap($mapId);
 $tileProbability = 5;
 $spawnedMonsters = Monster::spawnMonsters($monsters, $tileProbability, $map->getTiles(), count($monsters));
-
+$gearForPlayer = Monster::getGearForPlayer($_SESSION['playerId']);
 
 if (!empty($spawnedMonsters)) {
     $data['monsters'] = array_map(function($monster) {
@@ -51,7 +53,7 @@ if (!empty($spawnedMonsters)) {
             'y' => $monster->getY(),
         ];
     }, $spawnedMonsters);
-
+    $data['gear'] = $gearForPlayer;
     $data['message'] = "Monsters encountered!";
     $data['error'] = false;
 } else {

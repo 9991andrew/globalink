@@ -6,7 +6,16 @@
             @else New {{ camelToSpaced($objectClass) }}
             @endisset
         </x-slot>
+
         <x-slot name="content">
+    <x-input.group for="player_id" label="Player">
+        <select id="player_id" wire:model="editing.player_id" class="form-control">
+            <option value="">Select a Player</option>
+            @foreach ($players as $player)
+                <option value="{{ $player->id }}">{{ $player->name }}</option>
+             @endforeach
+            </select>
+        </x-input.group>
             <x-input.group for="req_lv" label="REQ LV" :error="$errors->first('editing.req_lv')">
                 <x-input wire:model="editing.req_lv" id="req_lv" type="number"/>
             </x-input.group>

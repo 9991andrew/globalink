@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Livewire\WithFileUploads;
+use App\Models\Player;
 
 class EditPotions extends EditObject
 {
@@ -12,7 +13,10 @@ class EditPotions extends EditObject
     public $objectClass = 'App\Models\Potions';
     public $newImage;
     public $iteration;
-
+    public $players;
+    public function mount() {
+        $this->players = Player::all();
+    }
     public function updatedNewImage()
     {
         $this->validate(['newImage' => 'nullable|image|max:1000']);
@@ -22,6 +26,7 @@ class EditPotions extends EditObject
     {
         return [
             'editing.req_lv' => ['required', 'numeric', 'gt:0'],
+            'editing.player_id' => ['required', 'max:255'],
             'editing.hp' => ['numeric', 'max:255'],
             'editing.mp' => ['numeric', 'max:255'],
             'editing.atk' => ['numeric', 'max:255'],

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Livewire\WithFileUploads;
+use App\Models\Player;
 
 class EditWeapon extends EditObject
 {
@@ -12,11 +13,15 @@ class EditWeapon extends EditObject
     public $objectClass = 'App\Models\Weapon';
     public $newImage;
     public $iteration;
-
+    public $players;
+    public function mount() {
+        $this->players = Player::all();
+    }
     public function rules(): array
     {
         return [
             'editing.req_lv' => ['numeric','required'],
+            'editing.player_id' => ['required', 'max:255'],
             'editing.min_hp' => ['numeric', 'required'],
             'editing.max_hp' => ['numeric', 'required'],
             'editing.min_mp_consumtion' => ['numeric', 'required'],

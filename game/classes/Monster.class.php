@@ -8,7 +8,6 @@ class Monster extends Dbh {
     protected $item_id;
     protected $drop_rate;
     protected $map_id;
-
     public $x;
     public $y;
 
@@ -32,9 +31,33 @@ class Monster extends Dbh {
         }
        
     }
+    public static function getGearForPlayer($playerId) {
+        $db = new self();
+        $gear = ['armors' => [], 'weapons' => [], 'potions' => []];
+    
+        // Fetch Armors
+        $sql = "SELECT * FROM armors WHERE player_id = ?";
+        $stmt = $db->connect()->prepare($sql);
+        $stmt->execute([$playerId]);
+        $gear['armors'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        // Fetch Weapons
+        $sql = "SELECT * FROM weapon WHERE player_id = ?";
+        $stmt = $db->connect()->prepare($sql);
+        $stmt->execute([$playerId]);
+        $gear['weapons'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        // Fetch Potions
+        $sql = "SELECT * FROM potions WHERE player_id = ?";
+        $stmt = $db->connect()->prepare($sql);
+        $stmt->execute([$playerId]);
+        $gear['potions'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $gear;
+    }
+    
 
-
-
+  //Getters and setters.
     public function getId(): int {
         return $this->id;
     }
