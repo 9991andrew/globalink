@@ -21,8 +21,29 @@ try {
 
 if (!isset($_POST["mapId"])) {
     $data["message"] = "no map id given";
-    $data["error"] = true;
+    $data["error"] = false;
 }
+
+if(isset($_POST['monsterDefeated']) && $_POST['monsterDefeated'] == 'true' && isset($_POST['itemId'])) {
+
+    $itemId = (int) $_POST['itemId'];
+    if($itemId) {
+        try{
+            $player->addItem($itemId);
+            $data['playerUpdated'] = true;
+            $data['message'] = "Monster defeated and item added";
+        }catch(Exception $e){
+            $data['playerUpdated'] = false;
+            $data['message'] = "Failed to add item to inventory: " . $e->getMessage();
+        }
+    } else {
+        $data['playerUpdated'] = false;
+        $data['message'] = "Monster defeated, but no item dropped.";
+    }
+    echo json_encode($data);
+    exit();
+}
+
 
 $mapId = $player->getMapId();
 
@@ -56,13 +77,14 @@ if (!empty($spawnedMonsters)) {
     $data['gear'] = $gearForPlayer;
     $data['message'] = "Monsters encountered!";
     $data['error'] = false;
+    echo json_encode($data);
+    exit();
 } else {
-    $data['message'] = "No monsters encountered.";
-    $data['error'] = true;
+    $data['error'] = false;
 }
 
 
 
-echo json_encode($data);
-exit();
+
+
 

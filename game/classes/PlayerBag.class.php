@@ -39,7 +39,8 @@ class PlayerBag extends Bag {
         while ($row = $stmt->fetch()) {
             if (isset($row['guid']) && strlen($row['guid']))
                 array_push($this->slotItems, array("slotId"=>(int)$row['bag_slot_id'], "playerItem"=>new PlayerItem($row)));
-            else array_push($this->slotItems, array("slotId"=>(int)$row['bag_slot_id'], "playerItem"=>null));
+            else 
+                array_push($this->slotItems, array("slotId"=>(int)$row['bag_slot_id'], "playerItem"=>null));
         }            
 
     } // end constructor

@@ -55,37 +55,6 @@ class Monster extends Dbh {
     
         return $gear;
     }
-    
-
-  //Getters and setters.
-    public function getId(): int {
-        return $this->id;
-    }
-    public function getName(): string { 
-        return $this->name;
-    }
-    public function getHp() {
-        return $this->hp;
-    }
-    public function getItemId(): int {  
-        return $this->item_id;
-    }
-    public function getDropRate(): int {
-        return $this->drop_rate;
-    }
-    public function getMapId(): int {
-        return $this->map_id;
-    }
-    public function getX() {
-        return $this->x;
-    }
-    public function getY() {
-        return $this->y;
-    }
-    public function setCoordinate($x, $y) {
-        $this->x = $x;
-        $this->y = $y;
-    }
     public static function fetchAllMonstersForMap($mapId) {
         $db = new self();
         $query = "SELECT * FROM monster WHERE map_id=?";
@@ -136,6 +105,36 @@ class Monster extends Dbh {
         
         return $itemDetails; // Return the array of item details
     }
+  //Getters and setters.
+    public function getId(): int {
+        return $this->id;
+    }
+    public function getName(): string { 
+        return $this->name;
+    }
+    public function getHp() {
+        return $this->hp;
+    }
+    public function getItemId(): int {  
+        return $this->item_id;
+    }
+    public function getDropRate(): int {
+        return $this->drop_rate;
+    }
+    public function getMapId(): int {
+        return $this->map_id;
+    }
+    public function getX() {
+        return $this->x;
+    }
+    public function getY() {
+        return $this->y;
+    }
+    public function setCoordinate($x, $y) {
+        $this->x = $x;
+        $this->y = $y;
+    }
+
     
     
 

@@ -66,8 +66,6 @@ class EditArmors extends EditObject
             
         ]);
     }
-
-
     public function save()
     {
         $this->validate();

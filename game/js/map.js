@@ -41,6 +41,14 @@ let updateData = new FormData();
 let lastMoveTime = 0;
 //The array of the monsters on the map.
 let mapMonsters = [];
+//monster data structure
+let currentEncounter = {
+    monster: null,
+    inEncounter: false,
+    defeated:false
+};
+//player gear for monster
+let playerGear = [];
 /**
  * Do fetch post to resource URL with provided data and returns a promise.
  * If the request fails, or 'error' is not false, promise is rejected and a toast is shown with error info.
@@ -215,6 +223,7 @@ function up() {
 
 function down() {
     move(0, -1);
+    console.log('Pressing down');
 }
 
 // Diagonal movement
@@ -237,6 +246,7 @@ function downright() {
 function move(xInc, yInc, smooth = true) {
     // Don't allow player to move with a modal open.
     closeModal();
+    if(currentEncounter.inEncounter) return;
     // If moving 0,0 to refresh player's position and info, we don't need all these checks
     let x = player.x + xInc;
     let y = player.y + yInc;
@@ -368,16 +378,19 @@ function move(xInc, yInc, smooth = true) {
 
 }// end move()
 
+
 function getMonsterData() {
     const formData = new FormData();
     formData.append('mapId', mapId);
     fetchPost("monsterEncounter.php", formData).then(data => {
-        console.log(data);
+        console.log('Data: ', data);
         if (data.monsters && data.monsters.length > 0) {
             mapMonsters = data.monsters; 
+            playerGear = data.gear;
             populateGearList(data);
         } else {
-            console.log("No monsters encountered.");
+           // console.log("No monsters encountered.");
+            currentEncounter.inEncounter = false;
         }
     });
 }
@@ -439,6 +452,7 @@ function populateGearList(data) {
     populateListWithTables(data.gear.potions, document.getElementById('potionList'));
 }
 function showEncounter(playerData, monsterData) {
+  //  if(inEncounter) return;
     console.log('Showing encounter with:', playerData, monsterData);
     const encounterBox = document.getElementById('encounterForm');
     const backdrop = document.getElementById('modalBackdrop');
@@ -454,15 +468,117 @@ function showEncounter(playerData, monsterData) {
 
 function checkForEncounter(x, y) {
     const encounteredMonster = mapMonsters.find(monster => monster.x === x && monster.y === y);
+    
     if (encounteredMonster) {
-        showEncounter(player, encounteredMonster);
+      currentEncounter.monster = encounteredMonster;
+      currentEncounter.inEncounter = true;
+      showEncounter(player, currentEncounter.monster);  
+    }
+}
+function calculatePlayerStatsWithGear(playerData, gearData) {
+    const totalStats = {
+        hp: playerData.h,
+        atk: playerData.at,
+        def: playerData.df,
+    };
+    gearData.weapons.forEach(weapon => {
+        totalStats.hp += (weapon.min_hp + weapon.max_hp)/2;
+        totalStats.atk += (weapon.min_atk + weapon.max_atk)/2;
+        totalStats.def += (weapon.min_def + weapon.max_def)/2;
+    });
+    gearData.armors.forEach(armor=>{
+        totalStats.hp += (armor.min_hp + armor.max_hp)/2;
+        totalStats.atk += (armor.min_atk + armor.max_atk)/2;
+        totalStats.def += (armor.min_def + armor.max_def)/2;
+    });
+    return totalStats;
+}
+
+//Calculate the damage applied
+function calculateDamage(playerData, monsterData, attackType) {
+    const attackSettings = {
+        'small':{multiplier: 0.5, successChance: 0.9},
+        'medium':{multiplier: 1, successChance: 0.6},
+        'large':{multiplier: 1.5, successChance:0.3}
+    };
+    const settings = attackSettings[attackType];
+    if(!settings) {
+        console.error("Invalid attack type: ", attackType);
+        return 0;
+    }
+    if(Math.random() > settings.successChance) {
+        console.log(`${attackType} attack failed`);
+        return 0;
+    }
+    let playerAttackStrength = playerData.atk;
+    monsterData.weapons.forEach(weapon=>{
+        const weaponAttackValue = (weapon.min_atk + weapon.max_atk)/2;
+        playerAttackStrength += weaponAttackValue;
+    });
+    const damageDealt = playerAttackStrength * settings.multiplier;
+    console.log(`${attackType} attack was successful! Dealt ${damageDealt} damage`);
+    return damageDealt;
+}
+
+function handleAttack(attackType) {
+    if(!currentEncounter.inEncounter || !currentEncounter.monster) {
+        console.log("No encounter is active.");
+        return;
+    }
+    const playerStatsWithGear = calculatePlayerStatsWithGear(player, playerGear);
+    const damageDealt = calculateDamage(playerStatsWithGear, playerGear, attackType);
+    if (damageDealt > 0) {
+        console.log(`${attackType} attack was successful! Dealt ${damageDealt} damage`);
+        currentEncounter.monster.hp -= damageDealt;
+        updateMonsterHPUI(currentEncounter.monster.hp);
+        if(currentEncounter.monster.hp <= 0) {
+            currentEncounter.defeated = true;
+           closeEncounterModal();
+        }
+    } else {
+        console.log(`${attackType} attack failed or no damage was dealt.`);
     }
 }
 
-function handleEncounterDecision(fightOrFlee) {
-
+function updateMonsterHPUI(newHP){
+    document.getElementById('monsterHP').textContent = `HP: ${newHP}`;
 }
 
+function shouldDropItem(dropRate) {
+    const randomChance = Math.random() * 100;
+    console.log("dropRate: ", dropRate);
+    console.log("randomChance: ", randomChance);
+    return randomChance <= (dropRate*100);
+}
+
+
+function closeEncounterModal() {
+    const defeatedData = new FormData();
+    document.getElementById('encounterForm').style.display = 'none';
+    const encounterBox = document.getElementById('encounterForm');
+    const backdrop = document.getElementById('modalBackdrop');
+    encounterBox.style.display = 'none';
+    backdrop.style.display = 'none';
+    currentEncounter.inEncounter = false;
+    if(!currentEncounter.inEncounter && currentEncounter.defeated) {
+        if(shouldDropItem(currentEncounter.monster.drop_rate)) {
+            console.log("HI");
+            console.log("ID: ", currentEncounter.monster.item.id);
+            defeatedData.append('itemId', currentEncounter.monster.item.id);
+            defeatedData.append('monsterDefeated', currentEncounter.defeated);
+            fetchPost("monsterEncounter.php", defeatedData).then(data=>{
+                if(data.playerUpdated) {
+                    console.log("Player inventory updated: ", data.playerUpdated);
+                }
+            });
+        }
+        //We need to add the item to our inventory here or add it to the player.     
+    }
+    getMonsterData(); //Calling this again to update the
+}
+function updatePlayerAfterEncounter(data) {
+    data.player.mny = player.mny;
+}
 
 function updateCursor(x, y, smooth = false) {
     document.getElementById('currentCoords').innerHTML = TXT.location_label+ '<strong class="ml-2">'+ x + '</strong>, <strong>' + y + '</strong>';
@@ -1009,13 +1125,13 @@ function gameUpdate(data) {
 
         player = data.player;
         if (typeof data.playerHash === "string") playerHash = data.playerHash;
-
         // Allow the player to move again as their state is in sync
         if (!movementAllowed) setMovementAllowed(true);
 
         // Update UI, status bar, player info panel with new player data
         updatePlayerStatus();
     }
+    updatePlayerAfterEncounter(data);
 
     // PlayerBag updating;
     if (typeof data.playerBag === 'object') {

@@ -36,6 +36,21 @@ if (isset($_POST['srcSlot']) && isset($_POST['destSlot'])) {
         exit();
     }
 }
+//Money
+if (isset($_POST['moneyUpdate']) && is_numeric($_POST['moneyUpdate'])) {
+    $moneyUpdate = (int) $_POST['moneyUpdate'];
+    try{
+        $data['money'] = $player->addMoney($moneyUpdate);
+        $data['message'] ="money changed successfully";
+        $data['error'] = false;
+    }catch(Exception $e) {
+        $data['error '] = true;
+        $data['message'] = $e->getMessage();    
+    }
+    echo json_encode($data);    
+    exit();
+}
+
 
 // Move the player
 if (isset($_POST['mvX'])) {

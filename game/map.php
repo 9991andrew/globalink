@@ -190,7 +190,6 @@ ul {
     </div>
 
     <div class="encounter-content">
-        <!-- Player Info on the Left -->
         <div class="player-section">
             <div class="player-info">
                 <h3 id="playerName">Player Name</h3>
@@ -207,11 +206,12 @@ ul {
             </div>
         </div>
         
-        <!-- Actions (Buttons) in the Middle -->
-        <div class="encounter-actions">
-            <button onclick="handleEncounterDecision('fight')">Fight</button>
-            <button onclick="handleEncounterDecision('flee')">Flee</button>
-        </div>
+    <!-- Encounter Actions (Buttons) -->
+    <div class="encounter-actions">
+        <button onclick="handleAttack('small')">Small Attack</button>
+        <button onclick="handleAttack('medium')">Medium Attack</button>
+        <button onclick="handleAttack('large')">Large Attack</button>
+    </div>
 
         <!-- Monster Info on the Right -->
         <div class="monster-info">
