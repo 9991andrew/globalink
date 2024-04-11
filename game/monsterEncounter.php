@@ -42,6 +42,22 @@ if(isset($_POST['monsterDefeated']) && $_POST['monsterDefeated'] == 'true' && is
     }
     echo json_encode($data);
     exit();
+} else if(isset($_POST['monsterDefeated']) && $_POST['monsterDefeated'] == 'false' && isset($_POST['dmg'])) {
+    $dmg = (int) $_POST['dmg'];
+    if($dmg) {
+        try {
+        $player->setHealth($player->getHealth() - $dmg);
+        $data['playerUpdated'] = true;
+        $data['message'] = "Monster was not defeated.";
+        $data['playerHP'] = $player->getHealth();
+        } catch(Exception $e) {
+            $data['playerUpdated'] = false;
+            $data['message'] = "Monster was defeated but something happened.";
+                
+        }
+    }
+    echo json_encode($data);
+    exit();
 }
 
 

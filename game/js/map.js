@@ -395,6 +395,38 @@ function getMonsterData() {
     });
 }
 
+function getRetaliationChance(attackType) {
+    const attackChances = {
+        'small': 0.5,
+        'medium': 0.7,
+        'large': 0.9
+    };
+    return attackChances[attackType] || 0;
+}
+
+function calculateMonsterAttack(playerArmor, playerAttackDamage) {
+    let baseRetaliatoryDmg = playerAttackDamage;
+    console.log("playerArmor: ", playerArmor, ", retal damage: ", playerAttackDamage);
+    let damageReduction = baseRetaliatoryDmg * (playerArmor/100);
+    let finalDamage = baseRetaliatoryDmg - damageReduction;
+    finalDamage = Math.max(0, finalDamage);
+    return finalDamage;
+}
+function monsterRetaliation(playerAttackDamage, playerArmor, attackType) {
+    const retalChance = getRetaliationChance(attackType);
+    if(Math.random() <= retalChance) {
+        
+        const retaliationDamage = calculateMonsterAttack(playerArmor, playerAttackDamage);
+        console.log("Monster retaliated with: ", retaliationDamage);
+        return retaliationDamage;
+    } else {
+        console.log("monster fails to retaliate");
+        return 0;
+    }
+}
+
+
+
 function createGearTable(item) {
     // Create a table and a tbody element
     const table = document.createElement('table');
@@ -426,7 +458,6 @@ function createGearTable(item) {
 }
 
 function populateListWithTables(items, listElement, itemType) {
-    console.log(itemType); 
     listElement.innerHTML = ''; 
     const header = document.createElement('h4');
     header.textContent = itemType; 
@@ -497,17 +528,13 @@ function calculatePlayerStatsWithGear(playerData, gearData) {
 //Calculate the damage applied
 function calculateDamage(playerData, monsterData, attackType) {
     const attackSettings = {
-        'small':{multiplier: 0.5, successChance: 0.9},
-        'medium':{multiplier: 1, successChance: 0.6},
-        'large':{multiplier: 1.5, successChance:0.3}
+        'small':{multiplier: 0.5, successChance: 0.3},
+        'medium':{multiplier: 1, successChance: 0.4},
+        'large':{multiplier: 1.5, successChance:0.5}
     };
     const settings = attackSettings[attackType];
     if(!settings) {
         console.error("Invalid attack type: ", attackType);
-        return 0;
-    }
-    if(Math.random() > settings.successChance) {
-        console.log(`${attackType} attack failed`);
         return 0;
     }
     let playerAttackStrength = playerData.atk;
@@ -516,6 +543,11 @@ function calculateDamage(playerData, monsterData, attackType) {
         playerAttackStrength += weaponAttackValue;
     });
     const damageDealt = playerAttackStrength * settings.multiplier;
+    
+    if(Math.random() > settings.successChance) {
+        console.log(`${attackType} attack failed`);
+        return 0 ;
+    }
     console.log(`${attackType} attack was successful! Dealt ${damageDealt} damage`);
     return damageDealt;
 }
@@ -530,19 +562,35 @@ function handleAttack(attackType) {
     if (damageDealt > 0) {
         console.log(`${attackType} attack was successful! Dealt ${damageDealt} damage`);
         currentEncounter.monster.hp -= damageDealt;
-        updateMonsterHPUI(currentEncounter.monster.hp);
+        updateMonsterHPUI(currentEncounter.monster.hp, 0);
         if(currentEncounter.monster.hp <= 0) {
             currentEncounter.defeated = true;
            closeEncounterModal();
         }
     } else {
         console.log(`${attackType} attack failed or no damage was dealt.`);
+        //If we don't deal any damage then we need to send the monster the attack damage the player has.
+        const monsterDmg = monsterRetaliation(playerStatsWithGear.atk, playerStatsWithGear.def, attackType);
+        if (monsterDmg > 0) {
+            const notDefeatedData=  new FormData();
+            notDefeatedData.append("monsterDefeated", 'false');
+            notDefeatedData.append("dmg", monsterDmg);    
+            fetchPost('monsterEncounter.php', notDefeatedData).then(data=> {
+                if (data.playerUpdated) {
+                    console.log("Player updated");
+                    updateMonsterHPUI(0, data.playerHP);
+                }
+            });
+        }       
     }
+
 }
 
-function updateMonsterHPUI(newHP){
-    document.getElementById('monsterHP').textContent = `HP: ${newHP}`;
+function updateMonsterHPUI(newMonsterHP, newPlayerHP){
+    document.getElementById('monsterHP').textContent = `HP: ${newMonsterHP}`;
+    document.getElementById('playerHP').textContent = `HP: ${newPlayerHP}`;
 }
+
 
 function shouldDropItem(dropRate) {
     const randomChance = Math.random() * 100;
@@ -574,10 +622,11 @@ function closeEncounterModal() {
         }
         //We need to add the item to our inventory here or add it to the player.     
     }
-    getMonsterData(); //Calling this again to update the
+    getMonsterData(); //Calling this again to update the monster locations
 }
 function updatePlayerAfterEncounter(data) {
     data.player.mny = player.mny;
+    data.player.health = player.health;
 }
 
 function updateCursor(x, y, smooth = false) {
