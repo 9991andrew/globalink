@@ -96,8 +96,6 @@ class Monster extends Dbh {
     }
     
     public function getItemDetailsById($itemId) {
-        // This is a placeholder. You'll need to implement the logic to query your database for the item.
-        // For example:
         $query = "SELECT * FROM items WHERE id = ?";
         $stmt = $this->connect()->prepare($query);
         $stmt->execute([$itemId]);
