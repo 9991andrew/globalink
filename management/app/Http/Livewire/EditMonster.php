@@ -29,7 +29,7 @@ class EditMonster extends EditObject
             'editing.name' => ['required', 'max:255'],
             'editing.hp' => ['nullable', 'max:255'],
             'editing.item_id' => ['nullable','max:255'],
-            'editing.drop_rate' => ['nullable','max:255'],
+            'editing.drop_rate' => ['nullable', 'numeric', 'min:0', 'max:1'],
             'editing.map_id'=>['nullable', 'max:255'],
         ];
     }

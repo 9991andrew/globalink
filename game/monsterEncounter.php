@@ -42,36 +42,36 @@ if(isset($_POST['monsterDefeated']) && $_POST['monsterDefeated'] == 'true' && is
     }
     echo json_encode($data);
     exit();
-} else if(isset($_POST['monsterDefeated']) && $_POST['monsterDefeated'] == 'false' && isset($_POST['dmg'])) {
-    $dmg = (int) $_POST['dmg'];
-    if($dmg) {
+} else if(isset($_POST['monsterDefeated']) && $_POST['monsterDefeated'] == 'false' && isset($_POST['playerHealth'])) {
+    $playerHealth = (int) $_POST['playerHealth'];
+    
         try {
-        $player->setHealth($player->getHealth() - $dmg);
-        $data['playerUpdated'] = true;
-        $data['message'] = "Monster was not defeated.";
-        $data['playerHP'] = $player->getHealth();
+            $player->setHealth($playerHealth);
+            $data['playerUpdated'] = true;
+            $data['message'] = "HP of player was updated";
+            $data['playerHP'] = $player->getHealth();
+            echo json_encode($data);
+            exit();
         } catch(Exception $e) {
             $data['playerUpdated'] = false;
             $data['message'] = "Monster was defeated but something happened.";
-                
+            echo json_encode($data);
+            exit();
         }
-    }
-    echo json_encode($data);
-    exit();
+
+
 }
 
+    $mapId = $player->getMapId();
+    $x = $player->getX();
+    $y = $player->getY();
+    $map = new Map($mapId);
 
-$mapId = $player->getMapId();
-
-$x = $player->getX();
-$y = $player->getY();
-$map = new Map($mapId);
-
-$monsters = [];
-$monsters = Monster::fetchAllMonstersForMap($mapId);
-$tileProbability = 5;
-$spawnedMonsters = Monster::spawnMonsters($monsters, $tileProbability, $map->getTiles(), count($monsters));
-$gearForPlayer = Monster::getGearForPlayer($_SESSION['playerId']);
+    $monsters = [];
+    $monsters = Monster::fetchAllMonstersForMap($mapId);
+    $tileProbability = 5;
+    $spawnedMonsters = Monster::spawnMonsters($monsters, $tileProbability, $map->getTiles(), count($monsters));
+    $gearForPlayer = Monster::getGearForPlayer($_SESSION['playerId']);
 
 if (!empty($spawnedMonsters)) {
     $data['monsters'] = array_map(function($monster) {
@@ -85,7 +85,7 @@ if (!empty($spawnedMonsters)) {
                 'name' => $itemDetails['name'],
                 'description' => $itemDetails['description'], 
             ],
-            'drop_rate' => $monster->getDropRate(),
+            'drop_rate' => ($monster->getDropRate()) ,
             'x' => $monster->getX(),
             'y' => $monster->getY(),
         ];
@@ -95,9 +95,12 @@ if (!empty($spawnedMonsters)) {
     $data['error'] = false;
     echo json_encode($data);
     exit();
-} else {
-    $data['error'] = false;
-}
+    } else {
+        $data['error'] = false;
+        $data['message'] = "No monsters on map";
+        echo json_encode($data);
+        exit();
+}   
 
 
 

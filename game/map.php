@@ -164,6 +164,12 @@ body {
     font-size: 28px; 
     margin-top: 20px; 
 }
+.encounter-message {
+    color: red;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
 /* Style for gear labels */
 .gear-label {
     font-size: 20px; /* Adjust the size as needed */
@@ -190,10 +196,11 @@ ul {
     </div>
 
     <div class="encounter-content">
+        <div id="encounterMessage" class="encounter-message"></div>
         <div class="player-section">
             <div class="player-info">
                 <h3 id="playerName">Player Name</h3>
-                <p id="playerHP">HP: 100</p>
+                <p id="playerHP">HP: -1</p>
                 <!-- Player's Weapons -->
                 <h3>Weapons</h3>
                 <ul id="weaponList"></ul>

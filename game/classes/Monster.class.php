@@ -24,7 +24,7 @@ class Monster extends Dbh {
                 $this->name = $result['name'];
                 $this->hp = (int) $result['hp'];
                 $this->item_id = (int) $result['item_id'];
-                $this->drop_rate = (int) $result['drop_rate'];
+                $this->drop_rate = (float) $result['drop_rate'];
                 $this->map_id = (int) $result['map_id'];
             
             }
@@ -116,7 +116,7 @@ class Monster extends Dbh {
     public function getItemId(): int {  
         return $this->item_id;
     }
-    public function getDropRate(): int {
+    public function getDropRate(): float {
         return $this->drop_rate;
     }
     public function getMapId(): int {

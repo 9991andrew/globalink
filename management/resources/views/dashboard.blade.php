@@ -59,36 +59,33 @@
                 </div>
             </dl>
         </div>
-        <div class="px-4 py-2">
-    <h2 class="text-xl font-bold text-center">Player versus Environment</h2>
-    <!-- List of routes with a short description of what they do. Show any relevant data here if necessary -->
-    <dl class="bg-white dark:bg-gray-800 shadow p-2 sm:mx-auto text-sm rounded-lg flex flex-wrap">
-        <div class="py-2 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <dt class="text-lg">
-                <a href="{{route('monster')}}" class="link pr-1">Monster</a>
-            </dt>
-            <dd>Add/Edit Monster</dd>
-        </div>
-        <div class="py-2 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <dt class="text-lg">
-                <a href="{{route('potions')}}" class="link pr-1">Potion</a>
-            </dt>
-            <dd>Add/Edit Potion</dd>
-        </div>
-        <div class="py-2 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <dt class="text-lg">
-                <a href="{{route('armors')}}" class="link pr-1">Armor</a>
-            </dt>
-            <dd>Add/Edit Armor</dd>
-        </div>
-        <div class="py-2 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <dt class="text-lg">
-                <a href="{{route('weapon')}}" class="link pr-1">Weapon</a>
-            </dt>
-            <dd>Add/Edit Weapon</dd>
-        </div>
-    </dl>
-</div>
+    <div class="px-4 py-2">
+        <h2 class="text-xl font-bold text-center">Player versus Environment</h2>
+        <dl class="bg-white dark:bg-gray-800 shadow p-2 sm:mx-auto text-sm rounded-lg flex flex-wrap">
+            <div class="py-2 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <dt class="text-lg">
+                    <a href="{{route('monster')}}" class="link pr-1">Monster</a>
+                </dt>
+                <dd>Add/Edit Monster</dd>
+            </div>
+            <div class="py-2 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <dt class="text-lg">
+                    <a href="{{route('potions')}}" class="link pr-1">Potion</a>
+                </dt>
+                <dd>Add/Edit Potion</dd>
+            </div>
+            <div class="py-2 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <dt class="text-lg">
+                    <a href="{{route('armors')}}" class="link pr-1">Armor</a>
+                </dt>
+                <dd>Add/Edit Armor</dd>
+            </div>
+            <div class="py-2 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <dt class="text-lg">
+                    <a href="{{route('weapon')}}" class="link pr-1">Weapon</a>
+                </dt>
+                <dd>Add/Edit Weapon</dd>
+            </div>
+        </dl>
     </div>
-
 </x-app-layout>

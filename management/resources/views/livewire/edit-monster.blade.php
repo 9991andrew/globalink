@@ -32,7 +32,7 @@
 
             {{-- Item Drop Rate --}}
             <x-input.group for="drop_rate" label="Item Drop Rate" :error="$errors->first('editing.drop_rate')">
-                <x-input wire:model="editing.drop_rate" id="drop_rate" type="number" class="form-control w-full sm:w-auto"/>
+                 <x-input wire:model="editing.drop_rate" id="drop_rate" type="number" step="0.01" class="form-control w-full sm:w-auto"/>
             </x-input.group>
 
             {{-- Map ID --}}
