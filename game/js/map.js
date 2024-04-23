@@ -459,9 +459,9 @@ function getMonsterData() {
 
 function getRetaliationChance(attackType) {
     const attackChances = {
-        'small': 0.5,
-        'medium': 0.7,
-        'large': 0.9
+        'small': 0.9,
+        'medium': 0.5,
+        'large': 0.3
     };
     return attackChances[attackType] || 0;
 }
@@ -471,10 +471,10 @@ function monsterRetaliation(playerAttackDamage, playerArmor, attackType) {
     if(Math.random() <= retalChance) {
         
         const retaliationDamage = calculateMonsterAttack(playerArmor, playerAttackDamage);
-        console.log("Monster retaliated with: ", retaliationDamage);
+        document.getElementById('retalMessage').innerText = `Dealt ${retaliationDamage} as retaliation damage`;
         return retaliationDamage;
     } else {
-        console.log("monster fails to retaliate");
+        document.getElementById('retalMessage').innerText = "monster fails to retaliate";
         return 0;
     }
 }
@@ -616,6 +616,8 @@ function handleAttack(attackType) {
         }).catch(error => {
             console.error("Error updating player health:", error);
         });
+    } else {
+        document.getElementById('retalMessage').innerText = "monster fails to retaliate";
     }
 }
 
@@ -642,6 +644,7 @@ function closeEncounterModal() {
     encounterBox.style.display = 'none';
     backdrop.style.display = 'none';
     document.getElementById('encounterMessage').innerText = '';
+
 
     currentEncounter.defeated = false;
     currentEncounter.inEncounter = false;

@@ -164,11 +164,13 @@ body {
     font-size: 28px; 
     margin-top: 20px; 
 }
-.encounter-message {
-    color: red;
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.encounter-message,
+.retal-message {
+    width: 25%;       
+    margin: 0 auto;   
+    margin-bottom: 10px; 
     text-align: center;
+    display: block;
 }
 /* Style for gear labels */
 .gear-label {
@@ -197,6 +199,7 @@ ul {
 
     <div class="encounter-content">
         <div id="encounterMessage" class="encounter-message"></div>
+
         <div class="player-section">
             <div class="player-info">
                 <h3 id="playerName">Player Name</h3>
@@ -222,6 +225,7 @@ ul {
 
         <!-- Monster Info on the Right -->
         <div class="monster-info">
+            <div id="retalMessage" class="retal-message"></div>
             <h3 id="monsterName">Monster Name</h3>
             <p id="monsterHP">HP: 50</p>
             <p id="monsterDrops">Drops: Gold Coin</p>
