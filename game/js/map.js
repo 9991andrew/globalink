@@ -573,6 +573,12 @@ function handleAttack(attackType) {
         console.log("Encounter is already finished.");
         return;
     }
+    if(player.h <= 0){
+        console.log("Player's life is less than or equal to zero!");
+        currentEncounter.defeated = false;
+        closeEncounterModal();
+        return;
+    }
 
     console.log("Before attack - PlayerHP:", player.h);  // Log player health before the attack
     const playerStatsWithGear = calculatePlayerStatsWithGear(player, playerGear);
@@ -596,7 +602,7 @@ function handleAttack(attackType) {
         document.getElementById('encounterMessage').innerText = `${attackType} attack failed or no damage was dealt.`;
     }
 
-    // Handle monster's retaliation
+    // All of this to the end of the function: Handle monster's retaliation
     const monsterDmg = parseInt(monsterRetaliation(playerStatsWithGear.atk, playerStatsWithGear.def, attackType));
     console.log("Damage Dealt by Monster:", monsterDmg);
     if (monsterDmg > 0) {
@@ -646,7 +652,39 @@ function closeEncounterModal() {
     backdrop.style.display = 'none';
     document.getElementById('encounterMessage').innerText = '';
     document.getElementById('retalMessage').innerText = '';
+    
+    //Lets handle player.h less than or eq. to zero here:
+    //If player's life is less than zero, for now, we just close out of the encounter, and continue on with the game.
+    if(player.h <= 0 ) {
+        console.log("Handling player's life less than or equal to zero");
+        //This'll make it e asier for whoever adds to this, to make any changes.
+        currentEncounter.inEncounter = false;
+        const notDefeatedData = new FormData();
+        const playerHealthAfterDamage = 100; 
+        notDefeatedData.append("monsterDefeated", 'false');
+        notDefeatedData.append("playerHealth", playerHealthAfterDamage);    
 
+        fetchPost('monsterEncounter.php', notDefeatedData).then(data => {
+            if (data.playerUpdated) {
+                console.log("Server confirms PlayerHP updated:", data.playerHP);
+                player.h = data.playerHP; // Update client-side player object with new health
+                updateMonsterHPUI(currentEncounter.monster.hp, data.playerHP);
+                updatePlayerStatus();
+            } else {
+                console.log("Failed to update player health on server");
+            }
+        }).catch(error => {
+            console.error("Error updating player health:", error);
+        });
+        document.getElementById('encounterForm').style.display = 'none';
+        const encounterBox = document.getElementById('encounterForm');
+        const backdrop = document.getElementById('modalBackdrop');
+        encounterBox.style.display = 'none';
+        backdrop.style.display = 'none';
+        document.getElementById('encounterMessage').innerText = '';
+        document.getElementById('retalMessage').innerText = '';
+        return;
+    }
 
     currentEncounter.inEncounter = false;
     if(!currentEncounter.inEncounter && currentEncounter.defeated) {

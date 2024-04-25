@@ -58,10 +58,8 @@ if(isset($_POST['monsterDefeated']) && $_POST['monsterDefeated'] == 'true' && is
             echo json_encode($data);
             exit();
         }
-
-
-}
-
+    }
+    
     $mapId = $player->getMapId();
     $x = $player->getX();
     $y = $player->getY();
