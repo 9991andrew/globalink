@@ -379,7 +379,15 @@ class Player extends Dbh {
     public function getX() {return $this->x;}
     public function getY() {return $this->y;}
     public function getHealth() {return $this->health;}
-    public function setHealth(int $health) {$this->health = $health;}
+    public function setHealth(int $health) {
+        if ($health < 0) {
+            $health = 0;
+        }
+       $this->health = $health;
+       $sql = "UPDATE players SET health = :health WHERE id = :id";
+       $stmt = $this->connect()->prepare($sql);
+       $stmt->execute([':health' => $this->health, ':id' =>$this->id]);
+    }
     public function getHealthMax() {return $this->healthMax;}
     public function getMovement() {return $this->movement;}
     public function getMoney() {return $this->money;}

@@ -75,8 +75,8 @@ class Monster extends Dbh {
         $spawnedMonsters = [];
     
         // Iterate over the tiles to potentially spawn monsters
-        foreach ($tiles as $y => $row) {
-            foreach ($row as $x => $tile) {
+        foreach ($tiles as $x => $row) {
+            foreach ($row as $y => $tile) {
                 // Check if we've reached the maximum number of spawns allowed
                 if (count($spawnedMonsters) >= $maxSpawnCount) {
                     break 2; // Exit both loops

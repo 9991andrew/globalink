@@ -610,6 +610,7 @@ function handleAttack(attackType) {
                 console.log("Server confirms PlayerHP updated:", data.playerHP);
                 player.h = data.playerHP; // Update client-side player object with new health
                 updateMonsterHPUI(currentEncounter.monster.hp, data.playerHP);
+                updatePlayerStatus();
             } else {
                 console.log("Failed to update player health on server");
             }
@@ -644,9 +645,9 @@ function closeEncounterModal() {
     encounterBox.style.display = 'none';
     backdrop.style.display = 'none';
     document.getElementById('encounterMessage').innerText = '';
+    document.getElementById('retalMessage').innerText = '';
 
 
-    currentEncounter.defeated = false;
     currentEncounter.inEncounter = false;
     if(!currentEncounter.inEncounter && currentEncounter.defeated) {
         if(shouldDropItem(currentEncounter.monster.drop_rate)) {
@@ -654,19 +655,22 @@ function closeEncounterModal() {
             console.log("ID: ", currentEncounter.monster.item.id);
 
             defeatedData.append('itemId', currentEncounter.monster.item.id);
-            defeatedData.append('monsterDefeated', currentEncounter.defeated);
-            defeatedData.append('money', )
+            defeatedData.append('monsterDefeated', 'true');
             fetchPost("monsterEncounter.php", defeatedData).then(data=>{
                 if(data.playerUpdated) {
                     console.log("Player inventory updated: ", data.playerUpdated);
+                    currentEncounter.defeated = false;
                     updatePlayerStatus();
+                    updatePlayerBag();
                 }
             });
         }
         //We need to add the item to our inventory here or add it to the player.     
     }
-    if(!currentEncounter.inEncounter)
+    if(!currentEncounter.inEncounter) {
         getMonsterData(); //Calling this again to update the monster locations
+        currentEncounter.defeated = false;
+    }
 }
 function updateCursor(x, y, smooth = false) {
     document.getElementById('currentCoords').innerHTML = TXT.location_label+ '<strong class="ml-2">'+ x + '</strong>, <strong>' + y + '</strong>';
@@ -1219,7 +1223,6 @@ function gameUpdate(data) {
         // Update UI, status bar, player info panel with new player data
         updatePlayerStatus();
     }
-    updatePlayerAfterEncounter(data);
 
     // PlayerBag updating;
     if (typeof data.playerBag === 'object') {
